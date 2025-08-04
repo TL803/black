@@ -1,0 +1,164 @@
+/* === Глобальные стили === */
+.container {
+    width: 1680px !important;
+    margin: auto;
+}
+
+.heading-1 {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 68px;
+    color: #ffffff;
+}
+
+/* === Анимация появления === */
+#marks > div {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* === Кастомный селект === */
+.custom-select {
+    width: 100%;
+    padding: 32px;
+    font-size: 32px;
+    border: 1px solid #b1b1b128;
+    border-radius: 8px;
+    color: #B8B8B8;
+    background-color: #13141766;
+    background-image: url('./assets/Polygon 2.svg');
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 12px 8px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-select option {
+    background-color: #131417;
+    color: white;
+    font-size: 32px;
+    padding: 10px;
+}
+
+.custom-select.has-value {
+    color: #ffffff !important;
+}
+
+.custom-select:focus {
+    border-color: #4886FF;
+    box-shadow: 0 0 0 3px rgba(72, 134, 255, 0.2);
+}
+
+/* === Стили ползунка === */
+
+/* Заголовок и подзаголовок */
+.slider__title {
+    font-size: 26px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.slider__subtitle {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #B8B8B8;
+    font-size: 18px;
+}
+
+/* Поля ввода значений */
+.slider__field {
+    width: 100px;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #fff;
+    background: #131417;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.slider__field:focus {
+    border-color: #4886FF;
+}
+
+/* Разделитель между полями */
+.slider__separator {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #B8B8B8;
+}
+
+/* Основной контейнер ползунка */
+.slider__self {
+    width: 100%;
+    cursor: pointer;
+    height: 73px !important;
+    background-color: #1D1D21 !important;
+    border-radius: 100px !important;
+    margin-top: 30px;
+    overflow: hidden; /* 🔥 Ключевое: обрезаем по скруглённым краям */
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Убедимся, что внутренняя основа тоже скруглена */
+.slider__self .noUi-target,
+.slider__self .noUi-base {
+    border-radius: 100px !important;
+}
+
+/* Активная часть (соединение между ползунками) */
+.slider__self .noUi-connect {
+    background-color: #19BC8D !important;
+    border-radius: 100px !important; /* Всегда скруглённая */
+    height: 100% !important;
+    box-sizing: border-box;
+}
+
+/* Общие стили маркеров */
+.slider__self .noUi-handle {
+    cursor: pointer;
+    width: 65px !important;
+    height: 65px !important;
+    border-radius: 50%;
+    background-color: #1D1D21;
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+}
+
+/* Убираем дефолтные стрелки/линии в маркерах */
+.slider__self .noUi-handle::before,
+.slider__self .noUi-handle::after {
+    display: none !important;
+}
+
+/* Левый маркер (по позиции значения) */
+.slider__self .noUi-handle.left-handle {
+    top: 5px !important;
+    right: -75px !important;
+    background-color: #1D1D21;
+}
+
+/* Правый маркер (по позиции значения) */
+.slider__self .noUi-handle.right-handle {
+    top: 35px !important;
+    right: 10px !important;
+    transform: translateY(-50%) !important;
+    background-color: #1D1D21;
+}
+
+/* === Дополнительные стили: процентные метки === */

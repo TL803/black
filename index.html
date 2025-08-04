@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Автосалон</title>
+
+    <!-- 1. Подключаем шрифт Commissioner из Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- 2. Загружаем Tailwind CSS через CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 3. Настраиваем Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Commissioner', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                    },
+                    backgroundColor: {
+                        'custom': '#25262A',
+                    },
+                    colors: {
+                        primary: '#25262A',
+                        secondary: '#19BC8D',
+                        tertiary: '#D2D2D2',
+                        dark: '#13141770',
+                        white: '#ffffff'
+                    },
+                    screens: {
+                        md: '1680px'
+                    },
+                }
+            }
+        };
+    </script>
+
+    <!-- <style>
+        .container {
+            width: 1680px !important;
+            margin: auto;
+        }
+
+        .heading-1 {
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 68px;
+        }
+    </style> -->
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-custom text-white font-sans">
+
+    <section
+        class="h-[935px] relative bg-cover bg-top bg-no-repeat flex flex-col justify-between rounded-bl-[98px] rounded-br-[98px]"
+        style="background-image: url('./assets/Главная.png');">
+        <header class="container relative flex justify-between items-center mt-[60px]">
+            <nav class="flex space-x-[32px]">
+                <a href="./" class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary">
+                    <span class="font-medium">Главная</span>
+                </a>
+                <a href="./carloan.html" class="py-4 px-4 rounded-full text-tertiary"><span>Автокредит</span></a>
+                <a href="./" class="py-4 px-4 rounded-full text-tertiary"><span>Trade-in</span></a>
+                <a href="./" class="py-4 px-4 rounded-full text-tertiary"><span>Акции</span></a>
+                <a href="./" class="py-4 px-4 rounded-full text-tertiary"><span>Сервис</span></a>
+                <a href="./" class="py-4 px-4 rounded-full text-tertiary"><span>Лизинг</span></a>
+                <a href="./" class="py-4 px-4 rounded-full text-tertiary"><span>Выкуп</span></a>
+                <a href="./" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
+                <a href="./" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
+            </nav>
+            <div class="flex gap-[68px] items-center">
+                <div>
+                    <p class="text-white">+7 (999) 999-99-99</p>
+                    <p class="text-white">ул. Юбилейная д.8 кв 6</p>
+                </div>
+                <button class="bg-secondary font-medium text-primary px-[23px] py-[16px] rounded-full">
+                    Обратная связь
+                </button>
+            </div>
+        </header>
+
+        <section class="container flex flex-col items-start justify-end h-full mb-[154px] mb">
+            <h2 class="heading-1 text-white mb-16">У вас 95% вероятность получить<br> одобрение по кредиту!</h2>
+            <button
+                class="bg-secondary text-primary text-[36px] font-medium px-[64px] py-[32px] rounded-[32px] hover:bg-opacity-90 transition">
+                Купить машину в кредит
+            </button>
+        </section>
+    </section>
+
+    <main>
+        <section class="container mt-[132px]">
+            <div class="flex items-center gap-[28px]">
+                <button id="prev-btn" class="py-[24px] toggle-elem-click px-[22px] bg-secondary/50 rounded-[20px]">
+                    <img src="./assets/Vector.svg" alt="Previous" />
+                </button>
+
+                <div id="marks" class="flex gap-[28px] flex-1 "></div>
+
+                <button id="next-btn" class="py-[24px] px-[22px] bg-secondary/50 rounded-[20px]">
+                    <img src="./assets/Vector (1).svg" alt="Next" />
+                </button>
+            </div>
+            <div class="relative mt-[65px]">
+                <img class="absolute top-[24px] left-[52px] " src="./assets/Frame 207.svg" alt="">
+                <input
+                    class="w-full bg-[#9292921F]/[12%] py-[24.5px] pl-[126px] rounded-[28px] placeholder:text-[32px] text-[32px] text-light placeholder:opacity-100"
+                    type="text" placeholder="Поиск">
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="text-[64px] font-bold mt-[132px] mb-[68px]">Спецпредложения</h2>
+            <div id="products-block" class="flex flex-row flex-wrap gap-[35px]">
+
+            </div>
+        </section>
+    </main>
+
+    <script src="./toggleClick.js"></script>
+    <script src="./pagination.js"></script>
+    <script src="./showProducts.js"></script>
+</body>
+
+</html>
