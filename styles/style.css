@@ -11,12 +11,7 @@
     color: #ffffff;
 }
 
-/* === Анимация появления === */
-#marks > div {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
+
 
 /* === Кастомный селект === */
 .custom-select {
@@ -207,4 +202,77 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+
+
+/* Стили для слайдера */
+.thick-blue-slider {
+    width: 100%;
+    margin: 20px 0;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    outline: none;
+}
+
+/* Стили для трека */
+.thick-blue-slider::-webkit-slider-runnable-track {
+    height: 58px;
+    background: linear-gradient(to right, #19BC8D 0%, #19BC8D var(--fill-percent, 50%), #13141766 var(--fill-percent, 50%), #13141766 100%);
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+/* Стили для ползунка */
+.thick-blue-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    margin-top: 4px; /* Центрируем по вертикали относительно track (58px - 50px = 8px, делим на 2) */
+    background: #1D1D21;
+    border: 3px solid #19BC8D;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень для ползунка */
+}
+
+/* Добавляем tooltip над ползунком */
+.thick-blue-slider::-webkit-slider-thumb::before {
+    content: attr(data-value);
+    position: absolute;
+    top: -30px; /* Позиционируем над ползунком */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1D1D21;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* Поддержка Firefox */
+.thick-blue-slider::-moz-range-track {
+    height: 58px;
+    background: #13141766;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.thick-blue-slider::-moz-range-progress {
+    height: 58px;
+    background: #19BC8D;
+    border-radius: 100px;
+}
+
+.thick-blue-slider::-moz-range-thumb {
+    width: 50px;
+    height: 50px;
+    background: #1D1D21;
+    border: 3px solid #19BC8D;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
 }
