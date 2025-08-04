@@ -213,6 +213,52 @@
                     </div>
                 </div>
 
+<div class="flex justify-between items-center bg-[#13141770] px-[97px] py-[32px] rounded-[44px]">
+  <div class="flex gap-6">
+    <input id="show-details" class="custom-checkbox" type="checkbox" />
+    <div>
+      <label class="md:text-[26px] font-medium text-white text-[36px]" for="show-details">Trade-in</label>
+      <p class="text-[12px] md:text-[20px] text-white leading-tight">
+        Обменяйте ваш старый автомобиль на новый с доплатой разницы между стоимостью нового авто и<br class="hidden md:flex">
+        оценочной ценой старого транспортного средства.
+      </p>
+      <span class="mt-2 md:text-[32px] text-[20px] font-medium text-[#4886FF] flex md:hidden">80 000 ₽</span>
+    </div>
+  </div>
+  <span class="mt-2 text-[32px] font-medium text-[#19BC8D] hidden md:flex">80 000 ₽</span>
+</div>
+
+<!-- Форма, которая появляется при включённом чекбоксе -->
+<div id="tradein-form" class="flex flex-col gap-[60px] hidden">
+  <select class="custom-select brand" name="brand">
+    <option value="" disabled selected>Комплектация</option>
+    <option value="bmw">BMW</option>
+    <option value="audi">Audi</option>
+    <option value="mercedes">Mercedes-Benz</option>
+  </select>
+
+  <select class="custom-select brand" name="brand">
+    <option value="" disabled selected>Комплектация</option>
+    <option value="bmw">BMW</option>
+    <option value="audi">Audi</option>
+    <option value="mercedes">Mercedes-Benz</option>
+  </select>
+
+  <select class="custom-select brand" name="brand">
+    <option value="" disabled selected>Комплектация</option>
+    <option value="bmw">BMW</option>
+    <option value="audi">Audi</option>
+    <option value="mercedes">Mercedes-Benz</option>
+  </select>
+
+  <select class="custom-select brand" name="brand">
+    <option value="" disabled selected>Комплектация</option>
+    <option value="bmw">BMW</option>
+    <option value="audi">Audi</option>
+    <option value="mercedes">Mercedes-Benz</option>
+  </select>
+</div>
+
                 <button type="button" class="text-[36px] bg-[#19BC8D66] rounded-[32px] py-[32px]">Применить</button>
             </form>
 
@@ -223,7 +269,7 @@
                 <input class="custom-select" placeholder="ФИО" type="text">
                 <input class="custom-select" placeholder="Ваш номер телефона" type="text">
                 <div class="flex gap-[44px]">
-                    <input type="checkbox" class="w-[44px]">
+                    <input type="checkbox" class="custom-checkbox">
                     <label for="">Я соглашаюсь с условиями и даю свое согласие на обработкуи использование моих
                         персональных данных, и разрешаю сделать запрос<br>
                         в бюро кредитных историй</label>
@@ -239,6 +285,7 @@
 
 
     <script src="./doubleSidedRange.js"></script>
+    <script src="./showDetails.js"></script>
 </body>
 
 </html>

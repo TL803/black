@@ -162,3 +162,49 @@
 }
 
 /* === Дополнительные стили: процентные метки === */
+
+
+
+
+
+
+
+
+/* Скрываем оригинальный чекбокс */
+.custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 44px;
+  height: 44px;
+  background-color: #131417; /* Цвет по умолчанию */
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease; /* Плавная анимация цвета */
+}
+
+/* Убираем фокус-обводку */
+.custom-checkbox:focus {
+  outline: none;
+}
+
+/* Галочка отображается только когда чекбокс отмечен */
+.custom-checkbox:checked {
+  background-color: #19BC8D; /* Цвет при активации */
+}
+
+/* Псевдоэлемент — галочка */
+.custom-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  
+  background-image: url('./assets/Icon.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
