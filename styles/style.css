@@ -27,7 +27,7 @@
     border-radius: 8px;
     color: #B8B8B8;
     background-color: #13141766;
-    background-image: url('./assets/Polygon 2.svg');
+    background-image: url('../assets/Polygon 2.svg');
     background-repeat: no-repeat;
     background-position: right 16px center;
     background-size: 12px 8px;
@@ -203,7 +203,7 @@
   width: 20px;
   height: 20px;
   
-  background-image: url('./assets/Icon.svg');
+  background-image: url('../assets/Icon.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

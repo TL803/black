@@ -39,40 +39,29 @@
         };
     </script>
 
-    <!-- <style>
-        .container {
-            width: 1680px !important;
-            margin: auto;
-        }
 
-        .heading-1 {
-            font-size: 64px;
-            font-weight: 600;
-            line-height: 68px;
-        }
-    </style> -->
+        <link rel="stylesheet" href="../styles/style.css">
 
-    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body class="bg-custom text-white font-sans">
 
     <section
         class="h-[935px] relative bg-cover bg-top bg-no-repeat flex flex-col justify-between rounded-bl-[98px] rounded-br-[98px]"
-        style="background-image: url('./assets/Главная.png');">
+        style="background-image: url('../assets/Главная.png');">
         <header class="container relative flex justify-between items-center mt-[60px]">
             <nav class="flex space-x-[32px]">
                 <a href="./" class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary">
                     <span class="font-medium">Главная</span>
                 </a>
                 <a href="./carloan.html" class="py-4 px-4 rounded-full text-tertiary"><span>Автокредит</span></a>
-                <a href="./" class="py-4 px-4 rounded-full text-tertiary"><span>Trade-in</span></a>
-                <a href="./" class="py-4 px-4 rounded-full text-tertiary"><span>Акции</span></a>
-                <a href="./" class="py-4 px-4 rounded-full text-tertiary"><span>Сервис</span></a>
-                <a href="./" class="py-4 px-4 rounded-full text-tertiary"><span>Лизинг</span></a>
-                <a href="./" class="py-4 px-4 rounded-full text-tertiary"><span>Выкуп</span></a>
-                <a href="./" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
-                <a href="./" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
+                <a href="./TradeIn.html" class="py-4 px-4 rounded-full text-tertiary"><span>Trade-in</span></a>
+                <a href="./stock.html" class="py-4 px-4 rounded-full text-tertiary"><span>Акции</span></a>
+                <a href="./service.html" class="py-4 px-4 rounded-full text-tertiary"><span>Сервис</span></a>
+                <a href="./Leasing.html" class="py-4 px-4 rounded-full text-tertiary"><span>Лизинг</span></a>
+                <a href="./ransom.html" class="py-4 px-4 rounded-full text-tertiary"><span>Выкуп</span></a>
+                <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
+                <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
             </nav>
             <div class="flex gap-[68px] items-center">
                 <div>
@@ -98,17 +87,17 @@
         <section class="container mt-[132px]">
             <div class="flex items-center gap-[28px]">
                 <button id="prev-btn" class="py-[24px] toggle-elem-click px-[22px] bg-secondary/50 rounded-[20px]">
-                    <img src="./assets/Vector.svg" alt="Previous" />
+                    <img src="../assets/Vector.svg" alt="Previous" />
                 </button>
 
                 <div id="marks" class="flex gap-[28px] flex-1 "></div>
 
                 <button id="next-btn" class="py-[24px] px-[22px] bg-secondary/50 rounded-[20px]">
-                    <img src="./assets/Vector (1).svg" alt="Next" />
+                    <img src="../assets/Vector (1).svg" alt="Next" />
                 </button>
             </div>
             <div class="relative mt-[65px]">
-                <img class="absolute top-[24px] left-[52px] " src="./assets/Frame 207.svg" alt="">
+                <img class="absolute top-[24px] left-[52px] " src="../assets/Frame 207.svg" alt="">
                 <input
                     class="w-full bg-[#9292921F]/[12%] py-[24.5px] pl-[126px] rounded-[28px] placeholder:text-[32px] text-[32px] text-light placeholder:opacity-100"
                     type="text" placeholder="Поиск">
@@ -123,9 +112,13 @@
         </section>
     </main>
 
-    <script src="./toggleClick.js"></script>
+    <!-- <script src="./toggleClick.js"></script>
     <script src="./pagination.js"></script>
-    <script src="./showProducts.js"></script>
+    <script src="./showProducts.js"></script> -->
+
+    <script src="../script/toggleClick.js"></script>
+    <script src="../script/pagination.js"></script>
+    <script src="../script/showProducts.js"></script>
 </body>
 
 </html>
