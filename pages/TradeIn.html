@@ -13,7 +13,7 @@
     <!-- 2. Загружаем Tailwind CSS через CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-        <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
 
 
     <!-- 3. Настраиваем Tailwind -->
@@ -44,30 +44,194 @@
 </head>
 
 <body class="bg-custom text-white font-sans">
-        <header class="container relative flex justify-between items-center mt-[60px]">
-            <nav class="flex space-x-[32px]">
-                <a href="./" class="py-4 px-4 rounded-full text-tertiary">
-                    <span class="font-medium">Главная</span>
-                </a>
-                <a href="./carloan.html" class="py-4 px-4 rounded-full text-tertiary"><span>Автокредит</span></a>
-                <a href="./TradeIn.html" class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary"><span>Trade-in</span></a>
-                <a href="./stock.html" class="py-4 px-4 rounded-full text-tertiary"><span>Акции</span></a>
-                <a href="./service.html" class="py-4 px-4 rounded-full text-tertiary"><span>Сервис</span></a>
-                <a href="./Leasing.html" class="py-4 px-4 rounded-full text-tertiary"><span>Лизинг</span></a>
-                <a href="./ransom.html" class="py-4 px-4 rounded-full text-tertiary"><span>Выкуп</span></a>
-                <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
-                <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
-            </nav>
-            <div class="flex gap-[68px] items-center">
-                <div>
-                    <p class="text-white">+7 (999) 999-99-99</p>
-                    <p class="text-white">ул. Юбилейная д.8 кв 6</p>
-                </div>
-                <button class="bg-secondary font-medium text-primary px-[23px] py-[16px] rounded-full">
-                    Обратная связь
-                </button>
+    <header class="container relative flex justify-between items-center mt-[60px]">
+        <nav class="flex space-x-[32px]">
+            <a href="./" class="py-4 px-4 rounded-full text-tertiary">
+                <span class="font-medium">Главная</span>
+            </a>
+            <a href="./carloan.html" class="py-4 px-4 rounded-full text-tertiary"><span>Автокредит</span></a>
+            <a href="./TradeIn.html"
+                class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary"><span>Trade-in</span></a>
+            <a href="./stock.html" class="py-4 px-4 rounded-full text-tertiary"><span>Акции</span></a>
+            <a href="./service.html" class="py-4 px-4 rounded-full text-tertiary"><span>Сервис</span></a>
+            <a href="./Leasing.html" class="py-4 px-4 rounded-full text-tertiary"><span>Лизинг</span></a>
+            <a href="./ransom.html" class="py-4 px-4 rounded-full text-tertiary"><span>Выкуп</span></a>
+            <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
+            <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
+        </nav>
+        <div class="flex gap-[68px] items-center">
+            <div>
+                <p class="text-white">+7 (999) 999-99-99</p>
+                <p class="text-white">ул. Юбилейная д.8 кв 6</p>
             </div>
-        </header>
+            <button class="bg-secondary font-medium text-primary px-[23px] py-[16px] rounded-full">
+                Обратная связь
+            </button>
+        </div>
+    </header>
+
+    <main class="container flex flex-col gap-[132px]">
+        <section>
+            <h1 class="text-[90px] mb-[60px] mt-[80px]">Купить новый автомобиль в Трейд-Ин </h1>
+            <div class="flex flex-col gap-[52px]">
+                <div class="p-[40px] rounded-[16px] bg-[#1314171F]/[12%]">
+                    <p class="text-[40px] text-[#19BC8D80]/50">Trade-in</p>
+                    <p class="text-[32px] text-[#A9A9A9]">Поменяйте свой подержанный автомобиль на новый, просто
+                        доплатив разницу между ценой нового авто и оценочной стоимостью вашего старого транспортного
+                        средства.</p>
+                </div>
+                <div class="p-[40px] rounded-[16px] bg-[#1314171F]/[12%]">
+                    <p class="text-[40px] text-[#19BC8D80]/50">Удобство</p>
+                    <p class="text-[32px] text-[#A9A9A9]">Весь обмен проходит в одном месте — не нужно тратить время на
+                        продажу старого авто и поиски покупателя.</p>
+                </div>
+                <div class="p-[40px] rounded-[16px] bg-[#1314171F]/[12%]">
+                    <p class="text-[40px] text-[#19BC8D80]/50">Безопасность сделки</p>
+                    <p class="text-[32px] text-[#A9A9A9]">При оформлении сделки через трейд‑ин всё происходит официально
+                        и прозрачно: вы заключаете договор с автосалоном, что полностью исключает риск столкнуться с
+                        мошенниками
+                        или недобросовестными покупателями.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <form class="px-[92px] py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[60px]" action="">
+                <h2 class="text-[48px] font-medium">1. Выберите автомобиль</h2>
+                <select class="custom-select brand" name="brand">
+                    <option value="" disabled selected>Марка автомобиля</option>
+                    <option value="bmw">BMW</option>
+                    <option value="audi">Audi</option>
+                    <option value="mercedes">Mercedes-Benz</option>
+                </select> <select class="custom-select brand" name="brand">
+                    <option value="" disabled selected>Модель</option>
+                    <option value="bmw">BMW</option>
+                    <option value="audi">Audi</option>
+                    <option value="mercedes">Mercedes-Benz</option>
+                </select> <select class="custom-select brand" name="brand">
+                    <option value="" disabled selected>Комплектация</option>
+                    <option value="bmw">BMW</option>
+                    <option value="audi">Audi</option>
+                    <option value="mercedes">Mercedes-Benz</option>
+                </select>
+
+                <button class="text-[36px] bg-[#19BC8D66] rounded-[32px] py-[32px]">Применить</button>
+            </form>
+        </section>
+
+
+        <section>
+            <div>
+                <h1 class="text-[96px] mb-[20px] mt-[80px]">Kaiyi X3 Pro</h1>
+                <p
+                    class="inline-block text-[20px] px-[55px] py-[16px] rounded-[32px] border border-[#19BC8D] bg-[#225045] mb-[60px]">
+                    Внедорожник
+                </p>
+            </div>
+            <div class="flex gap-[72px] mb-[80px]">
+                <div class="w-[1251px] h-[812px] rounded-[24px] bg-[#131417]"></div>
+                <div class="flex flex-col gap-[58px]">
+                    <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
+                    <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
+                    <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
+                </div>
+            </div>
+
+            <div class="flex gap-[40px] mb-[80px]">
+                <div
+                    class="w-max inline-block py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[32px] flex items-center gap-[96px]">
+                    <div>
+                        <p class="text-[24px] text-[#19BC8D]">210 км/ч</p>
+                        <p class="text-[20px]">Cкорость</p>
+                    </div>
+                    <img src="../assets/--------- (1) 1.svg" alt="">
+                </div>
+                <div
+                    class="w-max inline-block py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[32px] flex items-center gap-[96px]">
+                    <div>
+                        <p class="text-[24px] text-[#19BC8D]">7.9 сек.</p>
+                        <p class="text-[20px]">Cкорость</p>
+                    </div>
+                    <img src="../assets/--------- (1) 1.svg" alt="">
+                </div>
+                <div
+                    class="w-max inline-block py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[32px] flex items-center gap-[96px]">
+                    <div>
+                        <p class="text-[24px] text-[#19BC8D]">249 л.с.</p>
+                        <p class="text-[20px]">Cкорость</p>
+                    </div>
+                    <img src="../assets/--------- (1) 1.svg" alt="">
+                </div>
+                <div
+                    class="w-max inline-block py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[32px] flex items-center gap-[96px]">
+                    <div>
+                        <p class="text-[24px] text-[#19BC8D]">9.9 л/100 км</p>
+                        <p class="text-[20px]">Cкорость</p>
+                    </div>
+                    <img src="../assets/--------- (1) 1.svg" alt="">
+                </div>
+            </div>
+
+            <div class="mb-[100px]">
+                <p class="text-[32px] mb-[32px]">Цвет</p>
+                <div class="flex  gap-[40px]">
+                    <div class="bg-[#3150A0] w-[247px] h-[69px] rounded-[16px]"></div>
+                    <div class="bg-[#B33023] w-[247px] h-[69px] rounded-[16px]"></div>
+                    <div class="bg-[#EBAA3F] w-[247px] h-[69px] rounded-[16px]"></div>
+                    <div class="bg-[#1A295E] w-[247px] h-[69px] rounded-[16px]"></div>
+                </div>
+            </div>
+
+            <div class="mb-[40px]">
+                <p class="text-[48px] line-through">1 959 900 ₽</p>
+                <p class="text-[96px] font-medium">960 000 ₽</p>
+            </div>
+
+            <form class="px-[92px] py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[60px]" action="">
+                <h2 class="text-[48px] font-medium"> 2. Введите данные вашего автомобиля</h2>
+                <select class="custom-select brand" name="brand">
+                    <option value="" disabled selected>Марка автомобиля</option>
+                    <option value="bmw">BMW</option>
+                    <option value="audi">Audi</option>
+                    <option value="mercedes">Mercedes-Benz</option>
+                </select> <select class="custom-select brand" name="brand">
+                    <option value="" disabled selected>Модель</option>
+                    <option value="bmw">BMW</option>
+                    <option value="audi">Audi</option>
+                    <option value="mercedes">Mercedes-Benz</option>
+                </select>
+                <input type="text " class="custom-select" placeholder="Год">
+                <select class="custom-select brand" name="brand">
+                    <option value="" disabled selected>Комплектация</option>
+                    <option value="bmw">BMW</option>
+                    <option value="audi">Audi</option>
+                    <option value="mercedes">Mercedes-Benz</option>
+                </select>
+
+                <button class="text-[36px] bg-[#19BC8D66] rounded-[32px] py-[32px]">Применить</button>
+            </form>
+
+
+
+        </section>
+
+        <section>
+            <form class="px-[92px] py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[60px]" action="">
+                <h2 class="text-[48px] font-medium">3. Заполните ваши данные</h2>
+                <input class="custom-select" placeholder="ФИО" type="text">
+                <input class="custom-select" placeholder="Ваш номер телефона" type="text">
+                <div class="flex gap-[44px]">
+                    <input type="checkbox" class="custom-checkbox">
+                    <label for="">Я соглашаюсь с условиями и даю свое согласие на обработкуи использование моих
+                        персональных данных, и разрешаю сделать запрос<br>
+                        в бюро кредитных историй</label>
+                </div>
+                <button
+                    class="w-full bg-secondary py-[24px] rounded-[32px] text-[36px] font-medium text-primary mt-[30px]">Отправить
+                    заявку</button>
+            </form>
+        </section>
+    </main>
 </body>
 
 </html>
