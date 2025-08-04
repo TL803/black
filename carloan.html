@@ -180,25 +180,59 @@
                 <p class="text-[96px] font-medium">960 000 ₽</p>
             </div>
 
-<form class="px-[92px] py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[60px]" action="">
-    <h2 class="text-[48px] font-medium">2. Введите сумму первоначального взноса </h2>
+            <form class="px-[92px] py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[60px]" action="">
+                <!-- Блок 1: Первоначальный взнос -->
+                <h2 class="text-[48px] font-medium">2. Введите сумму первоначального взноса</h2>
 
-    <div class="slider__self" id="slider"></div>
+                <div class="slider-container">
+                    <div class="slider__self"></div>
+                    <div class="flex justify-between items-center mt-4">
+                        <input type="number" name="down_payment_min"
+                            class="slider__field slider__field--min rounded-full  text-[#19BC8D] w-[240px] py-[33px] box-border"
+                            placeholder="от" />
+                        <span class="slider__separator text-[32px] text-[#B8B8B8]">Первоначальный взнос</span>
+                        <input type="number" name="down_payment_max"
+                            class="slider__field slider__field--max rounded-full  text-[#19BC8D] w-[240px] py-[33px] box-border"
+                            placeholder="до" />
+                    </div>
+                </div>
 
-    <div class=" flex justify-between items-center">
-        <input type="number" name="min_num" id="min_num" class="slider__field rounded-full w-[240px] py-[33px] rounded-full box-border" placeholder="от" />
-        <span class="slider__separator text-[32px] text-[#B8B8B8]">Первоначальный взнос</span>
-        <input type="number" name="max_num" id="max_num" class="slider__field rounded-full w-[240px] py-[33px] rounded-full box-border" placeholder="до" />
-    </div>
+                <!-- Блок 2: Комфортный платёж -->
+                <h2 class="text-[48px] font-medium">3. Выберите комфортный платеж</h2>
 
-    <h2 class="text-[48px] font-medium">3. Выберите комфортный платеж </h2>
+                <div class="slider-container">
+                    <div class="slider__self"></div>
+                    <div class="flex justify-between items-center mt-4">
+                        <input type="number" name="payment_min"
+                            class="slider__field slider__field--min rounded-full  text-[#19BC8D] w-[240px] py-[33px] box-border"
+                            placeholder="от" />
+                        <span class="slider__separator text-[32px] text-[#B8B8B8]">Комфортный платёж</span>
+                        <input type="number" name="payment_max"
+                            class="slider__field slider__field--max rounded-full  text-[#19BC8D] w-[240px] py-[33px] box-border"
+                            placeholder="до" />
+                    </div>
+                </div>
 
-    <button class="text-[36px] bg-[#19BC8D66] rounded-[32px] py-[32px]">Применить</button>
-</form>
+                <button type="button" class="text-[36px] bg-[#19BC8D66] rounded-[32px] py-[32px]">Применить</button>
+            </form>
 
         </section>
-
-
+        <section>
+            <form class="px-[92px] py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[60px]" action="">
+                <h2 class="text-[48px] font-medium">4. Заполните ваши данные</h2>
+                <input class="custom-select" placeholder="ФИО" type="text">
+                <input class="custom-select" placeholder="Ваш номер телефона" type="text">
+                <div class="flex gap-[44px]">
+                    <input type="checkbox" class="w-[44px]">
+                    <label for="">Я соглашаюсь с условиями и даю свое согласие на обработкуи использование моих
+                        персональных данных, и разрешаю сделать запрос<br>
+                        в бюро кредитных историй</label>
+                </div>
+                <button
+                    class="w-full bg-secondary py-[24px] rounded-[32px] text-[36px] font-medium text-primary mt-[30px]">Отправить
+                    заявку</button>
+            </form>
+        </section>
     </main>
 
 
