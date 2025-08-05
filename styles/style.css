@@ -420,4 +420,12 @@
 
 
 
+/* Стили для мобильного меню */
+#mobileMenu {
+    transition: opacity 0.3s ease;
+}
 
+#mobileMenu.hidden {
+    opacity: 0;
+    pointer-events: none;
+}

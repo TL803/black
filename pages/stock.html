@@ -44,35 +44,74 @@
 </head>
 
 <body class="bg-custom text-white font-sans">
-    <header class="container relative flex md:justify-between justify-end items-center mt-[60px]">
-        <nav class="md:flex hidden space-x-[32px]">
-            <a href="./" class="py-4 px-4 rounded-full text-tertiary">
-                <span class="font-medium">Главная</span>
-            </a>
-            <a href="./carloan.html" class="py-4 px-4 rounded-full text-tertiary"><span>Автокредит</span></a>
-            <a href="./TradeIn.html" class="py-4 px-4 rounded-full text-tertiary"><span>Trade-in</span></a>
-            <a href="./stock.html" class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary"><span>Акции</span></a>
-            <a href="./service.html" class="py-4 px-4 rounded-full text-tertiary"><span>Сервис</span></a>
-            <a href="./Leasing.html" class="py-4 px-4 rounded-full text-tertiary"><span>Лизинг</span></a>
-            <a href="./ransom.html" class="py-4 px-4 rounded-full text-tertiary"><span>Выкуп</span></a>
-            <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
-            <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
-        </nav>
-        <div class="flex gap-[68px] md:flex hidden items-center">
-            <div>
-                <p class="text-white">+7 (999) 999-99-99</p>
-                <p class="text-white">ул. Юбилейная д.8 кв 6</p>
+<header class="container relative flex md:justify-between justify-end items-center mt-[60px]">
+    <!-- Навигация для десктопа -->
+    <nav class="md:flex hidden space-x-[32px]">
+        <a href="./" class="py-4 px-4 rounded-full text-tertiary">
+            <span class="font-medium">Главная</span>
+        </a>
+        <a href="./carloan.html" class="py-4 px-4 rounded-full text-tertiary"><span>Автокредит</span></a>
+        <a href="./TradeIn.html" class="py-4 px-4 rounded-full text-tertiary"><span>Trade-in</span></a>
+        <a href="./stock.html" class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary"><span>Акции</span></a>
+        <a href="./service.html" class="py-4 px-4 rounded-full text-tertiary"><span>Сервис</span></a>
+        <a href="./Leasing.html" class="py-4 px-4 rounded-full text-tertiary"><span>Лизинг</span></a>
+        <a href="./ransom.html" class="py-4 px-4 rounded-full text-tertiary"><span>Выкуп</span></a>
+        <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
+        <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
+    </nav>
+
+    <!-- Контакты и кнопка -->
+    <div class="flex gap-[68px] md:flex hidden items-center">
+        <div>
+            <p class="text-white">+7 (999) 999-99-99</p>
+            <p class="text-white">ул. Юбилейная д.8 кв 6</p>
+        </div>
+        <button class="bg-secondary font-medium text-primary px-[23px] py-[16px] rounded-full">
+            Обратная связь
+        </button>
+    </div>
+
+    <!-- Бургер-иконка -->
+    <div class="burger md:hidden flex items-center">
+        <img src="../assets/Бургер меню (2).svg" alt="Бургер меню" id="burgerMenu" class="cursor-pointer w-6 h-6">
+    </div>
+
+    <!-- Мобильное меню (60% ширины, справа) -->
+    <div id="mobileMenu" class="fixed top-0 right-0 w-[60%] h-full bg-[#131417] z-50 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex flex-col h-full p-6 space-y-6 text-white">
+            <div class="flex justify-between items-center mb-8">
+                <h3 class="text-xl font-bold">Меню</h3>
+                <button id="closeMenu" class="text-white text-2xl">&times;</button>
             </div>
-            <button class="bg-secondary font-medium text-primary px-[23px] py-[16px] rounded-full">
-                Обратная связь
-            </button>
+            <nav class="flex flex-col space-y-4">
+                <a href="./" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Главная</a>
+                <hr class="border-t border-[#19BC8D33] my-2"> <!-- Разделитель -->
+                <a href="./carloan.html" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Автокредит</a>
+                <hr class="border-t border-[#19BC8D33] my-2"> <!-- Разделитель -->
+                <a href="./TradeIn.html" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Trade-in</a>
+                <hr class="border-t border-[#19BC8D33] my-2"> <!-- Разделитель -->
+                <a href="./stock.html" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Акции</a>
+                <hr class="border-t border-[#19BC8D33] my-2"> <!-- Разделитель -->
+                <a href="./service.html" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Сервис</a>
+                <hr class="border-t border-[#19BC8D33] my-2"> <!-- Разделитель -->
+                <a href="./Leasing.html" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Лизинг</a>
+                <hr class="border-t border-[#19BC8D33] my-2"> <!-- Разделитель -->
+                <a href="./ransom.html" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Выкуп</a>
+                <hr class="border-t border-[#19BC8D33] my-2"> <!-- Разделитель -->
+                <a href="./taxiСar.html" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Авто под такси</a>
+                <hr class="border-t border-[#19BC8D33] my-2"> <!-- Разделитель -->
+                <a href="./Contacts.html" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Контакты</a>
+            </nav>
+            <div class="mt-auto pt-6 border-t border-gray-700 text-sm text-gray-300">
+                <p>+7 (999) 999-99-99</p>
+                <p>ул. Юбилейная д.8 кв 6</p>
+            </div>
         </div>
-        <div class="burger md:hidden flex ">
-            <img src="../assets/Бургер меню (2).svg" alt="Бургер меню">
+    </div>
 
-        </div>
-
-    </header>
+    <!-- Overlay (затемнение фона при открытом меню) -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
+</header>
 
     <main class="container flex flex-col gap-[68px] md:gap-[132px]">
         <h1 class="text-[24px] md:text-[90px]  md:mb-[60px] md:mt-[100px]">Акции</h1>
@@ -116,6 +155,8 @@
                 class="w-full bg-secondary py-[24px] rounded-[32px] text-[16px] md:text-[36px] font-medium text-primary mt-[30px]">Воспользоваться</button>
         </div>
     </main>
+    <script src="../script/burger.js"></script>
+
 </body>
 
 </html>
