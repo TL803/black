@@ -32,7 +32,7 @@
                         white: '#ffffff'
                     },
                     screens: {
-                        md: '1680px'
+                        md: '1681px'
                     },
                 }
             }
@@ -40,17 +40,17 @@
     </script>
 
 
-        <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
 
 </head>
 
 <body class="bg-custom text-white font-sans">
 
     <section
-        class="h-[935px] relative bg-cover bg-top bg-no-repeat flex flex-col justify-between rounded-bl-[98px] rounded-br-[98px]"
+        class="md:h-[935px] h-[447px] relative bg-cover bg-top bg-no-repeat flex flex-col justify-between rounded-bl-[98px] rounded-br-[98px]"
         style="background-image: url('../assets/Главная.png');">
         <header class="container relative flex justify-between items-center mt-[60px]">
-            <nav class="flex space-x-[32px]">
+            <nav class="md:flex hidden space-x-[32px]">
                 <a href="./" class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary">
                     <span class="font-medium">Главная</span>
                 </a>
@@ -63,7 +63,7 @@
                 <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
                 <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
             </nav>
-            <div class="flex gap-[68px] items-center">
+            <div class="flex gap-[68px] md:flex hidden items-center">
                 <div>
                     <p class="text-white">+7 (999) 999-99-99</p>
                     <p class="text-white">ул. Юбилейная д.8 кв 6</p>
@@ -72,6 +72,12 @@
                     Обратная связь
                 </button>
             </div>
+            <div class="burger md:hidden flexd">
+                <!-- Простой SVG бургер-иконки -->
+                <img src="../assets/Бургер меню (2).svg" alt="Бургер меню">
+
+            </div>
+
         </header>
 
         <section class="container flex flex-col items-start justify-end h-full mb-[154px] mb">

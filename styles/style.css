@@ -42,9 +42,18 @@
 }
 
 .custom-select.has-value {
-    color: #ffffff !important;
+    color: white !important;
 }
 
+.custom-select.has-value {
+    color: #ffffff !important;
+}
+.custom-select option {
+    background-color: #131417;
+    color: white;
+    font-size: 32px;
+    padding: 10px;
+}
 .custom-select:focus {
     border-color: #4886FF;
     box-shadow: 0 0 0 3px rgba(72, 134, 255, 0.2);
@@ -103,7 +112,8 @@
     background-color: #1D1D21 !important;
     border-radius: 100px !important;
     margin-top: 30px;
-    overflow: hidden; /* 🔥 Ключевое: обрезаем по скруглённым краям */
+    overflow: hidden;
+    /* 🔥 Ключевое: обрезаем по скруглённым краям */
     position: relative;
     box-sizing: border-box;
 }
@@ -117,7 +127,8 @@
 /* Активная часть (соединение между ползунками) */
 .slider__self .noUi-connect {
     background-color: #19BC8D !important;
-    border-radius: 100px !important; /* Всегда скруглённая */
+    border-radius: 100px !important;
+    /* Всегда скруглённая */
     height: 100% !important;
     box-sizing: border-box;
 }
@@ -167,44 +178,45 @@
 
 /* Скрываем оригинальный чекбокс */
 .custom-checkbox {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 44px;
-  height: 44px;
-  background-color: #131417; /* Цвет по умолчанию */
-  border-radius: 4px;
-  position: relative;
-  cursor: pointer;
-  transition: background-color 0.2s ease; /* Плавная анимация цвета */
+    appearance: none;
+    -webkit-appearance: none;
+    width: 44px;
+    height: 44px;
+    background-color: #131417;
+    /* Цвет по умолчанию */
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    /* Плавная анимация цвета */
 }
 
 /* Убираем фокус-обводку */
 .custom-checkbox:focus {
-  outline: none;
+    outline: none;
 }
 
 /* Галочка отображается только когда чекбокс отмечен */
 .custom-checkbox:checked {
-  background-color: #19BC8D; /* Цвет при активации */
+    background-color: #19BC8D;
+    /* Цвет при активации */
 }
 
 /* Псевдоэлемент — галочка */
 .custom-checkbox:checked::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  
-  background-image: url('../assets/Icon.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+
+    background-image: url('../assets/Icon.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-
-
 
 /* Стили для слайдера */
 .thick-blue-slider {
@@ -214,35 +226,37 @@
     appearance: none;
     background: transparent;
     outline: none;
+    height: 58px; /* Высота всего слайдера (важно для Firefox) */
+    overflow: hidden; /* Чтобы обрезать тень и крайние эффекты */
 }
 
-/* Стили для трека */
+/* Стили для трека (вебкид) */
 .thick-blue-slider::-webkit-slider-runnable-track {
     height: 58px;
     background: linear-gradient(to right, #19BC8D 0%, #19BC8D var(--fill-percent, 50%), #13141766 var(--fill-percent, 50%), #13141766 100%);
-    border-radius: 100px;
+    border-radius: 100px; /* Скругляем все углы */
     cursor: pointer;
 }
 
-/* Стили для ползунка */
+/* Ползунок */
 .thick-blue-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 50px;
     height: 50px;
-    margin-top: 4px; /* Центрируем по вертикали относительно track (58px - 50px = 8px, делим на 2) */
+    margin-top: 4px; /* вертикальное центрирование */
     background: #1D1D21;
-    border: 3px solid #19BC8D;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень для ползунка */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(-40px); /* Сдвигаем ползунок влево на 10px */
 }
 
-/* Добавляем tooltip над ползунком */
+/* Тултип над ползунком */
 .thick-blue-slider::-webkit-slider-thumb::before {
     content: attr(data-value);
     position: absolute;
-    top: -30px; /* Позиционируем над ползунком */
+    top: -30px;
     left: 50%;
     transform: translateX(-50%);
     background: #1D1D21;
@@ -251,28 +265,30 @@
     border-radius: 5px;
     font-size: 12px;
     white-space: nowrap;
+    pointer-events: none; /* Чтобы тултип не мешал кликам */
 }
 
-/* Поддержка Firefox */
+/* Firefox: трек */
 .thick-blue-slider::-moz-range-track {
     height: 58px;
     background: #13141766;
-    border-radius: 100px;
+    border-radius: 100px; /* Скругляем все углы */
     cursor: pointer;
 }
 
+/* Firefox: заполненная часть (прогресс) */
 .thick-blue-slider::-moz-range-progress {
     height: 58px;
     background: #19BC8D;
-    border-radius: 100px;
+    border-radius: 100px; /* Скругляем все углы */
 }
 
+/* Firefox: ползунок */
 .thick-blue-slider::-moz-range-thumb {
     width: 50px;
     height: 50px;
     background: #1D1D21;
-    border: 3px solid #19BC8D;
+    border: none;
     border-radius: 50%;
     cursor: pointer;
-    border: none;
 }
