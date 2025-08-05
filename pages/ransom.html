@@ -76,37 +76,36 @@
     </div>
 
     <!-- Мобильное меню (60% ширины, справа) -->
-    <div id="mobileMenu" class="fixed top-0 right-0 w-[60%] h-full bg-[#131417] z-50 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
-        <div class="flex flex-col h-full p-6 space-y-6 text-white">
-            <div class="flex justify-between items-center mb-8">
-                <h3 class="text-xl font-bold">Меню</h3>
-                <button id="closeMenu" class="text-white text-2xl">&times;</button>
-            </div>
-            <nav class="flex flex-col space-y-4">
-                <a href="./" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Главная</a>
-                <hr class="border-t border-[#19BC8D33] my-2"> <!-- Разделитель -->
-                <a href="./carloan.html" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Автокредит</a>
-                <hr class="border-t border-[#19BC8D33] my-2"> <!-- Разделитель -->
-                <a href="./TradeIn.html" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Trade-in</a>
-                <hr class="border-t border-[#19BC8D33] my-2"> <!-- Разделитель -->
-                <a href="./stock.html" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Акции</a>
-                <hr class="border-t border-[#19BC8D33] my-2"> <!-- Разделитель -->
-                <a href="./service.html" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Сервис</a>
-                <hr class="border-t border-[#19BC8D33] my-2"> <!-- Разделитель -->
-                <a href="./Leasing.html" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Лизинг</a>
-                <hr class="border-t border-[#19BC8D33] my-2"> <!-- Разделитель -->
-                <a href="./ransom.html" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Выкуп</a>
-                <hr class="border-t border-[#19BC8D33] my-2"> <!-- Разделитель -->
-                <a href="./taxiСar.html" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Авто под такси</a>
-                <hr class="border-t border-[#19BC8D33] my-2"> <!-- Разделитель -->
-                <a href="./Contacts.html" class="py-2 px-4 hover:bg-secondary/50 rounded-lg">Контакты</a>
-            </nav>
-            <div class="mt-auto pt-6 border-t border-gray-700 text-sm text-gray-300">
-                <p>+7 (999) 999-99-99</p>
-                <p>ул. Юбилейная д.8 кв 6</p>
-            </div>
+<div id="mobileMenu"
+    class="fixed top-0 right-0 w-[60%] h-full bg-[#131417] z-50 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="flex flex-col h-full p-6 text-white">
+        <!-- Верхняя часть с крестиком -->
+        <div class="flex justify-between items-center mb-6">
+            <button id="closeMenu" class="text-white text-2xl w-8 h-8 flex items-center justify-center">&times;</button>
+        </div>
+
+        <!-- Навигация с прокруткой -->
+        <nav class="flex-1 overflow-y-auto py-2">
+            <ul class="space-y-4">
+                <li><a href="./" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Главная</a><hr class="border-t border-[#19BC8D33] my-2"></li>
+                <li><a href="./carloan.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Автокредит</a><hr class="border-t border-[#19BC8D33] my-2"></li>
+                <li><a href="./TradeIn.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Trade-in</a><hr class="border-t border-[#19BC8D33] my-2"></li>
+                <li><a href="./stock.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Акции</a><hr class="border-t border-[#19BC8D33] my-2"></li>
+                <li><a href="./service.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Сервис</a><hr class="border-t border-[#19BC8D33] my-2"></li>
+                <li><a href="./Leasing.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Лизинг</a><hr class="border-t border-[#19BC8D33] my-2"></li>
+                <li><a href="./ransom.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Выкуп</a><hr class="border-t border-[#19BC8D33] my-2"></li>
+                <li><a href="./taxiСar.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Авто под такси</a><hr class="border-t border-[#19BC8D33] my-2"></li>
+                <li><a href="./Contacts.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <!-- Футер (контакты) всегда внизу -->
+        <div class="pt-6 border-t border-gray-700 text-sm text-gray-300 mt-4">
+            <p>+7 (999) 999-99-99</p>
+            <p>ул. Юбилейная д.8 кв 6</p>
         </div>
     </div>
+</div>
 
     <!-- Overlay (затемнение фона при открытом меню) -->
     <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
