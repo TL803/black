@@ -195,11 +195,11 @@
                     <div class="slider__self"></div>
                     <div class="flex justify-between items-center mt-4">
                         <input type="number" name="down_payment_min"
-                            class="slider__field slider__field--min rounded-full  text-[#19BC8D] w-[240px] py-[33px] box-border"
+                            class="slider__field slider__field--min rounded-full  text-[#19BC8D] w-[80px] md:w-[240px] py-[10px] md:py-[33px] box-border"
                             placeholder="от" />
-                        <span class="slider__separator text-[32px] text-[#B8B8B8]">Первоначальный взнос</span>
+                        <span class="slider__separator md:text-[32px] text-[#B8B8B8]">Первоначальный взнос</span>
                         <input type="number" name="down_payment_max"
-                            class="slider__field slider__field--max rounded-full  text-[#19BC8D] w-[240px] py-[33px] box-border"
+                            class="slider__field slider__field--max rounded-full  text-[#19BC8D] w-[80px] md:w-[240px] py-[10px] md:py-[33px] box-border"
                             placeholder="до" />
                     </div>
                 </div>
@@ -213,33 +213,29 @@
 
                 <div class="flex justify-between mt-4">
                     <div
-                        class="slider__field slider__field--min rounded-full  text-[#19BC8D] w-[240px] py-[33px] box-border">
+                        class="slider__field slider__field--min rounded-full  text-[#19BC8D] md:w-[240px] w-[100px] py-[10px] md:py-[33px] box-border">
                         <span id="loanTerm">10 лет</span>
                     </div>
                     <div
-                        class="slider__field slider__field--min rounded-full  text-[#19BC8D] w-[240px] py-[33px] box-border">
+                        class="slider__field slider__field--min rounded-full  text-[#19BC8D] md:w-[240px] w-[100px] py-[10px] md:py-[33px] box-border">
                         <span id="monthlyPayment">800 000</span> ₽
                     </div>
                 </div>
 
-                <div class="flex justify-between items-center bg-[#13141770] px-[97px] py-[32px] rounded-[44px]">
-                    <div class="flex gap-6">
+                <div class="flex items-center justify-between bg-[#1F2023]/[44%] p-4 rounded-lg">
+                    <div class="flex items-center gap-4">
                         <input id="show-details" class="custom-checkbox" type="checkbox" />
                         <div>
-                            <label class="md:text-[26px] font-medium text-white text-[36px]"
-                                for="show-details">Trade-in</label>
-                            <p class="text-[12px] md:text-[20px] text-white leading-tight">
-                                Обменяйте ваш старый автомобиль на новый с доплатой разницы между стоимостью нового авто
-                                и<br class="hidden md:flex">
-                                оценочной ценой старого транспортного средства.
+                            <label class="text-white text-xl md:text-2xl font-medium">Trade-in</label>
+                            <p class="text-sm md:text-base text-white mt-1 hidden md:block">
+                                Стоимость вашего авто и скидка
                             </p>
-                            <span class="mt-2 md:text-[32px] text-[20px] font-medium text-[#4886FF] flex md:hidden">80
-                                000 ₽</span>
                         </div>
                     </div>
-                    <span class="mt-2 text-[32px] font-medium text-[#19BC8D] hidden md:flex">80 000 ₽</span>
+                    <span class="text-right text-[#19BC8D] text-xl md:text-2xl font-medium">
+                        80 000 ₽
+                    </span>
                 </div>
-
                 <div id="tradein-form" class="flex flex-col gap-[60px] hidden">
                     <select class="custom-select brand" name="brand">
                         <option value="" disabled selected>Марка автомобиля</option>
@@ -259,7 +255,7 @@
                     <input type="text" class="custom-select" placeholder="Пробег">
                 </div>
 
-                <button type="button" class="text-[36px] bg-[#19BC8D66] rounded-[32px] py-[32px]">Применить</button>
+                <button type="button" class="md:text-[36px] text-[16px] bg-[#19BC8D66] rounded-[32px] py-[32px]">Применить</button>
             </form>
 
         </section>

@@ -69,8 +69,6 @@
 
 /* Поля ввода значений */
 .slider__field {
-    width: 100px;
-    padding: 10px;
     border: 2px solid #333;
     border-radius: 8px;
     font-size: 18px;
@@ -104,7 +102,6 @@
     border-radius: 100px !important;
     margin-top: 30px;
     overflow: hidden;
-    /* 🔥 Ключевое: обрезаем по скруглённым краям */
     position: relative;
     box-sizing: border-box;
 }
@@ -145,7 +142,7 @@
 
 /* Левый маркер (по позиции значения) */
 .slider__self .noUi-handle.left-handle {
-    top: 5px !important;
+    top: 3px !important;
     right: -75px !important;
     background-color: #1D1D21;
 }
@@ -282,15 +279,23 @@
 }
 
 @media (max-width: 1680px) {
+    /* Контейнер */
     .container {
-        width: 340px !important;
+        width: 100%;
+        max-width: 360px;
         margin: auto;
-        padding: 0 10px;
+        padding: 0 16px;
     }
 
+    /* Заголовок */
+    .heading-1 {
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    /* Кастомный селект */
     .custom-select {
-        width: 100%;
-        padding: 16px;
+        padding: 14px;
         font-size: 16px;
         border-radius: 8px;
     }
@@ -298,28 +303,108 @@
     .custom-select option {
         font-size: 14px;
         padding: 6px 10px;
-        line-height: 1.4;
     }
 
-    .slider__field {
-        font-size: 14px;
-        padding: 8px;
+    .custom-select.has-value {
+        color: #ffffff !important;
     }
 
+    /* Заголовки слайдера */
     .slider__title {
-        font-size: 22px;
+        font-size: 20px;
+        margin-bottom: 8px;
     }
 
     .slider__subtitle {
-        font-size: 16px;
+        font-size: 14px;
+        margin-bottom: 20px;
     }
 
+    /* Поля ввода */
+    .slider__field {
+        width: 70px;
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    .slider__separator {
+        font-size: 14px;
+        margin: 0 4px;
+    }
+
+    /* noUiSlider — уменьшаем размеры */
+    .slider__self {
+        height: 50px !important;
+        margin-top: 20px;
+    }
+
+    .slider__self .noUi-handle {
+        width: 44px !important;
+        height: 44px !important;
+    }
+
+    .slider__self .left-handle {
+        top: 3px !important;
+        right: -50px !important;
+    }
+
+    .slider__self .right-handle {
+        top: 50% !important;
+        right: 5px !important;
+        transform: translateY(-50%) !important;
+    }
+
+    /* thick-blue-slider — мобильная адаптация */
+    .thick-blue-slider {
+        height: 40px;
+    }
+
+    .thick-blue-slider::-webkit-slider-runnable-track {
+        height: 40px;
+        border-radius: 50px;
+    }
+
+    .thick-blue-slider::-webkit-slider-thumb {
+        width: 36px;
+        height: 36px;
+        margin-top: 2px;
+    }
+
+    .thick-blue-slider::-webkit-slider-thumb::before {
+        top: -28px;
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+
+    .thick-blue-slider::-moz-range-track {
+        height: 40px;
+        border-radius: 50px;
+    }
+
+    .thick-blue-slider::-moz-range-progress {
+        height: 40px;
+    }
+
+    .thick-blue-slider::-moz-range-thumb {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Чекбокс */
     .custom-checkbox {
-        min-width: 24px !important;
-        max-height: 34px !important;
+        width: 32px;
+        height: 32px;
+    }
+
+    .custom-checkbox:checked::after {
+        width: 14px;
+        height: 14px;
+    }
+
+    .slider__self .noUi-handle.right-handle{
+        top: 25px !important;
     }
 }
-
 
 
 
