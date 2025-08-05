@@ -10,41 +10,43 @@ const marksArray = [
   "Soueast", "SWM", "Tank", "UAZ", "Volkswagen", "XCite"
 ];
 
-// Настройки пагинации
-const itemsPerPage = 6;
-let currentPage = 0;
+// Определяем, мобильное ли устройство (по ширине экрана)
+function isMobile() {
+  return window.innerWidth < 1600; // или ваш порог, например 1681, но это странно — это огромный экран
+}
 
-// Делегирование кликов
-marks.addEventListener('click', function (e) {
-  const card = e.target.closest('.toggle-elem-click');
-  if (card) {
-    // Проверяем, активна ли уже карточка (уже зелёная)
-    const isActivated = card.style.backgroundColor === 'rgb(34, 80, 69)'; // #225045 → RGB
-
-    // Устанавливаем цвет: если активна — убираем, иначе — ставим #225045
-    card.style.backgroundColor = isActivated ? 'rgba(0, 0, 0, 0.44)' : '#225045';
-
-    // Также можно добавить/удалить класс для других стилей при необходимости
-    card.classList.toggle('text-white');
-  }
-});
-
-// Функция отображения карточек
-function showCards() {
+// Функция отображения всех марок (для мобильных)
+function showAllMarks() {
   marks.innerHTML = '';
 
+  marksArray.forEach(mark => {
+    const elem = `
+      <div class="toggle-elem-click flex bg-black/[44%] px-[20px] py-[6px] md:px-[24px] md:py-[16px] cursor-pointer relative rounded-full transition-colors duration-200 text-white">
+        <div class="w-[32px] h-[32px] md:w-[76px] md:h-[76px] rounded-full bg-[#D9D9D91F] absolute left-[1px] top-[2px]"></div>
+        <p class="ml-[44px] md:ml-[72px] text-[16px] md:text-[32px]">${mark}</p>
+      </div>
+    `;
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = elem.trim();
+    marks.appendChild(tempDiv.firstElementChild);
+  });
+}
+
+// Функция отображения пагинации (для десктопа)
+function showPaginatedMarks() {
+  const itemsPerPage = 6; // фиксированное значение для десктопа
   const totalPages = Math.ceil(marksArray.length / itemsPerPage);
-  const isLastPage = currentPage === totalPages - 1;
+  const start = currentPage * itemsPerPage;
+  const end = start + itemsPerPage;
 
-  const pageItems = isLastPage
-    ? marksArray.slice(-itemsPerPage)
-    : marksArray.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
+  marks.innerHTML = '';
 
+  const pageItems = marksArray.slice(start, end);
   pageItems.forEach(mark => {
     const elem = `
-      <div class="toggle-elem-click flex bg-black/[44%] px-[24px] cursor-pointer py-[16px] relative rounded-full transition-colors duration-200 text-white">
-        <div class="w-[76px] h-[76px] rounded-full bg-[#D9D9D91F] absolute left-[1px] top-[2px]"></div>
-        <p class="ml-[72px] text-[32px]">${mark}</p>
+      <div class="toggle-elem-click flex bg-black/[44%] px-[20px] py-[6px] md:px-[24px] md:py-[16px] cursor-pointer relative rounded-full transition-colors duration-200 text-white">
+        <div class="w-[32px] h-[32px] md:w-[76px] md:h-[76px] rounded-full bg-[#D9D9D91F] absolute left-[1px] top-[2px]"></div>
+        <p class="ml-[44px] md:ml-[72px] text-[16px] md:text-[32px]">${mark}</p>
       </div>
     `;
     const tempDiv = document.createElement('div');
@@ -52,7 +54,7 @@ function showCards() {
     marks.appendChild(tempDiv.firstElementChild);
   });
 
-  // Обновляем состояние кнопок
+  // Обновление кнопок
   prevBtn.disabled = currentPage === 0;
   prevBtn.style.opacity = currentPage === 0 ? '0.5' : '1';
   prevBtn.style.pointerEvents = currentPage === 0 ? 'none' : 'auto';
@@ -62,22 +64,55 @@ function showCards() {
   nextBtn.style.pointerEvents = nextBtn.disabled ? 'none' : 'auto';
 }
 
+let currentPage = 0;
+
+// Основная функция отображения
+function renderMarks() {
+  if (isMobile()) {
+    // На мобильных — показываем все
+    showAllMarks();
+    prevBtn.classList.add('hidden');
+    nextBtn.classList.add('hidden');
+  } else {
+    // На десктопе — пагинация
+    showPaginatedMarks();
+    prevBtn.classList.remove('hidden');
+    nextBtn.classList.remove('hidden');
+  }
+}
+
+// Делегирование кликов (общее)
+marks.addEventListener('click', function (e) {
+  const card = e.target.closest('.toggle-elem-click');
+  if (card) {
+    const isActivated = card.style.backgroundColor === 'rgb(34, 80, 69)';
+    card.style.backgroundColor = isActivated ? 'rgba(0, 0, 0, 0.44)' : '#225045';
+    card.classList.toggle('text-white');
+  }
+});
+
+// Обработчики кнопок (только для десктопа)
 prevBtn.addEventListener('click', () => {
   if (currentPage > 0) {
     currentPage--;
-    showCards();
+    renderMarks();
   }
 });
 
 nextBtn.addEventListener('click', () => {
-  const totalPages = Math.ceil(marksArray.length / itemsPerPage);
+  const totalPages = Math.ceil(marksArray.length / 6);
   if (currentPage < totalPages - 1) {
     currentPage++;
-    showCards();
+    renderMarks();
   }
 });
 
-// Загрузка при старте
+// Обновление при ресайзе
+window.addEventListener('resize', () => {
+  renderMarks();
+});
+
+// Инициализация
 document.addEventListener('DOMContentLoaded', () => {
-  showCards();
+  renderMarks();
 });

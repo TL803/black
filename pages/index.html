@@ -47,9 +47,9 @@
 <body class="bg-custom text-white font-sans">
 
     <section
-        class="md:h-[935px] h-[447px] relative bg-cover bg-top bg-no-repeat flex flex-col justify-between rounded-bl-[98px] rounded-br-[98px]"
+        class="md:h-[935px] h-[447px] relative bg-cover bg-top bg-no-repeat flex flex-col justify-between rounded-bl-[98px] rounded-br-[98px] "
         style="background-image: url('../assets/Главная.png');">
-        <header class="container relative flex justify-between items-center mt-[60px]">
+        <header class="container relative flex md:justify-between justify-end items-center mt-[60px]">
             <nav class="md:flex hidden space-x-[32px]">
                 <a href="./" class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary">
                     <span class="font-medium">Главная</span>
@@ -72,47 +72,49 @@
                     Обратная связь
                 </button>
             </div>
-            <div class="burger md:hidden flexd">
-                <!-- Простой SVG бургер-иконки -->
+            <div class="burger md:hidden flex ">
                 <img src="../assets/Бургер меню (2).svg" alt="Бургер меню">
 
             </div>
 
         </header>
 
-        <section class="container flex flex-col items-start justify-end h-full mb-[154px] mb">
-            <h2 class="heading-1 text-white mb-16">У вас 95% вероятность получить<br> одобрение по кредиту!</h2>
+        <section class="container flex flex-col items-start justify-end h-full md:mb-[154px] mb-[43px]">
+            <h2 class="md:text-[64px] md:font-semibold font-bold text-[20px] font text-white md:mb-16 mb-[29px]">У вас
+                95% вероятность получить<br> одобрение по кредиту!</h2>
             <button
-                class="bg-secondary text-primary text-[36px] font-medium px-[64px] py-[32px] rounded-[32px] hover:bg-opacity-90 transition">
+                class="bg-secondary text-primary md:text-[36px] text-[16px] font-medium md:px-[64px] md:py-[32px] py-[12px] w-full md:w-max rounded-[32px] hover:bg-opacity-90 transition">
                 Купить машину в кредит
             </button>
         </section>
     </section>
 
     <main>
-        <section class="container mt-[132px]">
+        <section class="container md:mt-[132px] mt-[24px]">
             <div class="flex items-center gap-[28px]">
                 <button id="prev-btn" class="py-[24px] toggle-elem-click px-[22px] bg-secondary/50 rounded-[20px]">
                     <img src="../assets/Vector.svg" alt="Previous" />
                 </button>
-
-                <div id="marks" class="flex gap-[28px] flex-1 "></div>
-
+                <div id="marks" class="flex gap-[12px] md:gap-[28px] overflow-x-auto pb-[16px] hide-scrollbar">
+                </div>
                 <button id="next-btn" class="py-[24px] px-[22px] bg-secondary/50 rounded-[20px]">
                     <img src="../assets/Vector (1).svg" alt="Next" />
                 </button>
             </div>
             <div class="relative mt-[65px]">
-                <img class="absolute top-[24px] left-[52px] " src="../assets/Frame 207.svg" alt="">
+                <img class="absolute md:w-auto w-[23px] top-[8px] left-[32px] md:top-[24px] md:left-[52px]"
+                    src="../assets/Frame 207.svg" alt="" />
                 <input
-                    class="w-full bg-[#9292921F]/[12%] py-[24.5px] pl-[126px] rounded-[28px] placeholder:text-[32px] text-[32px] text-light placeholder:opacity-100"
-                    type="text" placeholder="Поиск">
+                    class="w-full bg-[#9292921F]/[12%] py-[8px] md:py-[24.5px] pl-[75px] md:pl-[126px] rounded-[28px] placeholder:text-[16px] md:placeholder:text-[32px] text-[16px] md:text-[32px] text-light placeholder:opacity-100"
+                    type="text" placeholder="Поиск" />
             </div>
         </section>
 
         <section class="container">
-            <h2 class="text-[64px] font-bold mt-[132px] mb-[68px]">Спецпредложения</h2>
-            <div id="products-block" class="flex flex-row flex-wrap gap-[35px]">
+            <h2
+                class="md:text-[64px] text-[32px] font-semibold md:font-bold mt-[68px] md:mt-[132px] mb-[24px] md:mb-[68px]">
+                Спецпредложения</h2>
+            <div id="products-block" class="flex flex-row flex-wrap gap-[12px] md:gap-[35px]">
 
             </div>
         </section>
@@ -120,7 +122,6 @@
 
 
 
-    <script src="../script/toggleClick.js"></script>
     <script src="../script/pagination.js"></script>
     <script src="../script/showProducts.js"></script>
 </body>

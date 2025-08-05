@@ -44,8 +44,8 @@
 </head>
 
 <body class="bg-custom text-white font-sans">
-    <header class="container relative flex justify-between items-center mt-[60px]">
-        <nav class="flex space-x-[32px]">
+    <header class="container relative flex md:justify-between justify-end items-center mt-[60px]">
+        <nav class="md:flex hidden space-x-[32px]">
             <a href="./" class="py-4 px-4 rounded-full text-tertiary">
                 <span class="font-medium">Главная</span>
             </a>
@@ -56,10 +56,9 @@
             <a href="./Leasing.html" class="py-4 px-4 rounded-full text-tertiary"><span>Лизинг</span></a>
             <a href="./ransom.html" class="py-4 px-4 rounded-full text-tertiary"><span>Выкуп</span></a>
             <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
-            <a href="./Contacts.html"
-                class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary"><span>Контакты</span></a>
+            <a href="./Contacts.html" class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary"><span>Контакты</span></a>
         </nav>
-        <div class="flex gap-[68px] items-center">
+        <div class="flex gap-[68px] md:flex hidden items-center">
             <div>
                 <p class="text-white">+7 (999) 999-99-99</p>
                 <p class="text-white">ул. Юбилейная д.8 кв 6</p>
@@ -68,12 +67,17 @@
                 Обратная связь
             </button>
         </div>
+        <div class="burger md:hidden flex ">
+            <img src="../assets/Бургер меню (2).svg" alt="Бургер меню">
+
+        </div>
+
     </header>
 
     <main class="container">
-        <h1 class="text-[90px] mb-[60px] mt-[100px]">Контакты</h1>
+        <h1 class="text-[24px] md:text-[90px] mb-[60px] mt-[100px]">Контакты</h1>
 
-        <div class="w-full h-[784px] rounded-[32px] mb-[130px] overflow-hidden">
+        <div class="w-full h-[203px] md:h-[784px] rounded-[32px] mb-[130px] overflow-hidden">
             <iframe
                 src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t1u2v3w4x5y6z7a8b9c0d1e2f3&l=map%2Chybrid&z=12&t=1"
                 width="100%" height="100%" frameborder="0" style="border:0; border-radius: 32px;" allowfullscreen=""
@@ -81,30 +85,30 @@
             </iframe>
         </div>
 
-        <div class="flex gap-[40px] mb-[80px]">
+        <div class="flex md:flex-nowrap flex-wrap gap-[40px] mb-[80px]">
             <div
                 class="w-full justify-between py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[32px] flex items-center gap-[96px]">
                 <div>
-                    <p class="text-[24px] text-[#19BC8D]">Часы работы:</p>
-                    <p class="text-[20px]">9:00 - 20:00,   без выходных</p>
+                    <p class="text-[16px] md:text-[24px] text-[#19BC8D]">Часы работы:</p>
+                    <p class="text-[13px] md:text-[20px]">9:00 - 20:00,   без выходных</p>
                 </div>
-                <img src="../assets/Frame 256.svg" alt="">
+                <img class="w-[53px] md:w-auto"  src="../assets/Frame 256.svg" alt="">
             </div>
             <div
                 class="w-full justify-between py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[32px] flex items-center gap-[96px]">
                 <div>
-                    <p class="text-[24px] text-[#19BC8D]">Телефон:</p>
-                    <p class="text-[20px]">  8 (999) 999-99-99</p>
+                    <p class="text-[16px] md:text-[24px] text-[#19BC8D]">Телефон:</p>
+                    <p class="text-[13px] md:text-[20px]">  8 (999) 999-99-99</p>
                 </div>
-                <img src="../assets/Vector (2).svg" alt="">
+                <img class="w-[53px] md:w-auto"  src="../assets/Vector (2).svg" alt="">
             </div>
             <div
                 class="w-full justify-between py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[32px] flex items-center gap-[96px]">
                 <div>
-                    <p class="text-[24px] text-[#19BC8D]">Адрес:</p>
-                    <p class="text-[20px]">Адрес</p>
+                    <p class="text-[16px] md:text-[24px] text-[#19BC8D]">Адрес:</p>
+                    <p class="text-[13px] md:text-[20px]">Адрес</p>
                 </div>
-                <img src="../assets/------ (1) 1.svg" alt="">
+                <img  class="w-[53px] md:w-auto" src="../assets/------ (1) 1.svg" alt="">
             </div>
         </div>
     </main>

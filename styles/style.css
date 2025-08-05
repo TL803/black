@@ -42,18 +42,9 @@
 }
 
 .custom-select.has-value {
-    color: white !important;
-}
-
-.custom-select.has-value {
     color: #ffffff !important;
 }
-.custom-select option {
-    background-color: #131417;
-    color: white;
-    font-size: 32px;
-    padding: 10px;
-}
+
 .custom-select:focus {
     border-color: #4886FF;
     box-shadow: 0 0 0 3px rgba(72, 134, 255, 0.2);
@@ -226,15 +217,18 @@
     appearance: none;
     background: transparent;
     outline: none;
-    height: 58px; /* Высота всего слайдера (важно для Firefox) */
-    overflow: hidden; /* Чтобы обрезать тень и крайние эффекты */
+    height: 58px;
+    /* Высота всего слайдера (важно для Firefox) */
+    overflow: hidden;
+    /* Чтобы обрезать тень и крайние эффекты */
 }
 
 /* Стили для трека (вебкид) */
 .thick-blue-slider::-webkit-slider-runnable-track {
     height: 58px;
     background: linear-gradient(to right, #19BC8D 0%, #19BC8D var(--fill-percent, 50%), #13141766 var(--fill-percent, 50%), #13141766 100%);
-    border-radius: 100px; /* Скругляем все углы */
+    border-radius: 100px;
+    /* Скругляем все углы */
     cursor: pointer;
 }
 
@@ -244,12 +238,14 @@
     appearance: none;
     width: 50px;
     height: 50px;
-    margin-top: 4px; /* вертикальное центрирование */
+    margin-top: 4px;
+    /* вертикальное центрирование */
     background: #1D1D21;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transform: translateX(-40px); /* Сдвигаем ползунок влево на 10px */
+    transform: translateX(-40px);
+    /* Сдвигаем ползунок влево на 10px */
 }
 
 /* Тултип над ползунком */
@@ -265,14 +261,16 @@
     border-radius: 5px;
     font-size: 12px;
     white-space: nowrap;
-    pointer-events: none; /* Чтобы тултип не мешал кликам */
+    pointer-events: none;
+    /* Чтобы тултип не мешал кликам */
 }
 
 /* Firefox: трек */
 .thick-blue-slider::-moz-range-track {
     height: 58px;
     background: #13141766;
-    border-radius: 100px; /* Скругляем все углы */
+    border-radius: 100px;
+    /* Скругляем все углы */
     cursor: pointer;
 }
 
@@ -280,7 +278,8 @@
 .thick-blue-slider::-moz-range-progress {
     height: 58px;
     background: #19BC8D;
-    border-radius: 100px; /* Скругляем все углы */
+    border-radius: 100px;
+    /* Скругляем все углы */
 }
 
 /* Firefox: ползунок */
@@ -291,4 +290,48 @@
     border: none;
     border-radius: 50%;
     cursor: pointer;
+}
+
+@media (max-width: 1680px) {
+    .container {
+        width: 340px !important;
+        margin: auto;
+        padding: 0 10px;
+    }
+
+    .custom-select {
+        width: 100%;
+        padding: 16px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    /* === Уменьшаем выпадающие пункты (option) === */
+    .custom-select option {
+        font-size: 14px;
+        /* Было 32px → стало 14px */
+        padding: 6px 10px;
+        /* Уменьшаем отступы */
+        line-height: 1.4;
+        /* Компактная высота строки */
+    }
+
+    /* Дополнительно: уменьшаем отступы у самого селекта, если нужно */
+    .slider__field {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .slider__title {
+        font-size: 22px;
+    }
+
+    .slider__subtitle {
+        font-size: 16px;
+    }
+
+    .custom-checkbox {
+        min-width: 24px !important;
+        max-height: 34px !important;
+    }
 }

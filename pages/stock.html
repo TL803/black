@@ -44,22 +44,21 @@
 </head>
 
 <body class="bg-custom text-white font-sans">
-    <header class="container relative flex justify-between items-center mt-[60px]">
-        <nav class="flex space-x-[32px]">
+    <header class="container relative flex md:justify-between justify-end items-center mt-[60px]">
+        <nav class="md:flex hidden space-x-[32px]">
             <a href="./" class="py-4 px-4 rounded-full text-tertiary">
                 <span class="font-medium">Главная</span>
             </a>
             <a href="./carloan.html" class="py-4 px-4 rounded-full text-tertiary"><span>Автокредит</span></a>
             <a href="./TradeIn.html" class="py-4 px-4 rounded-full text-tertiary"><span>Trade-in</span></a>
-            <a href="./stock.html"
-                class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary"><span>Акции</span></a>
+            <a href="./stock.html" class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary"><span>Акции</span></a>
             <a href="./service.html" class="py-4 px-4 rounded-full text-tertiary"><span>Сервис</span></a>
             <a href="./Leasing.html" class="py-4 px-4 rounded-full text-tertiary"><span>Лизинг</span></a>
             <a href="./ransom.html" class="py-4 px-4 rounded-full text-tertiary"><span>Выкуп</span></a>
             <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
             <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
         </nav>
-        <div class="flex gap-[68px] items-center">
+        <div class="flex gap-[68px] md:flex hidden items-center">
             <div>
                 <p class="text-white">+7 (999) 999-99-99</p>
                 <p class="text-white">ул. Юбилейная д.8 кв 6</p>
@@ -68,48 +67,53 @@
                 Обратная связь
             </button>
         </div>
+        <div class="burger md:hidden flex ">
+            <img src="../assets/Бургер меню (2).svg" alt="Бургер меню">
+
+        </div>
+
     </header>
 
-    <main class="container flex flex-col gap-[132px]">
-        <h1 class="text-[90px] mb-[60px] mt-[100px]">Акции</h1>
+    <main class="container flex flex-col gap-[68px] md:gap-[132px]">
+        <h1 class="text-[24px] md:text-[90px]  md:mb-[60px] md:mt-[100px]">Акции</h1>
 
-        <div class="py-[80px] px-[32px] bg-[#2A2B2F] rounded-[32px]">
-            <div class="w-full h-[688px] rounded-[32px] mb-[52px] bg-cover bg-center bg-no-repeat"
+        <div class="p-[20px] md:py-[80px] md:px-[32px] bg-[#2A2B2F] rounded-[32px]">
+            <div class="w-full h-[265px] md:h-[688px] rounded-[32px] mb-[52px] bg-cover bg-center bg-no-repeat"
                 style="background-image: url('../assets/Rectangle 51.png');">
             </div>
-            <p class="text-[48px] mb-[50px]">ПОДАРКИ ВСЕМ! ПРИ ПОКУПКЕ АВТОМОБИЛЯ В КРЕДИТ</p>
-            <span class="text-[32px]">- Cниженная ставка кредитования<br></span>
-            <span class="text-[32px] mb-[72px]">- Отсрочка платежей на первые 3 месяца</span>
+            <p class="text-[20px] md:text-[48px] mb-[50px]">ПОДАРКИ ВСЕМ! ПРИ ПОКУПКЕ АВТОМОБИЛЯ В КРЕДИТ</p>
+            <span class="md:text-[32px] text-[15px] ">- Cниженная ставка кредитования<br></span>
+            <span class="md:text-[32px]  text-[15px] mb-[72px]">- Отсрочка платежей на первые 3 месяца</span>
 
             <button
-                class="w-full bg-secondary py-[24px] rounded-[32px] text-[36px] font-medium text-primary mt-[30px]">Воспользоваться</button>
+                class="w-full bg-secondary py-[24px] rounded-[32px] text-[16px] md:text-[36px] font-medium text-primary mt-[30px]">Воспользоваться</button>
         </div>
-        <div class="py-[80px] px-[32px] bg-[#2A2B2F] rounded-[32px]">
-            <div class="w-full h-[688px] rounded-[32px] mb-[52px] bg-cover bg-center bg-no-repeat"
+        <div class="p-[20px] md:py-[80px] md:px-[32px] bg-[#2A2B2F] rounded-[32px]">
+            <div class="w-full h-[265px] md:h-[688px] rounded-[32px] mb-[52px] bg-cover bg-center bg-no-repeat"
                 style="background-image: url('../assets/Rectangle\ 51\ \(1\).png');"></div>
-            <p class="text-[48px] mb-[50px]">Комплект зимних шин в подарок!</p>
-            <span class="text-[32px]"> Акция действует до 22.05.2025</span>
+            <p class="text-[20px] md:text-[48px] mb-[50px]">Комплект зимних шин в подарок!</p>
+            <span class="md:text-[32px] text-[15px]"> Акция действует до 22.05.2025</span>
 
             <button
-                class="w-full bg-secondary py-[24px] rounded-[32px] text-[36px] font-medium text-primary mt-[30px]">Воспользоваться</button>
+                class="w-full bg-secondary py-[24px] rounded-[32px] text-[16px] md:text-[36px] font-medium text-primary mt-[30px]">Воспользоваться</button>
         </div>
-        <div class="py-[80px] px-[32px] bg-[#2A2B2F] rounded-[32px]">
-            <div class="w-full h-[688px] rounded-[32px] mb-[52px] bg-cover bg-center bg-no-repeat"
+        <div class="p-[20px] md:py-[80px] md:px-[32px] bg-[#2A2B2F] rounded-[32px]">
+            <div class="w-full h-[265px] md:h-[688px] rounded-[32px] mb-[52px] bg-cover bg-center bg-no-repeat"
                 style="background-image: url('../assets/Rectangle\ 51\ \(2\).png');"></div>
-            <p class="text-[48px] mb-[50px]">Скидка 10% за приезд день в день!</p>
-            <span class="text-[32px]"> Акция действует до 22.05.2025</span>
+            <p class="text-[20px] md:text-[48px] mb-[50px]">Скидка 10% за приезд день в день!</p>
+            <span class="md:text-[32px] text-[15px]"> Акция действует до 22.05.2025</span>
 
             <button
-                class="w-full bg-secondary py-[24px] rounded-[32px] text-[36px] font-medium text-primary mt-[30px]">Воспользоваться</button>
+                class="w-full bg-secondary py-[24px] rounded-[32px] text-[16px] md:text-[36px] font-medium text-primary mt-[30px]">Воспользоваться</button>
         </div>
-        <div class="py-[80px] px-[32px] bg-[#2A2B2F] rounded-[32px] mb-[218px]">
-            <div class="w-full h-[688px] rounded-[32px] mb-[52px] bg-cover bg-top bg-no-repeat"
+        <div class="p-[20px] md:py-[80px] md:px-[32px] bg-[#2A2B2F] rounded-[32px] mb-[218px]">
+            <div class="w-full h-[265px] md:h-[688px] rounded-[32px] mb-[52px] bg-cover bg-top bg-no-repeat"
                 style="background-image: url('../assets/Rectangle\ 51\ \(3\).png');"></div>
-            <p class="text-[48px] mb-[50px]">Выгода при обмене по TRADE-IN </p>
-            <span class="text-[32px]"> Акция действует до 22.05.2025</span>
+            <p class="text-[20px] md:text-[48px] mb-[50px]">Выгода при обмене по TRADE-IN </p>
+            <span class="md:text-[32px] text-[15px]"> Акция действует до 22.05.2025</span>
 
             <button
-                class="w-full bg-secondary py-[24px] rounded-[32px] text-[36px] font-medium text-primary mt-[30px]">Воспользоваться</button>
+                class="w-full bg-secondary py-[24px] rounded-[32px] text-[16px] md:text-[36px] font-medium text-primary mt-[30px]">Воспользоваться</button>
         </div>
     </main>
 </body>

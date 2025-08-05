@@ -44,8 +44,8 @@
 </head>
 
 <body class="bg-custom text-white font-sans">
-    <header class="container relative flex justify-between items-center mt-[60px]">
-        <nav class="flex space-x-[32px]">
+    <header class="container relative flex md:justify-between justify-end items-center mt-[60px]">
+        <nav class="md:flex hidden space-x-[32px]">
             <a href="./" class="py-4 px-4 rounded-full text-tertiary">
                 <span class="font-medium">Главная</span>
             </a>
@@ -59,7 +59,7 @@
                     под такси</span></a>
             <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
         </nav>
-        <div class="flex gap-[68px] items-center">
+        <div class="flex gap-[68px] md:flex hidden items-center">
             <div>
                 <p class="text-white">+7 (999) 999-99-99</p>
                 <p class="text-white">ул. Юбилейная д.8 кв 6</p>
@@ -68,18 +68,23 @@
                 Обратная связь
             </button>
         </div>
+        <div class="burger md:hidden flex ">
+            <img src="../assets/Бургер меню (2).svg" alt="Бургер меню">
+
+        </div>
+
     </header>
 
-    <img class="m-auto" src="../assets/Frame 272.png" alt="">
+    <!-- <img class="m-auto" src="../assets/Frame 272.png" alt=""> -->
     <main class="container">
-        <h1 class="text-[90px] font-medium mb-[60px] mt-[80px]">Выкуп</h1>
+        <h1 class="text-[24px] md:text-[90px] font-medium mb-[60px] mt-[80px]">Выкуп</h1>
         <section class="container">
-            <div id="products-block" class="flex flex-row flex-wrap gap-[35px]">
+            <div id="products-block" class="flex flex-row flex-wrap gap-[12px] md:gap-[35px]">
 
             </div>
         </section>
     </main>
-    <img class="m-auto" src="../assets/Frame 269.png" alt="">
+    <!-- <img class="m-auto" src="../assets/Frame 269.png" alt=""> -->
 
 
     <script src="../script/showProducts.js"></script>

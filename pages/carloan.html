@@ -59,9 +59,9 @@
 </head>
 
 <body class="bg-custom text-white font-sans">
-    <header class="container relative flex justify-between items-center mt-[60px]">
-        <nav class="flex space-x-[32px]">
-            <a href="./" class="py-4 px-4 rounded-full text-tertiary ">
+    <header class="container relative flex md:justify-between justify-end items-center mt-[60px]">
+        <nav class="md:flex hidden space-x-[32px]">
+            <a href="./" class="py-4 px-4 rounded-full text-tertiary">
                 <span class="font-medium">Главная</span>
             </a>
             <a href="./carloan.html"
@@ -74,7 +74,7 @@
             <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
             <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
         </nav>
-        <div class="flex gap-[68px] items-center">
+        <div class="flex gap-[68px] md:flex hidden items-center">
             <div>
                 <p class="text-white">+7 (999) 999-99-99</p>
                 <p class="text-white">ул. Юбилейная д.8 кв 6</p>
@@ -83,13 +83,20 @@
                 Обратная связь
             </button>
         </div>
+        <div class="burger md:hidden flex ">
+            <img src="../assets/Бургер меню (2).svg" alt="Бургер меню">
+
+        </div>
+
     </header>
 
     <main class="container flex flex-col gap-[80px]">
         <section>
-            <h1 class="text-[90px] mb-[20px] mt-[80px]">Рассчитайте кредит</h1>
-            <form class="px-[92px] py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[60px]" action="">
-                <h2 class="text-[48px] font-medium">1. Выберите автомобиль</h2>
+            <h1 class="text-[20px] md:text-[90px] mb-[20px] mt-[80px]">Рассчитайте кредит</h1>
+            <form
+                class="p-[40px] md:px-[92px] md:py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]"
+                action="">
+                <h2 class="text-[20px] md:text-[24px] md:text-[48px] font-medium">1. Выберите автомобиль</h2>
                 <select class="custom-select brand" name="brand">
                     <option value="" disabled selected>Марка автомобиля</option>
                     <option value="bmw">BMW</option>
@@ -107,80 +114,82 @@
                     <option value="mercedes">Mercedes-Benz</option>
                 </select>
 
-                <button class="text-[36px] bg-[#19BC8D66] rounded-[32px] py-[32px]">Применить</button>
+                <button
+                    class="text-[16px] md:text-[36px] bg-[#19BC8D66] rounded-[32px] py-[12px] md:py-[32px]">Применить</button>
             </form>
         </section>
 
 
         <section>
             <div>
-                <h1 class="text-[96px] mb-[20px] mt-[80px]">Kaiyi X3 Pro</h1>
+                <h1 class="text-[36px] md:text-[96px] mb-[20px] md:mt-[80px]">Kaiyi X3 Pro</h1>
                 <p
-                    class="inline-block text-[20px] px-[55px] py-[16px] rounded-[32px] border border-[#19BC8D] bg-[#225045] mb-[60px]">
+                    class="inline-block text-[12px] md:text-[20px] px-[10px] md:px-[55px] py-[4px] md:py-[16px] rounded-[32px] border border-[#19BC8D] bg-[#225045] mb-[60px]">
                     Внедорожник
                 </p>
             </div>
             <div class="flex gap-[72px] mb-[80px]">
-                <div class="w-[1251px] h-[812px] rounded-[24px] bg-[#131417]"></div>
-                <div class="flex flex-col gap-[58px]">
+                <div class="md:w-[1251px] md:h-[812px] w-full h-[228px] rounded-[24px] bg-[#131417]"></div>
+                <div class=" flex-col gap-[58px] md:flex hidden">
                     <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
                     <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
                     <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
                 </div>
             </div>
 
-            <div class="flex gap-[40px] mb-[80px]">
+            <div class="flex flex-wrap gap-[40px] mb-[80px]">
                 <div
-                    class="w-max inline-block py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[32px] flex items-center gap-[96px]">
+                    class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
                     <div>
-                        <p class="text-[24px] text-[#19BC8D]">210 км/ч</p>
-                        <p class="text-[20px]">Cкорость</p>
+                        <p class="text-[16px] md:text-[24px] text-[#19BC8D]">210 км/ч</p>
+                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
                     </div>
-                    <img src="../assets/--------- (1) 1.svg" alt="">
+                    <img class="w-[60px] md:w-auto" src="../assets/--------- (1) 1.svg" alt="">
                 </div>
                 <div
-                    class="w-max inline-block py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[32px] flex items-center gap-[96px]">
+                    class="w-full md:w-max  inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
                     <div>
-                        <p class="text-[24px] text-[#19BC8D]">7.9 сек.</p>
-                        <p class="text-[20px]">Cкорость</p>
+                        <p class="text-[16px] md:text-[24px] text-[#19BC8D]">7.9 сек.</p>
+                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
                     </div>
-                    <img src="../assets/-------------- 1.svg" alt="">
+                    <img class="w-[60px] md:w-auto" src="../assets/-------------- 1.svg" alt="">
                 </div>
                 <div
-                    class="w-max inline-block py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[32px] flex items-center gap-[96px]">
+                    class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
                     <div>
-                        <p class="text-[24px] text-[#19BC8D]">249 л.с.</p>
-                        <p class="text-[20px]">Cкорость</p>
+                        <p class="text-[16px] md:text-[24px] text-[#19BC8D]">249 л.с.</p>
+                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
                     </div>
-                    <img src="../assets/------------------ (1) 1.svg" alt="">
+                    <img class="w-[60px] md:w-auto" src="../assets/------------------ (1) 1.svg" alt="">
                 </div>
                 <div
-                    class="w-max inline-block py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[32px] flex items-center gap-[96px]">
+                    class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
                     <div>
-                        <p class="text-[24px] text-[#19BC8D]">9.9 л/100 км</p>
-                        <p class="text-[20px]">Cкорость</p>
+                        <p class="text-[16px] md:text-[24px] text-[#19BC8D]">9.9 л/100 км</p>
+                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
                     </div>
-                    <img src="../assets/------- 1.svg" alt="">
+                    <img class="w-[60px] md:w-auto" src="../assets/------- 1.svg" alt="">
                 </div>
             </div>
 
             <div class="mb-[100px]">
-                <p class="text-[32px] mb-[32px]">Цвет</p>
-                <div class="flex  gap-[40px]">
-                    <div class="bg-[#3150A0] w-[247px] h-[69px] rounded-[16px]"></div>
-                    <div class="bg-[#B33023] w-[247px] h-[69px] rounded-[16px]"></div>
-                    <div class="bg-[#EBAA3F] w-[247px] h-[69px] rounded-[16px]"></div>
-                    <div class="bg-[#1A295E] w-[247px] h-[69px] rounded-[16px]"></div>
+                <p class="text-[20px] md:text-[32px] mb-[32px]">Цвет</p>
+                <div class="flex gap-[10px] md:gap-[40px]">
+                    <div class="bg-[#3150A0] md:w-[247px] md:h-[69px] w-[62px] h-[37px] rounded-[16px]"></div>
+                    <div class="bg-[#B33023] md:w-[247px] md:h-[69px] w-[62px] h-[37px] rounded-[16px]"></div>
+                    <div class="bg-[#EBAA3F] md:w-[247px] md:h-[69px] w-[62px] h-[37px] rounded-[16px]"></div>
+                    <div class="bg-[#1A295E] md:w-[247px] md:h-[69px] w-[62px] h-[37px] rounded-[16px]"></div>
                 </div>
             </div>
 
             <div class="mb-[40px]">
-                <p class="text-[48px] line-through">1 959 900 ₽</p>
-                <p class="text-[96px] font-medium">960 000 ₽</p>
+                <p class="md:text-[48px] text-[16px] line-through">1 959 900 ₽</p>
+                <p class="md:text-[96px] text-[32px] font-medium">960 000 ₽</p>
             </div>
 
-            <form class="px-[92px] py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[60px]" action="">
-                <h2 class="text-[48px] font-medium">2. Введите сумму первоначального взноса</h2>
+            <form class="p-[20px] md:px-[92px] md:py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[60px]"
+                action="">
+                <h2 class="text-[20px] md:text-[48px] font-medium">2. Введите сумму первоначального взноса</h2>
 
                 <div class="slider-container">
                     <div class="slider__self"></div>
@@ -195,7 +204,7 @@
                     </div>
                 </div>
 
-                <h2 class="text-[48px] font-medium">3. Выберите комфортный платеж</h2>
+                <h2 class="text-[20px] md:text-[48px] font-medium">3. Выберите комфортный платеж</h2>
 
 
                 <div class="relative h-8 flex items-center mt-6">
@@ -203,10 +212,12 @@
                 </div>
 
                 <div class="flex justify-between mt-4">
-                    <div class="slider__field slider__field--min rounded-full  text-[#19BC8D] w-[240px] py-[33px] box-border">
+                    <div
+                        class="slider__field slider__field--min rounded-full  text-[#19BC8D] w-[240px] py-[33px] box-border">
                         <span id="loanTerm">10 лет</span>
                     </div>
-                    <div class="slider__field slider__field--min rounded-full  text-[#19BC8D] w-[240px] py-[33px] box-border">
+                    <div
+                        class="slider__field slider__field--min rounded-full  text-[#19BC8D] w-[240px] py-[33px] box-border">
                         <span id="monthlyPayment">800 000</span> ₽
                     </div>
                 </div>
@@ -252,22 +263,28 @@
             </form>
 
         </section>
+
+
         <section>
-            <form class="px-[92px] py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[60px]" action="">
-                <h2 class="text-[48px] font-medium">4. Заполните ваши данные</h2>
+            <form
+                class="p-[30px] md:px-[92px] md:py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]"
+                action="">
+                <h2 class="text-[20px] md:text-[48px] font-medium">4. Заполните ваши данные</h2>
                 <input class="custom-select" placeholder="ФИО" type="text">
                 <input class="custom-select" placeholder="Ваш номер телефона" type="text">
-                <div class="flex gap-[44px]">
+                <div class="flex gap-[12px] md:gap-[44px]">
                     <input type="checkbox" class="custom-checkbox">
-                    <label for="">Я соглашаюсь с условиями и даю свое согласие на обработкуи использование моих
-                        персональных данных, и разрешаю сделать запрос<br>
+                    <label class="text-[10px] w-[280px] md:text-[16px] md:w-auto" for="">Я соглашаюсь с условиями и даю
+                        свое согласие на обработкуи использование моих
+                        персональных данных, и разрешаю сделать запрос<br class="hidden md:flex">
                         в бюро кредитных историй</label>
                 </div>
                 <button
-                    class="w-full bg-secondary py-[24px] rounded-[32px] text-[36px] font-medium text-primary mt-[30px]">Отправить
+                    class="w-full bg-secondary py-[24px] rounded-[32px] text-[16px] md:text-[36px] font-medium text-primary mt-[30px]">Отправить
                     заявку</button>
             </form>
         </section>
+
     </main>
 
 
