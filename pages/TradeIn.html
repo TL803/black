@@ -44,78 +44,101 @@
 </head>
 
 <body class="bg-custom text-white font-sans">
-<header class="container relative flex md:justify-between justify-end items-center mt-[60px]">
-    <!-- Навигация для десктопа -->
-    <nav class="md:flex hidden space-x-[32px]">
-        <a href="./" class="py-4 px-4 rounded-full text-tertiary">
-            <span class="font-medium">Главная</span>
-        </a>
-        <a href="./carloan.html" class="py-4 px-4 rounded-full text-tertiary"><span>Автокредит</span></a>
-        <a href="./TradeIn.html" class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary"><span>Trade-in</span></a>
-        <a href="./stock.html" class="py-4 px-4 rounded-full text-tertiary"><span>Акции</span></a>
-        <a href="./service.html" class="py-4 px-4 rounded-full text-tertiary"><span>Сервис</span></a>
-        <a href="./Leasing.html" class="py-4 px-4 rounded-full text-tertiary"><span>Лизинг</span></a>
-        <a href="./ransom.html" class="py-4 px-4 rounded-full text-tertiary"><span>Выкуп</span></a>
-        <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
-        <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
-    </nav>
-
-    <!-- Контакты и кнопка -->
-    <div class="flex gap-[68px] md:flex hidden items-center">
-        <div>
-            <p class="text-white">+7 (999) 999-99-99</p>
-            <p class="text-white">ул. Юбилейная д.8 кв 6</p>
-        </div>
-        <button class="bg-secondary showModalBox font-medium text-primary px-[23px] py-[16px] rounded-full">
-            Обратная связь
-        </button>
-    </div>
-
-    <!-- Бургер-иконка -->
-    <div class="burger md:hidden flex items-center">
-        <img src="../assets/Бургер меню (2).svg" alt="Бургер меню" id="burgerMenu" class="cursor-pointer w-6 h-6">
-    </div>
-
-<div id="mobileMenu"
-    class="fixed top-0 right-0 w-[60%] h-full bg-[#131417] z-50 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
-    <div class="flex flex-col h-full p-6 text-white">
-        <!-- Верхняя часть с крестиком -->
-        <div class="flex justify-between items-center mb-6">
-            <button id="closeMenu" class="text-white text-2xl w-8 h-8 flex items-center justify-center">&times;</button>
-        </div>
-
-        <!-- Навигация с прокруткой -->
-        <nav class="flex-1 overflow-y-auto py-2">
-            <ul class="space-y-4">
-                <li><a href="./" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Главная</a><hr class="border-t border-[#19BC8D33] my-2"></li>
-                <li><a href="./carloan.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Автокредит</a><hr class="border-t border-[#19BC8D33] my-2"></li>
-                <li><a href="./TradeIn.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Trade-in</a><hr class="border-t border-[#19BC8D33] my-2"></li>
-                <li><a href="./stock.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Акции</a><hr class="border-t border-[#19BC8D33] my-2"></li>
-                <li><a href="./service.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Сервис</a><hr class="border-t border-[#19BC8D33] my-2"></li>
-                <li><a href="./Leasing.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Лизинг</a><hr class="border-t border-[#19BC8D33] my-2"></li>
-                <li><a href="./ransom.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Выкуп</a><hr class="border-t border-[#19BC8D33] my-2"></li>
-                <li><a href="./taxiСar.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Авто под такси</a><hr class="border-t border-[#19BC8D33] my-2"></li>
-                <li><a href="./Contacts.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Контакты</a></li>
-            </ul>
+    <header class="container relative flex md:justify-between justify-end items-center mt-[60px]">
+        <!-- Навигация для десктопа -->
+        <nav class="md:flex hidden space-x-[32px]">
+            <a href="./" class="py-4 px-4 rounded-full text-tertiary">
+                <span class="font-medium">Главная</span>
+            </a>
+            <a href="./carloan.html" class="py-4 px-4 rounded-full text-tertiary"><span>Автокредит</span></a>
+            <a href="./TradeIn.html"
+                class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary"><span>Trade-in</span></a>
+            <a href="./stock.html" class="py-4 px-4 rounded-full text-tertiary"><span>Акции</span></a>
+            <a href="./service.html" class="py-4 px-4 rounded-full text-tertiary"><span>Сервис</span></a>
+            <a href="./Leasing.html" class="py-4 px-4 rounded-full text-tertiary"><span>Лизинг</span></a>
+            <a href="./ransom.html" class="py-4 px-4 rounded-full text-tertiary"><span>Выкуп</span></a>
+            <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
+            <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
         </nav>
 
-        <!-- Футер (контакты) всегда внизу -->
-        <div class="pt-6 border-t border-gray-700 text-sm text-gray-300 mt-4">
-            <p>+7 (999) 999-99-99</p>
-            <p>ул. Юбилейная д.8 кв 6</p>
+        <!-- Контакты и кнопка -->
+        <div class="flex gap-[68px] md:flex hidden items-center">
+            <div>
+                <p class="text-white">+7 (999) 999-99-99</p>
+                <p class="text-white">ул. Юбилейная д.8 кв 6</p>
+            </div>
+            <button class="bg-secondary showModalBox font-medium text-primary px-[23px] py-[16px] rounded-full">
+                Обратная связь
+            </button>
         </div>
-    </div>
-</div>
 
-    <!-- Overlay (затемнение фона при открытом меню) -->
-    <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
-</header>
+        <!-- Бургер-иконка -->
+        <div class="burger md:hidden flex items-center">
+            <img src="../assets/Бургер меню (2).svg" alt="Бургер меню" id="burgerMenu" class="cursor-pointer w-6 h-6">
+        </div>
+
+        <div id="mobileMenu"
+            class="fixed top-0 right-0 w-[60%] h-full bg-[#131417] z-50 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex flex-col h-full p-6 text-white">
+                <!-- Верхняя часть с крестиком -->
+                <div class="flex justify-between items-center mb-6">
+                    <button id="closeMenu"
+                        class="text-white text-2xl w-8 h-8 flex items-center justify-center">&times;</button>
+                </div>
+
+                <!-- Навигация с прокруткой -->
+                <nav class="flex-1 overflow-y-auto py-2">
+                    <ul class="space-y-4">
+                        <li><a href="./" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Главная</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./carloan.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Автокредит</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./TradeIn.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Trade-in</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./stock.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Акции</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./service.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Сервис</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./Leasing.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Лизинг</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./ransom.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Выкуп</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./taxiСar.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Авто под
+                                такси</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./Contacts.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Контакты</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Футер (контакты) всегда внизу -->
+                <div class="pt-6 border-t border-gray-700 text-sm text-gray-300 mt-4">
+                    <p>+7 (999) 999-99-99</p>
+                    <p>ул. Юбилейная д.8 кв 6</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overlay (затемнение фона при открытом меню) -->
+        <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
+    </header>
 
     <main class="container flex flex-col gap-[132px] mb-[172px]">
         <section>
-            <h1 class="text-[24px] md:text-[90px] md:text-[90px] mb-[60px] mt-[80px]">Купить новый автомобиль в Трейд-Ин
+            <h1 class="text-[24px] md:text-[90px] md:text-[90px] mb-[30px] md:mb-[60px] mt-[80px]">Купить новый
+                автомобиль в Трейд-Ин
             </h1>
-            <div class="flex flex-col gap-[52px]">
+            <div class="flex flex-col gap-[20px] md:gap-[52px]">
                 <div class="p-[16px] md:p-[40px] rounded-[16px] bg-[#1314171F]/[12%]">
                     <p class="text-[20px] md:text-[36px] text-[#19BC8D80]/50">Trade-in</p>
                     <p class="text-[12px] md:text-[32px] text-[#A9A9A9]">Поменяйте свой подержанный автомобиль на новый,
@@ -142,7 +165,7 @@
 
         <section>
             <form
-                class="p-[40px] md:px-[92px] md:py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]"
+                class=" md:px-[92px] md:py-[100px] rounded-[24px]  md:bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]"
                 action="">
                 <h2 class="text-[20px] md:text-[24px] md:text-[48px] font-medium">1. Выберите автомобиль</h2>
                 <select class="custom-select brand" name="brand">
@@ -177,7 +200,7 @@
                 </p>
             </div>
             <div class="flex gap-[72px] mb-[80px]">
-                                <div id='carImage'
+                <div id='carImage'
                     class="md:w-[1251px] md:h-[812px] w-full h-[228px] rounded-[24px] bg-[#131417] bg-cover bg-center"
                     style="background-image: url('../assets/car_white.png');">
                 </div>
@@ -244,20 +267,11 @@
         </section>
         <section>
             <form
-                class="p-[30px] md:px-[92px] md:py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]"
+                class=" md:px-[92px] md:py-[100px] rounded-[24px] md:bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]"
                 action="">
-                <h2 class="text-[20px] md:text-[48px] font-medium">2. Введите сумму первоначального взноса</h2>
-                <select class="custom-select brand" name="brand">
-                    <option value="" disabled selected>Марка автомобиля</option>
-                    <option value="bmw">BMW</option>
-                    <option value="audi">Audi</option>
-                    <option value="mercedes">Mercedes-Benz</option>
-                </select> <select class="custom-select brand" name="brand">
-                    <option value="" disabled selected>Модель</option>
-                    <option value="bmw">BMW</option>
-                    <option value="audi">Audi</option>
-                    <option value="mercedes">Mercedes-Benz</option>
-                </select>
+                <h2 class="text-[20px] md:text-[48px] font-medium"> 2. Введите данные вашего автомобиля</h2>
+                <input class="custom-select brand" type="text" placeholder="Марка автомобиля">
+                <input class="custom-select brand" type="text" placeholder="Модель">
                 <input class="custom-select brand" type="text" placeholder="Год">
                 <input class="custom-select brand" type="text" placeholder="Пробег">
 
@@ -267,7 +281,7 @@
         </section>
         <section>
             <form
-                class="p-[30px] md:px-[92px] md:py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]"
+                class=" md:px-[92px] md:py-[100px] rounded-[24px] md:bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]"
                 action="">
                 <h2 class="text-[20px] md:text-[48px] font-medium">3. Заполните ваши данные</h2>
                 <input class="custom-select" placeholder="ФИО" type="text">
@@ -287,72 +301,69 @@
     </main>
 
     <footer class="bg-[#2A2B2F] text-white py-12">
-  <div class="container mx-auto px-6">
-    <!-- Основная секция: карта и информация -->
-    <div class="flex flex-col md:flex-row gap-8 mb-10">
-      <!-- Карта -->
-      <div class="w-full md:w-1/3">
-        <div class="rounded-xl overflow-hidden shadow-lg transform transition hover:shadow-xl">
-          <iframe
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa1e5d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9&amp;source=constructor"
-            width="100%"
-            height="220"
-            frameborder="0"
-            allowfullscreen="true"
-            aria-label="Карта расположения компании"
-            style="border: none; border-radius: 12px;">
-          </iframe>
-        </div>
-      </div>
+        <div class="container mx-auto px-6">
+            <!-- Основная секция: карта и информация -->
+            <div class="flex flex-col md:flex-row gap-8 mb-10">
+                <!-- Карта -->
+                <div class="w-full md:w-1/3">
+                    <div class="rounded-xl overflow-hidden shadow-lg transform transition hover:shadow-xl">
+                        <iframe
+                            src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa1e5d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9&amp;source=constructor"
+                            width="100%" height="220" frameborder="0" allowfullscreen="true"
+                            aria-label="Карта расположения компании" style="border: none; border-radius: 12px;">
+                        </iframe>
+                    </div>
+                </div>
 
-      <!-- Информация -->
-      <div class="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
-        <!-- Адрес -->
-        <div>
-          <h3 class="text-xl font-normal text-gray-300 mb-2">Адрес</h3>
-          <p class="text-2xl font-medium leading-tight">
-            г. Москва,<br>
-            Береговой проезд, д. 4/6, стр. 3
-          </p>
-        </div>
+                <!-- Информация -->
+                <div class="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
+                    <!-- Адрес -->
+                    <div>
+                        <h3 class="text-xl font-normal text-gray-300 mb-2">Адрес</h3>
+                        <p class="text-2xl font-medium leading-tight">
+                            г. Москва,<br>
+                            Кулакова, вл. 24, корп. 3, Москва
+                        </p>
+                    </div>
 
-        <!-- График работы -->
-        <div>
-          <h3 class="text-xl font-normal text-gray-300 mb-2">График работы</h3>
-          <p class="text-2xl font-medium">
-            Ежедневно<br>
-            с 9:00 до 21:00
-          </p>
-        </div>
+                    <!-- График работы -->
+                    <div>
+                        <h3 class="text-xl font-normal text-gray-300 mb-2">График работы</h3>
+                        <p class="text-2xl font-medium">
+                            Ежедневно<br>
+                            с 9:00 до 21:00
+                        </p>
+                    </div>
 
-        <!-- Контакты -->
-        <div>
-          <h3 class="text-xl font-normal text-gray-300 mb-2">Контакты</h3>
-          <a href="tel:+79999999999" class="text-2xl font-medium hover:text-secondary transition duration-200">
-            +7 (999) 999-99-99
-          </a>
-        </div>
+                    <!-- Контакты -->
+                    <div>
+                        <h3 class="text-xl font-normal text-gray-300 mb-2">Контакты</h3>
+                        <a href="tel:+79999999999"
+                            class="text-2xl font-medium hover:text-secondary transition duration-200">
+                            +7 (495) 778-98-50
+                        </a>
+                    </div>
 
-        <!-- Обратная связь -->
-        <div class="flex items-end">
-          <button
-            class="bg-secondary text-primary px-6 py-3 rounded-full font-medium hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50 transition-all duration-200 shadow-md hover:shadow-lg">
-            Обратная связь
-          </button>
-        </div>
-      </div>
-    </div>
+                    <!-- Обратная связь -->
+                    <div class="flex items-end">
+                        <button
+                            class="bg-secondary text-primary px-6 py-3 rounded-full font-medium hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50 transition-all duration-200 shadow-md hover:shadow-lg">
+                            Обратная связь
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Нижний блок: копирайт и реквизиты -->
-    <div class="border-t  pt-6 mt-6 text-xs text-gray-500 space-y-2">
-      <p>&copy; 2025 ООО «Техинком-Авто». Все права защищены.</p>
-      <p>
-        Юридический адрес: ул. Кулакова, вл. 24, корп. 3, Москва<br>
-        ОГРН: 1176952010180 | ИНН: 6950207759
-      </p>
-    </div>
-  </div>
-</footer>
+            <!-- Нижний блок: копирайт и реквизиты -->
+            <div class="border-t  pt-6 mt-6 text-xs text-gray-500 space-y-2">
+                <p>&copy; 2025 ООО «Техинком-Авто». Все права защищены.</p>
+                <p>
+                    Юридический адрес: ул. Кулакова, вл. 24, корп. 3, Москва<br>
+                    ОГРН: 1176952010180 | ИНН: 6950207759
+                </p>
+            </div>
+        </div>
+    </footer>
     <script src="../script/burger.js"></script>
     <script type="module" src="../script/main.js"></script>
     <script src="../script/selectedOption.js"></script>

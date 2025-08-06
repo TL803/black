@@ -150,9 +150,9 @@
 
     <main class="container flex flex-col gap-[80px] mb-[172px]">
         <section>
-            <h1 class="text-[20px] md:text-[90px] mb-[20px] mt-[80px]">Рассчитайте кредит</h1>
+            <h1 class="text-[24px] md:text-[90px] mb-[20px] mt-[24px] md:mt-[80px]">Рассчитайте кредит</h1>
             <form
-                class="p-[40px] md:px-[92px] md:py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]"
+                class=" md:px-[92px] md:py-[100px] rounded-[24px] bg-[#25262A] md:bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]"
                 action="">
                 <h2 class="text-[20px] md:text-[24px] md:text-[48px] font-medium">1. Выберите автомобиль</h2>
                 <select class="custom-select brand" name="brand">
@@ -251,7 +251,7 @@
                 <p class="md:text-[96px] text-[32px] font-medium">960 000 ₽</p>
             </div>
 
-            <form class="p-[20px] md:px-[92px] md:py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[60px]"
+            <form class="md:p-[20px] md:px-[92px] md:py-[100px] rounded-[24px]  md:bg-[#1314171F] flex flex-col gap-[60px]"
                 action="">
                 <h2 class="text-[20px] md:text-[48px] font-medium">2. Введите сумму первоначального взноса</h2>
 
@@ -327,7 +327,7 @@
 
         <section>
             <form
-                class="p-[30px] md:px-[92px] md:py-[100px] rounded-[24px] bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]"
+                class=" md:px-[92px] md:py-[100px] rounded-[24px] md:bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]"
                 action="">
                 <h2 class="text-[20px] md:text-[48px] font-medium">4. Заполните ваши данные</h2>
                 <input class="custom-select" placeholder="ФИО" type="text">
@@ -347,70 +347,73 @@
 
     </main>
 
-    <footer class="bg-[#2A2B2F] text-white py-12">
-        <div class="container mx-auto px-6">
-            <!-- Основная секция: карта и информация -->
-            <div class="flex flex-col md:flex-row gap-8 mb-10">
-                <!-- Карта -->
-                <div class="w-full md:w-1/3">
-                    <div class="rounded-xl overflow-hidden shadow-lg transform transition hover:shadow-xl">
-                        <iframe
-                            src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa1e5d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9&amp;source=constructor"
-                            width="100%" height="220" frameborder="0" allowfullscreen="true"
-                            aria-label="Карта расположения компании" style="border: none; border-radius: 12px;">
-                        </iframe>
-                    </div>
-                </div>
-
-                <!-- Информация -->
-                <div class="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
-                    <!-- Адрес -->
-                    <div>
-                        <h3 class="text-xl font-normal text-gray-300 mb-2">Адрес</h3>
-                        <p class="text-2xl font-medium leading-tight">
-                            г. Москва,<br>
-                            Береговой проезд, д. 4/6, стр. 3
-                        </p>
-                    </div>
-
-                    <!-- График работы -->
-                    <div>
-                        <h3 class="text-xl font-normal text-gray-300 mb-2">График работы</h3>
-                        <p class="text-2xl font-medium">
-                            Ежедневно<br>
-                            с 9:00 до 21:00
-                        </p>
-                    </div>
-
-                    <!-- Контакты -->
-                    <div>
-                        <h3 class="text-xl font-normal text-gray-300 mb-2">Контакты</h3>
-                        <a href="tel:+79999999999"
-                            class="text-2xl font-medium hover:text-secondary transition duration-200">
-                            +7 (999) 999-99-99
-                        </a>
-                    </div>
-
-                    <!-- Обратная связь -->
-                    <div class="flex items-end">
-                        <button
-                            class="bg-secondary text-primary px-6 py-3 rounded-full font-medium hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50 transition-all duration-200 shadow-md hover:shadow-lg">
-                            Обратная связь
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Нижний блок: копирайт и реквизиты -->
-            <div class="border-t  pt-6 mt-6 text-xs text-gray-500 space-y-2">
-                <p>&copy; 2025 ООО «Техинком-Авто». Все права защищены.</p>
-                <p>
-                    Юридический адрес: ул. Кулакова, вл. 24, корп. 3, Москва<br>
-                    ОГРН: 1176952010180 | ИНН: 6950207759
-                </p>
-            </div>
+<footer class="bg-[#2A2B2F] text-white py-12">
+  <div class="container mx-auto px-6">
+    <!-- Основная секция: карта и информация -->
+    <div class="flex flex-col md:flex-row gap-8 mb-10">
+      <!-- Карта -->
+      <div class="w-full md:w-1/3">
+        <div class="rounded-xl overflow-hidden shadow-lg transform transition hover:shadow-xl">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa1e5d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9&amp;source=constructor"
+            width="100%"
+            height="220"
+            frameborder="0"
+            allowfullscreen="true"
+            aria-label="Карта расположения компании"
+            style="border: none; border-radius: 12px;">
+          </iframe>
         </div>
-    </footer>
+      </div>
+
+      <!-- Информация -->
+      <div class="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
+        <!-- Адрес -->
+        <div>
+          <h3 class="text-xl font-normal text-gray-300 mb-2">Адрес</h3>
+          <p class="text-2xl font-medium leading-tight">
+            г. Москва,<br>
+            Кулакова, вл. 24, корп. 3, Москва
+          </p>
+        </div>
+
+        <!-- График работы -->
+        <div>
+          <h3 class="text-xl font-normal text-gray-300 mb-2">График работы</h3>
+          <p class="text-2xl font-medium">
+            Ежедневно<br>
+            с 9:00 до 21:00
+          </p>
+        </div>
+
+        <!-- Контакты -->
+        <div>
+          <h3 class="text-xl font-normal text-gray-300 mb-2">Контакты</h3>
+          <a href="tel:+79999999999" class="text-2xl font-medium hover:text-secondary transition duration-200">
+            +7 (495) 778-98-50
+          </a>
+        </div>
+
+        <!-- Обратная связь -->
+        <div class="flex items-end">
+          <button
+            class="bg-secondary text-primary px-6 py-3 rounded-full font-medium hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50 transition-all duration-200 shadow-md hover:shadow-lg">
+            Обратная связь
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Нижний блок: копирайт и реквизиты -->
+    <div class="border-t  pt-6 mt-6 text-xs text-gray-500 space-y-2">
+      <p>&copy; 2025 ООО «Техинком-Авто». Все права защищены.</p>
+      <p>
+        Юридический адрес: ул. Кулакова, вл. 24, корп. 3, Москва<br>
+        ОГРН: 1176952010180 | ИНН: 6950207759
+      </p>
+    </div>
+  </div>
+</footer>
 
     <!-- <script src="./doubleSidedRange.js"></script>
     <script src="./showDetails.js"></script> -->
