@@ -1,3 +1,3 @@
-import './popupBlocks/Credit.js'
-import './popupBlocks/Feedback.js'
-import './popupBlocks/catchingUp.js'
+import './popupBlocks/Credit.js';
+import './popupBlocks/Feedback.js';
+import './popupBlocks/catchingUp.js';
