@@ -1,5 +1,4 @@
-const showModalBox = document.getElementsByClassName('showModalBox')
-
+const showModalBoxes = document.getElementsByClassName('showModalBox');
 
 const initGlobalModal = () => {
     if (document.querySelector('.global-modal-back')) return;
@@ -8,16 +7,20 @@ const initGlobalModal = () => {
 
     const modalBack = document.createElement('div');
     modalBack.className = 'global-modal-back bg-[#00000066] w-full h-screen fixed inset-0 z-40';
+    modalBack.addEventListener('click', () => {
+        modalBack.remove();
+        modal.remove();
+    });
 
     const modal = document.createElement('div');
-    modal.className = 'global-modal flex flex-col gap-[80px] container w-full py-[106px] px-[92px] bg-gradient-to-r from-[#131417] to-[#005f4f]  rounded-[52px] shadow-xl fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50';
+    modal.className = 'global-modal flex flex-col gap-[80px] container w-full py-[106px] px-[92px] bg-gradient-to-r from-[#131417] to-[#005f4f] rounded-[52px] shadow-xl fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50';
 
     const modalHeader = document.createElement('div');
     modalHeader.className = 'text-center';
     modalHeader.innerHTML = `
-    <h2 class="text-[64px] font-medium text-white">Остались вопросы?</h2>
-    <p class="text-[36px] font-regular">Оставьте ваш номер и мы перезвоним в ближайшее время!</p>
-  `;
+        <h2 class="text-[64px] font-medium text-white">Остались вопросы?</h2>
+        <p class="text-[36px] font-regular">Оставьте ваш номер и мы перезвоним в ближайшее время!</p>
+    `;
 
     const modalForm = document.createElement('form');
     modalForm.className = 'flex flex-col gap-[60px]';
@@ -26,23 +29,24 @@ const initGlobalModal = () => {
     inputName.type = 'text';
     inputName.placeholder = 'ФИО';
     inputName.className = 'custom-select';
+    inputName.required = true;
 
     const inputPhone = document.createElement('input');
     inputPhone.type = 'tel';
     inputPhone.placeholder = 'Ваш номер телефона';
     inputPhone.className = 'custom-select';
+    inputPhone.required = true;
 
     const consentCheckbox = document.createElement('label');
     consentCheckbox.className = 'flex items-center space-x-[44px]';
     consentCheckbox.innerHTML = `
-    <span class="inline-block relative">
-      <input type="checkbox" class="custom-checkbox">
-    </span>
-    <span class="text-[20px]">
-      Я соглашаюсь с условиями и даю свое согласие на обработку использования моих персональных данных,
-      и разрешаю сделать запрос в бюро кредитных историй
-    </span>
-  `;
+        <span class="inline-block relative">
+            <input type="checkbox" class="custom-checkbox" required>
+        </span>
+        <span class="text-[20px]">
+            Я соглашаюсь с условиями и даю свое согласие на обработку моих персональных данных, и разрешаю сделать запрос в бюро кредитных историй
+        </span>
+    `;
 
     const submitButton = document.createElement('button');
     submitButton.type = 'submit';
@@ -54,24 +58,49 @@ const initGlobalModal = () => {
     modalForm.appendChild(consentCheckbox);
     modalForm.appendChild(submitButton);
 
-    modal.appendChild(modalHeader);
-    modal.appendChild(modalForm);
-
     const closeModalButton = document.createElement('button');
     closeModalButton.className = 'absolute top-10 right-14 hover:opacity-80 transition-opacity';
     closeModalButton.innerHTML = `
-    <img src="../assets/Frame 156.svg" alt="Закрыть модальное окно" class="w-[32px] h-[32px]">
-  `;
-    closeModalButton.addEventListener('click', () => {
-        modal.remove();
+        <img src="../assets/Frame 156.svg" alt="Закрыть модальное окно" class="w-[32px] h-[32px]">
+    `;
+    closeModalButton.addEventListener('click', (e) => {
+        e.stopPropagation();
         modalBack.remove();
+        modal.remove();
     });
 
+    modal.appendChild(modalHeader);
+    modal.appendChild(modalForm);
     modal.appendChild(closeModalButton);
+
+    modalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        modalForm.remove();
+
+        modalHeader.innerHTML = `
+            <div class="flex flex-col items-center gap-6">
+                <div class="w-[120px] h-[120px] rounded-full bg-green-500 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-[60px] w-[60px] text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h2 class="text-[48px] font-medium text-white">Спасибо за вашу заявку!</h2>
+                <p class="text-[28px] text-gray-300 text-center">Мы перезвоним в ближайшее время!</p>
+            </div>
+        `;
+        modal.appendChild(closeAfterSubmit);
+    });
 
     body.appendChild(modalBack);
     body.appendChild(modal);
 };
 
-window.onload = initGlobalModal;
-
+document.addEventListener('DOMContentLoaded', () => {
+    Array.from(showModalBoxes).forEach(box => {
+        box.addEventListener('click', (e) => {
+            e.preventDefault();
+            initGlobalModal();
+        });
+    });
+});
