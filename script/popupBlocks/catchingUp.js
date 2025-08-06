@@ -31,7 +31,7 @@ const initGlobalModal = () => {
         rounded-[12px] sm:rounded-[16px] md:rounded-[24px] lg:rounded-[52px]
         shadow-xl
         fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-        z-50 max-w-[95vw] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1000px]  /* Изменено: max-w-[95vw] на малых экранах */
+        z-50 max-w-[95vw] max-w-[600px] md:max-w-[1800px]
         text-white
         overflow-y-auto max-h-[95vh]
         box-border

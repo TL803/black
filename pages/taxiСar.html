@@ -64,7 +64,7 @@
             <p class="text-white">+7 (999) 999-99-99</p>
             <p class="text-white">ул. Юбилейная д.8 кв 6</p>
         </div>
-        <button class="bg-secondary font-medium text-primary px-[23px] py-[16px] rounded-full">
+        <button class="bg-secondary showModalBox font-medium text-primary px-[23px] py-[16px] rounded-full">
             Обратная связь
         </button>
     </div>
@@ -111,13 +111,81 @@
 </header>
 
     <img class="m-auto absolute w-full" src="../assets/Frame 272.png" alt="">
-    <main class="container mt-[350px]">
+    <main class="container mt-[350px] mb-[172px]">
         <h1 class="text-[24px] md:text-[90px] font-medium mb-[60px] mt-[80px]">Авто под такси </h1>
         <section class="container">
             <div id="products-block" class="flex flex-row flex-wrap gap-[12px] md:gap-[35px]">
             </div>
         </section>
     </main>
+
+    <footer class="bg-[#2A2B2F] text-white py-12">
+  <div class="container mx-auto px-6">
+    <!-- Основная секция: карта и информация -->
+    <div class="flex flex-col md:flex-row gap-8 mb-10">
+      <!-- Карта -->
+      <div class="w-full md:w-1/3">
+        <div class="rounded-xl overflow-hidden shadow-lg transform transition hover:shadow-xl">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa1e5d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9&amp;source=constructor"
+            width="100%"
+            height="220"
+            frameborder="0"
+            allowfullscreen="true"
+            aria-label="Карта расположения компании"
+            style="border: none; border-radius: 12px;">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Информация -->
+      <div class="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
+        <!-- Адрес -->
+        <div>
+          <h3 class="text-xl font-normal text-gray-300 mb-2">Адрес</h3>
+          <p class="text-2xl font-medium leading-tight">
+            г. Москва,<br>
+            Береговой проезд, д. 4/6, стр. 3
+          </p>
+        </div>
+
+        <!-- График работы -->
+        <div>
+          <h3 class="text-xl font-normal text-gray-300 mb-2">График работы</h3>
+          <p class="text-2xl font-medium">
+            Ежедневно<br>
+            с 9:00 до 21:00
+          </p>
+        </div>
+
+        <!-- Контакты -->
+        <div>
+          <h3 class="text-xl font-normal text-gray-300 mb-2">Контакты</h3>
+          <a href="tel:+79999999999" class="text-2xl font-medium hover:text-secondary transition duration-200">
+            +7 (999) 999-99-99
+          </a>
+        </div>
+
+        <!-- Обратная связь -->
+        <div class="flex items-end">
+          <button
+            class="bg-secondary text-primary px-6 py-3 rounded-full font-medium hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50 transition-all duration-200 shadow-md hover:shadow-lg">
+            Обратная связь
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Нижний блок: копирайт и реквизиты -->
+    <div class="border-t  pt-6 mt-6 text-xs text-gray-500 space-y-2">
+      <p>&copy; 2025 ООО «Техинком-Авто». Все права защищены.</p>
+      <p>
+        Юридический адрес: ул. Кулакова, вл. 24, корп. 3, Москва<br>
+        ОГРН: 1176952010180 | ИНН: 6950207759
+      </p>
+    </div>
+  </div>
+</footer>
     <img class="m-auto absolute w-full" src="../assets/Frame 269.png" alt="">
 
     <script src="../script/showTaxi.js"></script>

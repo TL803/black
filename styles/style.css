@@ -223,7 +223,7 @@
 .thick-blue-slider::-webkit-slider-runnable-track {
     height: 58px;
     background: linear-gradient(to right, #19BC8D 0%, #19BC8D var(--fill-percent, 50%), #13141766 var(--fill-percent, 50%), #13141766 100%);
-    border-radius: 100px;
+    border-radius: 100px !important;
     cursor: pointer;
 }
 
@@ -429,3 +429,14 @@
     opacity: 0;
     pointer-events: none;
 }
+
+
+
+
+/* .thick-blue-slider::-webkit-slider-runnable-track {
+    height: 100%;
+    background: #13141766;
+    border-radius: 100px;
+    cursor: pointer;
+} */
+
