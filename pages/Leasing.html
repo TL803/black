@@ -232,42 +232,75 @@
                 <p class="md:text-[96px] text-[32px] font-medium">960 000 ₽</p>
             </div>
 
-            <form class=" md:px-[92px] md:py-[100px] rounded-[24px] md:bg-[#1314171F] flex flex-col gap-[60px] mb-[80px]"
+            <form
+                class="p-4 md:p-[20px] md:px-[92px] md:py-[100px] rounded-[24px] md:bg-[#1314171F] flex flex-col gap-8 md:gap-[60px]"
                 action="">
-                <h2 class="text-[20px] md:text-[48px] font-medium"> 2. Условия </h2>
+                <!-- Сумма первоначального взноса -->
+                <h2 class="text-[18px] md:text-[48px] font-medium">2. Введите сумму первоначального взноса</h2>
 
-                <div class="slider-container">
-                    <div class="slider__self"></div>
-                    <div class="flex justify-between items-center mt-4">
-                        <input type="number" name="down_payment_min"
-                            class="slider__field slider__field--min rounded-full  text-[#19BC8D] w-[80px] md:w-[240px] py-[10px] md:py-[33px] box-border"
-                            placeholder="от" />
-                        <span class="slider__separator md:text-[32px] text-[#B8B8B8]">Первоначальный взнос</span>
-                        <input type="number" name="down_payment_max"
-                            class="slider__field slider__field--max rounded-full  text-[#19BC8D] w-[80px] md:w-[240px] py-[10px] md:py-[33px] box-border"
-                            placeholder="до" />
+                <div class="relative h-8 flex items-center mb-4 md:mb-6">
+                    <div id="price-slider" class="w-full"></div>
+                </div>
+
+                <div class="flex justify-between items-center text-xs md:text-sm font-medium mt-2 md:mt-4 mb-4 md:mb-6">
+                    <div class="bg-[#131417] text-gray-600 px-4 md:px-8 py-2 md:py-4 rounded-[50px] shadow-sm">
+                        <span class="text-[12px] md:text-[18px] text-[#19BC8D]" id="minPriceValue">От 500 000 ₽</span>
+                    </div>
+                    <div class="text-[#B8B8B8] text-[10px] md:text-[18px] text-center mx-2 md:mx-0">Цена</div>
+                    <div class="bg-[#131417] text-gray-600 px-4 md:px-8 py-2 md:py-4 rounded-[50px] shadow-sm">
+                        <span class="text-[12px] md:text-[18px] text-[#19BC8D]" id="maxPriceValue">До 2 500 000 ₽</span>
+                    </div>
+                </div>
+
+                <!-- Комфортный платеж -->
+                <h2 class="text-[18px] md:text-[48px] font-medium">3. Выберите комфортный платеж</h2>
+
+                <!-- Слайдер -->
+                <input type="range" class="thick-blue-slider block w-full" id="mobilePaymentSlider" min="0" max="100"
+                    value="20">
+
+                <!-- Отображение значений -->
+                <div class="flex justify-between items-center text-sm font-medium mt-4">
+                    <div class="bg-[#131417] text-[#19BC8D] px-4 md:px-8 py-2 md:py-4 rounded-[50px] shadow-sm">
+                        <span class="text-[14px]" id="termValue">6 лет</span>
+                    </div>
+                    <div class="text-[#B8B8B8]">Срок кредита</div>
+                    <div class="bg-[#131417] text-[#19BC8D] px-4 md:px-8 py-2 md:py-4 rounded-[50px] shadow-sm">
+                        <span class="text-[14px]" id="paymentValue">60 000 ₽</span>
                     </div>
                 </div>
 
 
-
-                <div class="relative h-8 flex items-center mt-6">
-                    <input type="range" class="thick-blue-slider credit-slider" min="1" max="30" value="10">
+                <!-- Trade-in -->
+                <div class="flex items-center justify-between bg-[#1F2023]/[44%] p-3 md:p-4 rounded-lg">
+                    <div class="flex items-center gap-3 md:gap-4">
+                        <input id="show-details" class="custom-checkbox" type="checkbox" />
+                        <div>
+                            <label class="text-white text-lg md:text-2xl font-medium">Trade-in</label>
+                            <p class="text-xs md:text-base text-white mt-1 hidden md:block">
+                                Стоимость вашего авто и скидка
+                            </p>
+                        </div>
+                    </div>
+                    <span class="text-right text-[#19BC8D] text-lg md:text-2xl font-medium">
+                        80 000 ₽
+                    </span>
                 </div>
 
-                <div class="flex justify-between mt-4">
-                    <div
-                        class="slider__field slider__field--min rounded-full  text-[#19BC8D] md:w-[240px] w-[100px] py-[10px] md:py-[33px] box-border">
-                        <span id="loanTerm">10 лет</span>
-                    </div>
-                    <div
-                        class="slider__field slider__field--min rounded-full  text-[#19BC8D] md:w-[240px] w-[100px] py-[10px] md:py-[33px] box-border">
-                        <span id="monthlyPayment">800 000</span> ₽
-                    </div>
+                <!-- Форма Trade-in (скрыта по умолчанию) -->
+                <div id="tradein-form" class="flex flex-col gap-4 md:gap-[60px] hidden">
+                    <input type="text" class="custom-select p-3 md:p-4 text-sm md:text-base"
+                        placeholder="Марка автомобиля">
+                    <input type="text" class="custom-select p-3 md:p-4 text-sm md:text-base" placeholder="Модель">
+                    <input type="text" class="custom-select p-3 md:p-4 text-sm md:text-base" placeholder="Год">
+                    <input type="text" class="custom-select p-3 md:p-4 text-sm md:text-base" placeholder="Пробег">
                 </div>
 
+                <!-- Кнопка -->
                 <button type="button"
-                    class="md:text-[36px] text-[16px] bg-[#19BC8D66] rounded-[32px] py-[32px]">Применить</button>
+                    class="text-[16px] md:text-[36px] bg-[#19BC8D66] rounded-[32px] py-4 md:py-[32px]">
+                    Применить
+                </button>
             </form>
 
         </section>
