@@ -151,48 +151,47 @@
     <main class="container flex flex-col gap-[80px] mb-[172px]">
         <section>
             <h1 class="text-[24px] md:text-[90px] mb-[20px] mt-[24px] md:mt-[80px]">Рассчитайте кредит</h1>
-            <form
-                class=" md:px-[92px] md:py-[100px] rounded-[24px] bg-[#25262A] md:bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]"
-                action="">
+            <form class="md:px-[92px] md:py-[100px] rounded-[24px] bg-[#25262A] md:bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]" action="">
                 <h2 class="text-[20px] md:text-[24px] md:text-[48px] font-medium">1. Выберите автомобиль</h2>
                 <select class="custom-select brand" name="brand">
                     <option value="" disabled selected>Марка автомобиля</option>
                     <option value="bmw">BMW</option>
                     <option value="audi">Audi</option>
                     <option value="mercedes">Mercedes-Benz</option>
-                </select> <select class="custom-select brand" name="brand">
-                    <option value="" disabled selected>Модель</option>
-                    <option value="bmw">BMW</option>
-                    <option value="audi">Audi</option>
-                    <option value="mercedes">Mercedes-Benz</option>
-                </select> <select class="custom-select brand" name="brand">
-                    <option value="" disabled selected>Комплектация</option>
-                    <option value="bmw">BMW</option>
-                    <option value="audi">Audi</option>
-                    <option value="mercedes">Mercedes-Benz</option>
                 </select>
-
-                <button
-                    class="text-[16px] md:text-[36px] bg-[#19BC8D66] rounded-[32px] py-[12px] md:py-[32px]">Применить</button>
+                <select class="custom-select brand" name="model">
+                    <option value="" disabled selected>Модель</option>
+                    <option value="bmw">BMW X5</option>
+                    <option value="audi">Audi Q7</option>
+                    <option value="mercedes">Mercedes GLE</option>
+                </select>
+                <select class="custom-select brand" name="trim">
+                    <option value="" disabled selected>Комплектация</option>
+                    <option value="base">Базовая</option>
+                    <option value="mid">Средняя</option>
+                    <option value="premium">Премиум</option>
+                </select>
+                <button class="text-[16px] md:text-[36px] bg-[#19BC8D66] rounded-[32px] py-[12px] md:py-[32px]">
+                    Применить
+                </button>
             </form>
         </section>
 
-
+        <!-- Второй блок: Информация об автомобиле -->
         <section>
             <div>
                 <h1 class="text-[36px] md:text-[96px] mb-[20px] md:mt-[80px]">Kaiyi X3 Pro</h1>
-                <p
-                    class="inline-block text-[12px] md:text-[20px] px-[10px] md:px-[55px] py-[4px] md:py-[16px] rounded-[32px] border border-[#19BC8D] bg-[#225045] mb-[60px]">
+                <p class="inline-block text-[12px] md:text-[20px] px-[10px] md:px-[55px] py-[4px] md:py-[16px] rounded-[32px] border border-[#19BC8D] bg-[#225045] mb-[60px]">
                     Внедорожник
                 </p>
             </div>
-            <div class="flex gap-[72px] mb-[80px]">
-                <div id='carImage'
-                    class="md:w-[1251px] md:h-[812px] w-full h-[228px] rounded-[24px] bg-[#131417] bg-cover bg-center"
-                    style="background-image: url('../assets/car_white.png');">
-                </div>
 
-                <div class=" flex-col gap-[58px] md:flex hidden">
+            <div class="flex gap-[72px] mb-[80px]">
+                <div id="carImage"
+                     class="md:w-[1251px] md:h-[812px] w-full h-[228px] rounded-[24px] bg-[#131417] bg-cover bg-center"
+                     style="background-image: url('../assets/car_white.png');">
+                </div>
+                <div class="flex-col gap-[58px] md:flex hidden">
                     <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
                     <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
                     <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
@@ -200,37 +199,33 @@
             </div>
 
             <div class="flex flex-wrap gap-[40px] mb-[80px]">
-                <div
-                    class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
+                <div class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
                     <div>
                         <p class="text-[16px] md:text-[24px] text-[#19BC8D]">210 км/ч</p>
-                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
+                        <p class="text-[16px] md:text-[20px]">Скорость</p>
                     </div>
-                    <img class="w-[60px] md:w-auto" src="../assets/--------- (1) 1.svg" alt="">
+                    <img class="w-[60px] md:w-auto" src="../assets/--------- (1) 1.svg" alt="Скорость">
                 </div>
-                <div
-                    class="w-full md:w-max  inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
+                <div class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
                     <div>
                         <p class="text-[16px] md:text-[24px] text-[#19BC8D]">7.9 сек.</p>
-                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
+                        <p class="text-[16px] md:text-[20px]">Разгон</p>
                     </div>
-                    <img class="w-[60px] md:w-auto" src="../assets/-------------- 1.svg" alt="">
+                    <img class="w-[60px] md:w-auto" src="../assets/-------------- 1.svg" alt="Разгон">
                 </div>
-                <div
-                    class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
+                <div class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
                     <div>
                         <p class="text-[16px] md:text-[24px] text-[#19BC8D]">249 л.с.</p>
-                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
+                        <p class="text-[16px] md:text-[20px]">Мощность</p>
                     </div>
-                    <img class="w-[60px] md:w-auto" src="../assets/------------------ (1) 1.svg" alt="">
+                    <img class="w-[60px] md:w-auto" src="../assets/------------------ (1) 1.svg" alt="Мощность">
                 </div>
-                <div
-                    class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
+                <div class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
                     <div>
                         <p class="text-[16px] md:text-[24px] text-[#19BC8D]">9.9 л/100 км</p>
-                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
+                        <p class="text-[16px] md:text-[20px]">Расход</p>
                     </div>
-                    <img class="w-[60px] md:w-auto" src="../assets/------- 1.svg" alt="">
+                    <img class="w-[60px] md:w-auto" src="../assets/------- 1.svg" alt="Расход">
                 </div>
             </div>
 
@@ -238,7 +233,7 @@
                 <p class="text-[20px] md:text-[32px] mb-[32px]">Цвет</p>
                 <div class="mb-[100px]">
                     <div class="flex overflow-x-auto md:overflow-visible pb-2 md:pb-0 gap-[8px] md:gap-[40px] scrollbar-hide"
-                        style="scrollbar-width: none; -ms-overflow-style: none;">
+                         style="scrollbar-width: none; -ms-overflow-style: none;">
                         <div id="colorContainer" class="flex md:flex-wrap gap-[8px] md:gap-[40px] min-w-max md:min-w-0">
                             <!-- Цвета будут добавлены через JS -->
                         </div>
@@ -248,19 +243,16 @@
 
             <div class="mb-[40px]">
                 <p class="md:text-[48px] text-[16px] line-through">1 959 900 ₽</p>
-                <p class="md:text-[96px] text-[32px] font-medium">960 000 ₽</p>
+                <p class="md:text-[96px] text-[32px] font-medium">960 000 ₽</p>
             </div>
 
-            <form
-                class="p-4 md:p-[20px] md:px-[92px] md:py-[100px] rounded-[24px] md:bg-[#1314171F] flex flex-col gap-8 md:gap-[60px]"
-                action="">
-                <!-- Сумма первоначального взноса -->
+            <!-- Форма: Кредит и Trade-in -->
+            <form class="p-4 md:p-[20px] md:px-[92px] md:py-[100px] rounded-[24px] md:bg-[#1314171F] flex flex-col gap-8 md:gap-[60px]" action="">
+                <!-- Первоначальный взнос -->
                 <h2 class="text-[18px] md:text-[48px] font-medium">2. Введите сумму первоначального взноса</h2>
-
                 <div class="relative h-8 flex items-center mb-4 md:mb-6">
                     <div id="price-slider" class="w-full"></div>
                 </div>
-
                 <div class="flex justify-between items-center text-xs md:text-sm font-medium mt-2 md:mt-4 mb-4 md:mb-6">
                     <div class="bg-[#131417] text-gray-600 px-4 md:px-8 py-2 md:py-4 rounded-[50px] shadow-sm">
                         <span class="text-[12px] md:text-[18px] text-[#19BC8D]" id="minPriceValue">От 500 000 ₽</span>
@@ -273,12 +265,7 @@
 
                 <!-- Комфортный платеж -->
                 <h2 class="text-[18px] md:text-[48px] font-medium">3. Выберите комфортный платеж</h2>
-
-                <!-- Слайдер -->
-                <input type="range" class="thick-blue-slider block w-full" id="mobilePaymentSlider" min="0" max="100"
-                    value="20">
-
-                <!-- Отображение значений -->
+                <input type="range" class="thick-blue-slider block w-full" id="mobilePaymentSlider" min="0" max="100" value="20">
                 <div class="flex justify-between items-center text-sm font-medium mt-4">
                     <div class="bg-[#131417] text-[#19BC8D] px-4 md:px-8 py-2 md:py-4 rounded-[50px] shadow-sm">
                         <span class="text-[14px]" id="termValue">6 лет</span>
@@ -288,7 +275,6 @@
                         <span class="text-[14px]" id="paymentValue">60 000 ₽</span>
                     </div>
                 </div>
-
 
                 <!-- Trade-in -->
                 <div class="flex items-center justify-between bg-[#1F2023]/[44%] p-3 md:p-4 rounded-lg">
@@ -308,20 +294,17 @@
 
                 <!-- Форма Trade-in (скрыта по умолчанию) -->
                 <div id="tradein-form" class="flex flex-col gap-4 md:gap-[60px] hidden">
-                    <input type="text" class="custom-select p-3 md:p-4 text-sm md:text-base"
-                        placeholder="Марка автомобиля">
+                    <input type="text" class="custom-select p-3 md:p-4 text-sm md:text-base" placeholder="Марка автомобиля">
                     <input type="text" class="custom-select p-3 md:p-4 text-sm md:text-base" placeholder="Модель">
                     <input type="text" class="custom-select p-3 md:p-4 text-sm md:text-base" placeholder="Год">
                     <input type="text" class="custom-select p-3 md:p-4 text-sm md:text-base" placeholder="Пробег">
                 </div>
 
                 <!-- Кнопка -->
-                <button type="button"
-                    class="text-[16px] md:text-[36px] bg-[#19BC8D66] rounded-[32px] py-4 md:py-[32px]">
+                <button type="button" class="text-[16px] md:text-[36px] bg-[#19BC8D66] rounded-[32px] py-4 md:py-[32px]">
                     Применить
                 </button>
             </form>
-
         </section>
 
 
@@ -415,6 +398,7 @@
     <!-- <script src="./doubleSidedRange.js"></script>
     <script src="./showDetails.js"></script> -->
     <script src="../script/burger.js"></script>
+    <script src="../script/showCar.js"></script>
     <script src="../script/doubleSidedRange.js"></script>
     <script src="../script/single-slider.js"></script>
     <script src="../script/selectedOption.js"></script>
