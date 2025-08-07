@@ -63,7 +63,7 @@
                 <span class="font-medium">Главная</span>
             </a>
             <a href="./carloan.html" class="py-4 px-4 rounded-full text-tertiary"><span>Автокредит</span></a>
-            <a href="./TradeIn.html" class="py-4 px-4 rounded-full text-tertiary"><span>Trade-in</span></a>
+            <a href="../TradeIn.html" class="py-4 px-4 rounded-full text-tertiary"><span>Trade-in</span></a>
             <a href="./stock.html" class="py-4 px-4 rounded-full text-tertiary"><span>Акции</span></a>
             <a href="./service.html" class="py-4 px-4 rounded-full text-tertiary"><span>Сервис</span></a>
             <a href="./Leasing.html" class="py-4 px-4 rounded-full text-tertiary"><span>Лизинг</span></a>
@@ -109,7 +109,7 @@
                                 class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Автокредит</a>
                             <hr class="border-t border-[#19BC8D33] my-2">
                         </li>
-                        <li><a href="./TradeIn.html"
+                        <li><a href="../TradeIn.html"
                                 class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Trade-in</a>
                             <hr class="border-t border-[#19BC8D33] my-2">
                         </li>
@@ -280,10 +280,11 @@
                 </div>
 
                 <div id="content-specs" class="content-section px-4 text-white">
-                    <!-- Заголовок с кнопкой-стрелкой (только на мобильных) -->
                     <div class="flex justify-between items-center mb-6 cursor-pointer md:cursor-auto md:block"
                         data-toggle>
-                        <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D]">2.5 л. 6АКПП (180 л.с.) FWD
+                        <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D]">2.5 л. 6АКПП (180
+                            л.с.)
+                            FWD
                         </h2>
                         <div class="flex items-center md:hidden"> <!-- Стрелка только на мобильных -->
                             <svg class="w-6 h-6 md:w-8 md:h-8 text-[#19BC8D] transition-transform duration-300"
@@ -295,9 +296,7 @@
                         </div>
                     </div>
 
-                    <!-- Контент, который будет скрываться только на мобильных -->
-                    <div class="specs-content md:block"> <!-- На десктопе всегда виден -->
-                        <!-- Двигатель -->
+                    <div class="specs-content md:block">
                         <div class="mb-10">
                             <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Двигатель</h2>
                             <div class="space-y-4">
@@ -339,7 +338,6 @@
                             </div>
                         </div>
 
-                        <!-- Кузов -->
                         <div class="mb-10">
                             <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Кузов</h2>
                             <div class="space-y-4">
@@ -362,7 +360,6 @@
                             </div>
                         </div>
 
-                        <!-- Эксплуатационные показатели -->
                         <div>
                             <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Эксплуатационные
                                 показатели</h2>
@@ -403,100 +400,158 @@
                                     2.5 л. 6АКПП (180 л.с.) FWD
                                 </h2>
 
-                                <div class="space-y-6">
-                                    <div
-                                        class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 items-center bg-[#13141770] p-4 md:p-[40px] rounded-[32px]">
-                                        <div class="flex items-center justify-center md:justify-start gap-2">
-                                            <span class="font-semibold text-lg text-white">Active Plus New</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <polyline points="6 9 12 15 18 9"></polyline>
-                                            </svg>
-                                        </div>
+                                <details class="w-full group space-y-6 col-span-5">
+                                    <summary class="list-none">
+                                        <div
+                                            class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 items-center bg-[#13141770] p-4 md:p-[40px] rounded-[32px] cursor-pointer">
+                                            <div class="flex items-center justify-center md:justify-start gap-2">
+                                                <span class="font-semibold text-lg text-white">Active Plus New</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="transition-transform duration-300 group-open:rotate-180">
+                                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                                </svg>
+                                            </div>
 
-                                        <div class="text-right">
-                                            <span
-                                                class="line-through text-lg text-gray-300 hidden md:block text-center">1
-                                                489 000
-                                                ₽</span>
-                                        </div>
+                                            <div class="text-right">
+                                                <span
+                                                    class="line-through text-lg text-gray-300 hidden md:block text-center">1
+                                                    489 000 ₽</span>
+                                            </div>
 
-                                        <div class="flex justify-center md:justify-start">
-                                            <span class="text-[#19BC8D] font-medium text-lg flex items-center gap-2">
-                                                <span class="md:hidden line-through text-gray-400  text-sm">1 489 000
-                                                    ₽</span>
-                                                от 633 000 ₽
-                                            </span>
-                                        </div>
+                                            <div class="flex justify-center md:justify-start">
+                                                <span
+                                                    class="text-[#19BC8D] font-medium text-lg flex items-center gap-2">
+                                                    <span class="md:hidden line-through text-gray-400 text-sm">1 489 000
+                                                        ₽</span>
+                                                    от 633 000 ₽
+                                                </span>
+                                            </div>
 
-                                        <div class="text-center md:text-left">
-                                            <span class="text-white text-sm md:text-base showCreaditpopup">В кредит от 7
-                                                806
-                                                ₽/мес.</span>
-                                        </div>
+                                            <div class="text-center md:text-left">
+                                                <span class="text-white text-sm md:text-base showCreaditpopup">В кредит
+                                                    от 7 806 ₽/мес.</span>
+                                            </div>
 
-                                        <div class="flex gap-2 mt-2 md:mt-0 justify-center md:justify-end">
-                                            <button
-                                                class="flex-1 max-w-[140px] bg-[#19BC8D] text-white py-3 rounded-[28px] showCreaditpopup font-medium text-sm credit-button">
-                                                В кредит
-                                            </button>
-                                            <button
-                                                class="flex-1 max-w-[140px] bg-[#25262A] py-3 rounded-[28px] text-[#19BC8D] font-medium text-sm">
-                                                <a href="/TradeIn.html">Trade-in</a>
-                                            </button>
+                                            <div class="flex gap-2 mt-2 md:mt-0 justify-center md:justify-end">
+                                                <button
+                                                    class="flex-1 max-w-[140px] bg-[#19BC8D] text-white py-3 rounded-[28px] showCreaditpopup font-medium text-sm credit-button">
+                                                    В кредит
+                                                </button>
+                                                <button
+                                                    class="flex-1 max-w-[140px] bg-[#25262A] py-3 rounded-[28px] text-[#19BC8D] font-medium text-sm">
+                                                    <a href="./TradeIn.html">Trade-in</a>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </summary>
+
+                                    <!-- Раскрывающийся блок с деталями — теперь тоже в стиле карточки -->
+                                    <div class="bg-[#13141770] rounded-[32px] p-4 md:p-[40px] mt-[-1px]">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 text-sm text-gray-300">
+                                            <div><strong class="text-white">Безопасность:</strong></div>
+                                            <div></div>
+                                            <div>• Подушка безопасности водителя</div>
+                                            <div>• Подушка безопасности пассажира</div>
+                                            <div>• Боковые подушки</div>
+                                            <div>• Система стабилизации (ESP)</div>
+                                            <div>• Антиблокировочная система (ABS)</div>
+                                            <div>• ISOFIX</div>
+
+                                            <div class="mt-4"><strong class="text-white">Комфорт:</strong></div>
+                                            <div></div>
+                                            <div>• Климат-контроль</div>
+                                            <div>• Мультимедиа с экраном</div>
+                                            <div>• Подогрев сидений</div>
+                                            <div>• Электропакет</div>
+
+                                            <div class="mt-4"><strong class="text-white">Экстерьер:</strong></div>
+                                            <div></div>
+                                            <div>• Противотуманные фары</div>
+                                            <div>• Светодиодные фары</div>
+                                            <div>• Рейлинги на крыше</div>
+                                            <div>• Окраска «металлик»</div>
                                         </div>
                                     </div>
-                                </div>
+                                </details>
                             </div>
 
-                            <div>
-                                <h2
-                                    class="text-xl md:text-4xl font-medium mb-6 text-[#19BC8D] text-center md:text-left">
-                                    2.0 л. 6АКПП (150 л.с.) FWD
-                                </h2>
+                                <details class="w-full group space-y-6 col-span-5">
+                                    <summary class="list-none">
+                                        <div
+                                            class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 items-center bg-[#13141770] p-4 md:p-[40px] rounded-[32px] cursor-pointer">
+                                            <div class="flex items-center justify-center md:justify-start gap-2">
+                                                <span class="font-semibold text-lg text-white">Active Plus New</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="transition-transform duration-300 group-open:rotate-180">
+                                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                                </svg>
+                                            </div>
 
-                                <div
-                                    class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 items-center bg-[#13141770] p-4 md:p-[40px] rounded-[32px]">
-                                    <div class="flex items-center justify-center md:justify-start gap-2">
-                                        <span class="font-semibold text-lg text-white">Active Plus New</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </div>
+                                            <div class="text-right">
+                                                <span
+                                                    class="line-through text-lg text-gray-300 hidden md:block text-center">1
+                                                    489 000 ₽</span>
+                                            </div>
 
-                                    <div class="text-right">
-                                        <span class="line-through text-lg text-gray-300 hidden text-center md:block">1
-                                            489 000
-                                            ₽</span>
-                                    </div>
+                                            <div class="flex justify-center md:justify-start">
+                                                <span
+                                                    class="text-[#19BC8D] font-medium text-lg flex items-center gap-2">
+                                                    <span class="md:hidden line-through text-gray-400 text-sm">1 489 000
+                                                        ₽</span>
+                                                    от 633 000 ₽
+                                                </span>
+                                            </div>
 
-                                    <div class="flex justify-center md:justify-start">
-                                        <span class="text-[#19BC8D] font-medium text-lg flex items-center gap-2">
-                                            <span class="md:hidden line-through text-gray-400 text-sm">1 489 000
-                                                ₽</span>
-                                            от 633 000 ₽
-                                        </span>
-                                    </div>
+                                            <div class="text-center md:text-left">
+                                                <span class="text-white text-sm md:text-base showCreaditpopup">В кредит
+                                                    от 7 806 ₽/мес.</span>
+                                            </div>
 
-                                    <div class="text-center md:text-left">
-                                        <span class="text-white text-sm md:text-base">В кредит от 7 806 ₽/мес.</span>
-                                    </div>
+                                            <div class="flex gap-2 mt-2 md:mt-0 justify-center md:justify-end">
+                                                <button
+                                                    class="flex-1 max-w-[140px] bg-[#19BC8D] text-white py-3 rounded-[28px] showCreaditpopup font-medium text-sm credit-button">
+                                                    В кредит
+                                                </button>
+                                                <button
+                                                    class="flex-1 max-w-[140px] bg-[#25262A] py-3 rounded-[28px] text-[#19BC8D] font-medium text-sm">
+                                                    <a href="./TradeIn.html">Trade-in</a>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </summary>
 
-                                    <div class="flex gap-2 mt-2 md:mt-0 justify-center md:justify-end">
-                                        <button
-                                            class="flex-1 max-w-[140px] bg-[#19BC8D] text-white showCreaditpopup py-3 rounded-[28px] font-medium text-sm credit-button">
-                                            В кредит
-                                        </button>
-                                        <button
-                                            class="flex-1 max-w-[140px] bg-[#25262A] py-3 rounded-[28px] text-[#19BC8D] font-medium text-sm">
-                                            <a href="/TradeIn.html">Trade-in</a>
-                                        </button>
+                                    <!-- Раскрывающийся блок с деталями — теперь тоже в стиле карточки -->
+                                    <div class="bg-[#13141770] rounded-[32px] p-4 md:p-[40px] mt-[-1px]">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 text-sm text-gray-300">
+                                            <div><strong class="text-white">Безопасность:</strong></div>
+                                            <div></div>
+                                            <div>• Подушка безопасности водителя</div>
+                                            <div>• Подушка безопасности пассажира</div>
+                                            <div>• Боковые подушки</div>
+                                            <div>• Система стабилизации (ESP)</div>
+                                            <div>• Антиблокировочная система (ABS)</div>
+                                            <div>• ISOFIX</div>
+
+                                            <div class="mt-4"><strong class="text-white">Комфорт:</strong></div>
+                                            <div></div>
+                                            <div>• Климат-контроль</div>
+                                            <div>• Мультимедиа с экраном</div>
+                                            <div>• Подогрев сидений</div>
+                                            <div>• Электропакет</div>
+
+                                            <div class="mt-4"><strong class="text-white">Экстерьер:</strong></div>
+                                            <div></div>
+                                            <div>• Противотуманные фары</div>
+                                            <div>• Светодиодные фары</div>
+                                            <div>• Рейлинги на крыше</div>
+                                            <div>• Окраска «металлик»</div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                </details>
 
                         </div>
                     </div>
