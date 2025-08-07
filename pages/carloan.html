@@ -75,7 +75,6 @@
             <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
         </nav>
 
-        <!-- Контакты и кнопка -->
         <div class="flex gap-[68px] md:flex hidden items-center">
             <div>
                 <p class="text-white">+7 (999) 999-99-99</p>
@@ -86,65 +85,63 @@
             </button>
         </div>
 
-        <!-- Бургер-иконка -->
         <div class="burger md:hidden flex items-center">
             <img src="../assets/Бургер меню (2).svg" alt="Бургер меню" id="burgerMenu" class="cursor-pointer w-6 h-6">
         </div>
 
-        <!-- Мобильное меню (60% ширины, справа) -->
-        <div id="mobileMenu"
-            class="fixed top-0 right-0 w-[60%] h-full bg-[#131417] z-50 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
-            <div class="flex flex-col h-full p-6 text-white">
-                <!-- Верхняя часть с крестиком -->
-                <div class="flex justify-between items-center mb-6">
-                    <button id="closeMenu"
-                        class="text-white text-2xl w-8 h-8 flex items-center justify-center">&times;</button>
-                </div>
+            <div id="mobileMenu"
+                class="fixed top-0 right-0 w-[60%] h-full bg-[#131417] z-50 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
+                <div class="flex flex-col h-full p-6 text-white">
+                    <div class="flex justify-between items-center mb-6">
+                        <button id="closeMenu"
+                            class="text-white text-2xl w-8 h-8 flex items-center justify-center">&times;</button>
+                    </div>
 
-                <!-- Навигация с прокруткой -->
-                <nav class="flex-1 overflow-y-auto py-2">
-                    <ul class="space-y-4">
-                        <li><a href="./" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Главная</a>
-                            <hr class="border-t border-[#19BC8D33] my-2">
-                        </li>
-                        <li><a href="./carloan.html"
-                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Автокредит</a>
-                            <hr class="border-t border-[#19BC8D33] my-2">
-                        </li>
-                        <li><a href="./TradeIn.html"
-                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Trade-in</a>
-                            <hr class="border-t border-[#19BC8D33] my-2">
-                        </li>
-                        <li><a href="./stock.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Акции</a>
-                            <hr class="border-t border-[#19BC8D33] my-2">
-                        </li>
-                        <li><a href="./service.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Сервис</a>
-                            <hr class="border-t border-[#19BC8D33] my-2">
-                        </li>
-                        <li><a href="./Leasing.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Лизинг</a>
-                            <hr class="border-t border-[#19BC8D33] my-2">
-                        </li>
-                        <li><a href="./ransom.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Выкуп</a>
-                            <hr class="border-t border-[#19BC8D33] my-2">
-                        </li>
-                        <li><a href="./taxiСar.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Авто под
-                                такси</a>
-                            <hr class="border-t border-[#19BC8D33] my-2">
-                        </li>
-                        <li><a href="./Contacts.html"
-                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Контакты</a></li>
-                    </ul>
-                </nav>
+                    <nav class="flex-1 overflow-y-auto py-2">
+                        <ul class="space-y-4">
+                            <li><a href="./" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Главная</a>
+                                <hr class="border-t border-[#19BC8D33] my-2">
+                            </li>
+                            <li><a href="./carloan.html"
+                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Автокредит</a>
+                                <hr class="border-t border-[#19BC8D33] my-2">
+                            </li>
+                            <li><a href="./TradeIn.html"
+                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Trade-in</a>
+                                <hr class="border-t border-[#19BC8D33] my-2">
+                            </li>
+                            <li><a href="./stock.html"
+                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Акции</a>
+                                <hr class="border-t border-[#19BC8D33] my-2">
+                            </li>
+                            <li><a href="./service.html"
+                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Сервис</a>
+                                <hr class="border-t border-[#19BC8D33] my-2">
+                            </li>
+                            <li><a href="./Leasing.html"
+                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Лизинг</a>
+                                <hr class="border-t border-[#19BC8D33] my-2">
+                            </li>
+                            <li><a href="./ransom.html"
+                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Выкуп</a>
+                                <hr class="border-t border-[#19BC8D33] my-2">
+                            </li>
+                            <li><a href="./taxiСar.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Авто
+                                    под такси</a>
+                                <hr class="border-t border-[#19BC8D33] my-2">
+                            </li>
+                            <li><a href="./Contacts.html"
+                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Контакты</a></li>
+                        </ul>
+                    </nav>
 
-                <!-- Футер (контакты) всегда внизу -->
-                <div class="pt-6 border-t border-gray-700 text-sm text-gray-300 mt-4">
-                    <p>+7 (999) 999-99-99</p>
-                    <p>ул. Юбилейная д.8 кв 6</p>
+                    <div class="pt-6 border-t border-gray-700 text-sm text-gray-300 mt-4">
+                        <p class="text-[18px] font-bold text-white">+7 (999) 999-99-99</p>
+                        <p>ул. Юбилейная д.8 кв 6</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Overlay (затемнение фона при открытом меню) -->
         <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
     </header>
 
@@ -177,7 +174,6 @@
             </form>
         </section>
 
-        <!-- Второй блок: Информация об автомобиле -->
         <section>
             <div>
                 <h1 class="text-[36px] md:text-[96px] mb-[20px] md:mt-[80px]">Kaiyi X3 Pro</h1>
@@ -235,7 +231,6 @@
                     <div class="flex overflow-x-auto md:overflow-visible pb-2 md:pb-0 gap-[8px] md:gap-[40px] scrollbar-hide"
                          style="scrollbar-width: none; -ms-overflow-style: none;">
                         <div id="colorContainer" class="flex md:flex-wrap gap-[8px] md:gap-[40px] min-w-max md:min-w-0">
-                            <!-- Цвета будут добавлены через JS -->
                         </div>
                     </div>
                 </div>
@@ -246,9 +241,7 @@
                 <p class="md:text-[96px] text-[32px] font-medium">960 000 ₽</p>
             </div>
 
-            <!-- Форма: Кредит и Trade-in -->
             <form class="p-4 md:p-[20px] md:px-[92px] md:py-[100px] rounded-[24px] md:bg-[#1314171F] flex flex-col gap-8 md:gap-[60px]" action="">
-                <!-- Первоначальный взнос -->
                 <h2 class="text-[18px] md:text-[48px] font-medium">2. Введите сумму первоначального взноса</h2>
                 <div class="relative h-8 flex items-center mb-4 md:mb-6">
                     <div id="price-slider" class="w-full"></div>
@@ -263,7 +256,6 @@
                     </div>
                 </div>
 
-                <!-- Комфортный платеж -->
                 <h2 class="text-[18px] md:text-[48px] font-medium">3. Выберите комфортный платеж</h2>
                 <input type="range" class="thick-blue-slider block w-full" id="mobilePaymentSlider" min="0" max="100" value="20">
                 <div class="flex justify-between items-center text-sm font-medium mt-4">
@@ -276,7 +268,6 @@
                     </div>
                 </div>
 
-                <!-- Trade-in -->
                 <div class="flex items-center justify-between bg-[#1F2023]/[44%] p-3 md:p-4 rounded-lg">
                     <div class="flex items-center gap-3 md:gap-4">
                         <input id="show-details" class="custom-checkbox" type="checkbox" />
@@ -292,7 +283,6 @@
                     </span>
                 </div>
 
-                <!-- Форма Trade-in (скрыта по умолчанию) -->
                 <div id="tradein-form" class="flex flex-col gap-4 md:gap-[60px] hidden">
                     <input type="text" class="custom-select p-3 md:p-4 text-sm md:text-base" placeholder="Марка автомобиля">
                     <input type="text" class="custom-select p-3 md:p-4 text-sm md:text-base" placeholder="Модель">
@@ -300,7 +290,6 @@
                     <input type="text" class="custom-select p-3 md:p-4 text-sm md:text-base" placeholder="Пробег">
                 </div>
 
-                <!-- Кнопка -->
                 <button type="button" class="text-[16px] md:text-[36px] bg-[#19BC8D66] rounded-[32px] py-4 md:py-[32px]">
                     Применить
                 </button>
@@ -332,9 +321,7 @@
 
     <footer class="bg-[#2A2B2F] text-white py-12">
         <div class="container mx-auto px-6">
-            <!-- Основная секция: карта и информация -->
             <div class="flex flex-col md:flex-row gap-8 mb-10">
-                <!-- Карта -->
                 <div class="w-full md:w-1/3">
                     <div class="rounded-xl overflow-hidden shadow-lg transform transition hover:shadow-xl">
                         <iframe
@@ -345,9 +332,7 @@
                     </div>
                 </div>
 
-                <!-- Информация -->
                 <div class="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
-                    <!-- Адрес -->
                     <div>
                         <h3 class="text-xl font-normal text-gray-300 mb-2">Адрес</h3>
                         <p class="text-2xl font-medium leading-tight">
@@ -356,7 +341,6 @@
                         </p>
                     </div>
 
-                    <!-- График работы -->
                     <div>
                         <h3 class="text-xl font-normal text-gray-300 mb-2">График работы</h3>
                         <p class="text-2xl font-medium">
@@ -365,7 +349,6 @@
                         </p>
                     </div>
 
-                    <!-- Контакты -->
                     <div>
                         <h3 class="text-xl font-normal text-gray-300 mb-2">Контакты</h3>
                         <a href="tel:+79999999999"
@@ -374,17 +357,15 @@
                         </a>
                     </div>
 
-                    <!-- Обратная связь -->
                     <div class="flex items-end">
                         <button
-                            class="bg-secondary text-primary px-6 py-3 rounded-full font-medium hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50 transition-all duration-200 shadow-md hover:shadow-lg">
+                            class="bg-secondary showModalBox text-primary px-6 py-3 rounded-full font-medium hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50 transition-all duration-200 shadow-md hover:shadow-lg">
                             Обратная связь
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Нижний блок: копирайт и реквизиты -->
             <div class="border-t  pt-6 mt-6 text-xs text-gray-500 space-y-2">
                 <p>&copy; 2025 ООО «Техинком-Авто». Все права защищены.</p>
                 <p>
@@ -394,9 +375,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- <script src="./doubleSidedRange.js"></script>
-    <script src="./showDetails.js"></script> -->
     <script src="../script/burger.js"></script>
     <script src="../script/showCar.js"></script>
     <script src="../script/doubleSidedRange.js"></script>

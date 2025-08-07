@@ -1,25 +1,13 @@
-  // 1. Слайдер первоначального взноса
+document.addEventListener("DOMContentLoaded", function () {
   const downPaymentSlider = document.getElementById('downPaymentSlider');
   const downPaymentValue = document.getElementById('downPaymentValue');
 
-  downPaymentSlider.addEventListener('input', function () {
-    const value = parseInt(this.value).toLocaleString('ru-RU') + ' ₽';
-    downPaymentValue.textContent = value;
-
-    // Рассчитываем процент
-    const percent = ((this.value - this.min) / (this.max - this.min)) * 100;
-
-    // Устанавливаем CSS-переменную для трека
-    this.style.setProperty('--progress', `${percent}%`);
-  });
-
-  // Инициализация
-  downPaymentSlider.dispatchEvent(new Event('input'));
-
-
-  // 2. Слайдер срока кредита
   const termSlider = document.getElementById('termSlider');
   const termValue = document.getElementById('termValue');
+
+  function formatNumber(num) {
+    return num.toLocaleString('ru-RU');
+  }
 
   function getYearWord(year) {
     if (year % 10 === 1 && year % 100 !== 11) return 'год';
@@ -27,9 +15,27 @@
     return 'лет';
   }
 
-  termSlider.addEventListener('input', function () {
-    const term = this.value;
-    termValue.textContent = `${term} ${getYearWord(term)}`;
-  });
+  if (downPaymentSlider && downPaymentValue) {
+    downPaymentSlider.addEventListener('input', function () {
+      const value = formatNumber(parseInt(this.value)) + ' ₽';
+      downPaymentValue.textContent = value;
 
-  termSlider.dispatchEvent(new Event('input'));
+      const percent = ((this.value - this.min) / (this.max - this.min)) * 100;
+      this.style.setProperty('--progress', `${percent}%`);
+    });
+
+    downPaymentSlider.dispatchEvent(new Event('input'));
+  }
+
+  if (termSlider && termValue) {
+    termSlider.addEventListener('input', function () {
+      const term = parseInt(this.value);
+      termValue.textContent = `${term} ${getYearWord(term)}`;
+
+      const percent = ((this.value - this.min) / (this.max - this.min)) * 100;
+      this.style.setProperty('--progress', `${percent}%`);
+    });
+
+    termSlider.dispatchEvent(new Event('input'));
+  }
+});
