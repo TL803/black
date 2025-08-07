@@ -75,113 +75,6 @@
     box-shadow: 0 0 0 3px rgba(72, 134, 255, 0.2);
 }
 
-/* === Стили ползунка === */
-
-/* Заголовок и подзаголовок */
-.slider__title {
-    font-size: 26px;
-    margin-bottom: 10px;
-    text-align: center;
-    color: #ffffff;
-}
-
-.slider__subtitle {
-    margin-bottom: 30px;
-    text-align: center;
-    color: #B8B8B8;
-    font-size: 18px;
-}
-
-/* Поля ввода значений */
-.slider__field {
-    border: 2px solid #333;
-    border-radius: 8px;
-    font-size: 18px;
-    color: #fff;
-    background: #131417;
-    text-align: center;
-    outline: none;
-    transition: border-color 0.2s ease;
-}
-
-.slider__field:focus {
-    border-color: #4886FF;
-}
-
-/* Разделитель между полями */
-.slider__separator {
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 1;
-    margin-left: 10px;
-    margin-right: 10px;
-    color: #B8B8B8;
-}
-
-/* Основной контейнер ползунка */
-.slider__self {
-    width: 100%;
-    cursor: pointer;
-    height: 73px !important;
-    background-color: #1D1D21 !important;
-    border-radius: 100px !important;
-    margin-top: 30px;
-    overflow: hidden;
-    position: relative;
-    box-sizing: border-box;
-}
-
-/* Убедимся, что внутренняя основа тоже скруглена */
-.slider__self .noUi-target,
-.slider__self .noUi-base {
-    border-radius: 100px !important;
-}
-
-/* Активная часть (соединение между ползунками) */
-.slider__self .noUi-connect {
-    background-color: #19BC8D !important;
-    border-radius: 100px !important;
-    /* Всегда скруглённая */
-    height: 100% !important;
-    box-sizing: border-box;
-}
-
-/* Общие стили маркеров */
-.slider__self .noUi-handle {
-    cursor: pointer;
-    width: 65px !important;
-    height: 65px !important;
-    border-radius: 50%;
-    background-color: #1D1D21;
-    border: none;
-    box-shadow: none;
-    box-sizing: border-box;
-    transition: transform 0.2s ease;
-}
-
-/* Убираем дефолтные стрелки/линии в маркерах */
-.slider__self .noUi-handle::before,
-.slider__self .noUi-handle::after {
-    display: none !important;
-}
-
-/* Левый маркер (по позиции значения) */
-.slider__self .noUi-handle.left-handle {
-    top: 3px !important;
-    right: -75px !important;
-    background-color: #1D1D21;
-}
-
-/* Правый маркер (по позиции значения) */
-.slider__self .noUi-handle.right-handle {
-    top: 35px !important;
-    right: 10px !important;
-    transform: translateY(-50%) !important;
-    background-color: #1D1D21;
-}
-
-/* === Дополнительные стили: процентные метки === */
-
 
 
 
@@ -231,77 +124,6 @@
     background-repeat: no-repeat;
 }
 
-/* Стили для слайдера */
-.thick-blue-slider {
-    width: 100%;
-    margin: 20px 0;
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-    outline: none;
-    height: 58px;
-    /* Высота всего слайдера (важно для Firefox) */
-    overflow: hidden;
-    /* Чтобы обрезать тень и крайние эффекты */
-}
-
-.thick-blue-slider::-webkit-slider-runnable-track {
-    height: 58px;
-    background: linear-gradient(to right, #19BC8D 0%, #19BC8D var(--fill-percent, 50%), #13141766 var(--fill-percent, 50%), #13141766 100%);
-    border-radius: 100px !important;
-    cursor: pointer;
-}
-
-.thick-blue-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 50px;
-    height: 50px;
-    margin-top: 4px;
-    background: #1D1D21;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transform: translateX(-40px);
-}
-
-.thick-blue-slider::-webkit-slider-thumb::before {
-    content: attr(data-value);
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #1D1D21;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    white-space: nowrap;
-    pointer-events: none;
-}
-
-.thick-blue-slider::-moz-range-track {
-    height: 58px;
-    background: #13141766;
-    border-radius: 100px;
-    cursor: pointer;
-}
-
-.thick-blue-slider::-moz-range-progress {
-    height: 58px;
-    background: #19BC8D;
-    border-radius: 100px;
-}
-
-/* Firefox: ползунок */
-.thick-blue-slider::-moz-range-thumb {
-    width: 50px;
-    height: 50px;
-    background: #1D1D21;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-}
 
 @media (max-width: 1680px) {
     /* Контейнер */
@@ -465,3 +287,179 @@
     cursor: pointer;
 } */
 
+
+
+.slider-container {
+    position: relative;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.track {
+    width: 100%;
+    height: 0.5rem;
+    background-color: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #3b82f6;
+    border-radius: 999px;
+    transform-origin: left;
+    transition: transform 0.1s ease-out;
+}
+
+.custom-thumb {
+    position: absolute;
+    top: 50%;
+    left: 10%; /* Примерное положение — управляется JS */
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #3b82f6;
+    border: 2px solid white;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+}
+
+.custom-thumb:hover {
+    transform: translateX(-50%) translateY(-50%) scale(1.1);
+}
+
+
+
+.thick-blue-slider {
+    width: 100%;
+    height: 30px;
+    margin: 20px 0;
+    -webkit-appearance: none;
+    background: transparent;
+}
+
+.thick-blue-slider::-webkit-slider-runnable-track {
+    height: 30px !important;
+    background: linear-gradient(to right, #19BC8D 0%, #19BC8D var(--fill-percent, 50%), #13141742 var(--fill-percent, 50%), #13141742 100%);
+    border-radius: 15px;
+}
+
+.thick-blue-slider::-moz-range-track {
+    height: 35px;
+    background: linear-gradient(to right, #19BC8D 0%, #19BC8D var(--fill-percent, 50%), #ddd var(--fill-percent, 50%), #ddd 100%);
+    border-radius: 10px;
+}
+
+.thick-blue-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 45px;
+    height: 45px;
+    margin-top: -8px;
+    background: #19BC8D;
+    border: 1px solid #636363;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.thick-blue-slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4886FF;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+
+
+#price-slider {
+    width: 100%;
+    cursor: pointer;
+    height: 30px;
+    border-radius: 15px;
+   border: none;
+    border: 0;
+    outline: none;
+    outline-offset: 0;
+    box-shadow: none;
+    appearance: none;          /* Убирает системные стили (особенно важно для input, button, select) */
+    -webkit-appearance: none;  /* Для старых версий Safari */
+    -moz-appearance: none;     /* Для Firefox */
+    background: transparent;   /* Если нужно, чтобы фон не создавал визуальной рамки */
+    padding: 0;                /* Опционально: убрать внутренние отступы, если мешают */
+    margin: 0;                 /* Опционально */
+    font: inherit;             /* Чтобы стили шрифта не влияли на размеры */
+    line-height: normal;      
+    background-color: #13141742;
+    margin-top: 30px;
+}
+
+#price-slider .noUi-connect {
+    background-color: #19BC8D;
+}
+
+#price-slider .noUi-handle {
+    cursor: pointer;
+    height: 54px;
+    width: 54px;
+    top: -12px;
+    right: -9px;
+    border: 1px solid #636363;
+    border-radius: 50%;
+    box-shadow: none;
+    background-color: #19BC8D;
+    outline: none;
+}
+
+#price-slider .noUi-handle::after,
+#price-slider .noUi-handle::before {
+    display: none;
+}
+
+
+@media (max-width: 1680px) {
+
+    #price-slider {
+    height: 15px;
+}
+    #price-slider .noUi-handle {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    top: -8px;
+    right: -9px;
+    border: 1px solid #636363;
+    border-radius: 50%;
+    box-shadow: none;
+    background-color: #19BC8D;
+    outline: none;
+}
+
+
+.thick-blue-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    margin-top: -8px;
+    background: #19BC8D;
+    border: 1px solid #636363;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.thick-blue-slider::-webkit-slider-runnable-track {
+    height: 15px !important;
+    background: linear-gradient(to right, #19BC8D 0%, #19BC8D var(--fill-percent, 50%), #13141742 var(--fill-percent, 50%), #13141742 100%);
+    border-radius: 15px;
+}
+}

@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const slider = document.querySelector('.thick-blue-slider'); // первый слайдер (процент)
     const creditSlider = document.querySelector('.credit-slider'); // второй слайдер (срок кредита)
 
+    // === ВАЖНО: Проверяем, существуют ли элементы ===
     const percentValue = document.getElementById('percentValue');
     const amountValue = document.getElementById('amountValue');
     const loanTermElement = document.getElementById('loanTerm');
@@ -24,71 +25,106 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // === Обновление первого слайдера (процент и сумма) ===
     function updateSlider() {
+        if (!slider) return;
+
         const value = parseFloat(slider.value);
         const min = parseFloat(slider.min) || 0;
         const max = parseFloat(slider.max) || 100;
 
-        // Вычисляем процент заполнения
+        // Процент заполнения для стиля
         const percent = ((value - min) / (max - min)) * 100;
-
-        // Устанавливаем CSS-переменную для градиента
         slider.style.setProperty('--fill-percent', `${percent}%`);
 
-        // Обновляем отображение процента
-        const roundedPercent = Math.round(percent);
-        percentValue.textContent = `${roundedPercent}%`;
+        // Округлённое значение в процентах
+        const roundedPercent = Math.round(value); // value уже округляется через step
 
-        // Считаем сумму
-        const amount = propertyPrice * (percent / 100);
-        amountValue.textContent = formatNumber(Math.round(amount));
+        // Обновляем отображение процента, если элемент есть
+        if (percentValue) {
+            percentValue.textContent = `${roundedPercent} Лет`;
+        }
 
-        // Обновляем tooltip (data-value)
+        // Сумма первоначального взноса
+        const amount = propertyPrice * (roundedPercent / 100);
+        if (amountValue) {
+            amountValue.textContent = formatNumber(Math.round(amount));
+        }
+
+        // Tooltip
         slider.setAttribute('data-value', `${roundedPercent}%`);
     }
 
     // === Обновление второго слайдера (срок кредита) ===
     function updateCreditSlider() {
-        const years = parseInt(creditSlider.value);
+        if (!creditSlider) return;
 
-        // Базовый платёж при 15 годах — 400 000 ₽
-        const basePaymentAt15Years = 400_000;
-        const payment = Math.round(basePaymentAt15Years * 15 / years); // обратная пропорция
+        const years = parseInt(creditSlider.value, 10);
 
-        // Обновляем отображение срока
-        loanTermElement.textContent = `${years} ${getYearText(years)}`;
+        // Жёстко заданные значения ежемесячных платежей (в рублях)
+        const paymentMap = {
+            1: 6000000,
+            2: 3000000,
+            3: 2000000,
+            4: 1500000,
+            5: 1200000,
+            6: 1000000,
+            7: Math.round(6_000_000 / 7) // ≈ 857 143
+        };
+
+        const monthlyPayment = paymentMap[years] || 0;
+
+        // Обновляем отображение срока, если элемент существует
+        if (loanTermElement) {
+            loanTermElement.textContent = `${years} ${getYearText(years)}`;
+        }
 
         // Обновляем ежемесячный платёж
-        monthlyPaymentElement.textContent = formatNumber(payment);
+        if (monthlyPaymentElement) {
+            monthlyPaymentElement.textContent = formatNumber(monthlyPayment);
+        }
 
         // Обновляем tooltip
         creditSlider.setAttribute('data-value', `${years} ${getYearText(years)}`);
     }
 
-    // === Проверка наличия элементов ===
+    // === Инициализация первого слайдера (процент) ===
     if (!slider) {
         console.warn("Первый слайдер (.thick-blue-slider) не найден");
     } else {
-        // Инициализация data-value
+        slider.min = 0;
+        slider.max = 100;
+        slider.step = 10; // Шаг 10%
+        if (!slider.value) slider.value = 0;
+
+        // Инициализация tooltip
         slider.setAttribute('data-value', '0%');
         slider.addEventListener('input', updateSlider);
-        updateSlider(); // первоначальное обновление
+        updateSlider(); // начальное обновление
     }
 
+    // === Инициализация второго слайдера (срок кредита) ===
     if (!creditSlider) {
         console.warn("Второй слайдер (.credit-slider) не найден");
     } else {
-        // Устанавливаем data-value по умолчанию
-        const initialYears = creditSlider.value;
+        creditSlider.min = 1;
+        creditSlider.max = 7;
+        creditSlider.step = 1;
+        if (!creditSlider.value) creditSlider.value = 1;
+
+        // Устанавливаем начальное значение tooltip
+        const initialYears = parseInt(creditSlider.value, 10);
         creditSlider.setAttribute('data-value', `${initialYears} ${getYearText(initialYears)}`);
+
         creditSlider.addEventListener('input', updateCreditSlider);
-        updateCreditSlider(); // первоначальное обновление
+        updateCreditSlider(); // начальное обновление
     }
 
     // === Функция для программного изменения значения слайдера (опционально) ===
     window.setSliderValue = function (value) {
         if (slider) {
-            slider.value = value;
-            slider.dispatchEvent(new Event('input'));
+            const step = 10;
+            const roundedValue = Math.round(value / step) * step; // округляем к шагу
+            slider.value = Math.max(0, Math.min(100, roundedValue)); // в пределах 0–100
+            updateSlider();
         }
     };
 });

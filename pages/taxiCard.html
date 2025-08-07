@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 1. Подключаем шрифт Commissioner из Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- 2. Загружаем Tailwind CSS через CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 3. Настраиваем Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Commissioner', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                    },
+                    backgroundColor: {
+                        'custom': '#25262A',
+                    },
+                    colors: {
+                        primary: '#25262A',
+                        secondary: '#19BC8D',
+                        tertiary: '#D2D2D2',
+                        dark: '#13141770',
+                        white: '#ffffff'
+                    },
+                    screens: {
+                        md: '1680px'
+                    },
+                }
+            }
+        };
+    </script>
+
+    <style>
+        .container {
+            width: 1680px !important;
+            margin: auto;
+        }
+
+        .heading-1 {
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 68px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../styles/style.css">
+
+</head>
+
+<body class="bg-custom text-white font-sans">
+    <header class="container relative flex md:justify-between justify-end items-center mt-[60px]">
+        <nav class="md:flex hidden space-x-[32px]">
+            <a href="./" class="py-4 px-4 rounded-full text-tertiary">
+                <span class="font-medium">Главная</span>
+            </a>
+            <a href="./carloan.html" class="py-4 px-4 rounded-full text-tertiary"><span>Автокредит</span></a>
+            <a href="../TradeIn.html" class="py-4 px-4 rounded-full text-tertiary"><span>Trade-in</span></a>
+            <a href="./stock.html" class="py-4 px-4 rounded-full text-tertiary"><span>Акции</span></a>
+            <a href="./service.html" class="py-4 px-4 rounded-full text-tertiary"><span>Сервис</span></a>
+            <a href="./Leasing.html" class="py-4 px-4 rounded-full text-tertiary"><span>Лизинг</span></a>
+            <a href="./ransom.html" class="py-4 px-4 rounded-full text-tertiary"><span>Выкуп</span></a>
+            <a href="./taxiСar.html" class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary"><span>Авто под такси</span></a>
+            <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
+        </nav>
+
+        <!-- Контакты и кнопка -->
+        <div class="flex gap-[68px] md:flex hidden items-center">
+            <div>
+                <p class="text-white">+7 (999) 999-99-99</p>
+                <p class="text-white">ул. Юбилейная д.8 кв 6</p>
+            </div>
+            <button
+                class="bg-secondary showModalBox font-medium showModalBox text-primary px-[23px] py-[16px] rounded-full">
+                Обратная связь
+            </button>
+        </div>
+
+        <!-- Бургер-иконка -->
+        <div class="burger md:hidden flex items-center">
+            <img src="../assets/Бургер меню (2).svg" alt="Бургер меню" id="burgerMenu" class="cursor-pointer w-6 h-6">
+        </div>
+
+        <!-- Мобильное меню (60% ширины, справа) -->
+        <div id="mobileMenu"
+            class="fixed top-0 right-0 w-[60%] h-full bg-[#131417] z-50 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex flex-col h-full p-6 text-white">
+                <!-- Верхняя часть с крестиком -->
+                <div class="flex justify-between items-center mb-6">
+                    <button id="closeMenu"
+                        class="text-white text-2xl w-8 h-8 flex items-center justify-center">&times;</button>
+                </div>
+
+                <!-- Навигация с прокруткой -->
+                <nav class="flex-1 overflow-y-auto py-2">
+                    <ul class="space-y-4">
+                        <li><a href="./" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Главная</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./carloan.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Автокредит</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="../TradeIn.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Trade-in</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./stock.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Акции</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./service.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Сервис</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./Leasing.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Лизинг</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./ransom.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Выкуп</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./taxiСar.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Авто под
+                                такси</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./Contacts.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Контакты</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Футер (контакты) всегда внизу -->
+                <div class="pt-6 border-t border-gray-700 text-sm text-gray-300 mt-4">
+                    <p>+7 (999) 999-99-99</p>
+                    <p>ул. Юбилейная д.8 кв 6</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overlay (затемнение фона при открытом меню) -->
+        <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
+    </header>
+
+    <main class="container flex flex-col mb-[172px] gap-[80px]">
+        <section>
+            <div>
+                <h1 class="text-[36px] md:text-[96px] mb-[20px] mt-[80px]">Kaiyi X3 Pro</h1>
+                <p
+                    class="inline-block text-[12px] md:text-[20px] px-[10px] md:px-[55px] py-[4px] md:py-[16px] rounded-[32px] border border-[#19BC8D] bg-[#225045] mb-[60px]">
+                    Внедорожник
+                </p>
+            </div>
+            <div class="flex gap-[72px] mb-[80px]">
+                <div id='carImage'
+                    class="md:w-[1251px] md:h-[812px] w-full h-[228px] rounded-[24px] bg-[#131417] bg-cover bg-center"
+                    style="background-image: url('../assets/car_white.png');">
+                </div>
+                <div class=" flex-col gap-[58px] md:flex hidden">
+                    <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
+                    <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
+                    <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-[40px] mb-[80px]">
+                <div
+                    class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
+                    <div>
+                        <p class="text-[16px] md:text-[24px] text-[#19BC8D]">210 км/ч</p>
+                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
+                    </div>
+                    <img class="w-[60px] md:w-auto" src="../assets/--------- (1) 1.svg" alt="">
+                </div>
+                <div
+                    class="w-full md:w-max  inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
+                    <div>
+                        <p class="text-[16px] md:text-[24px] text-[#19BC8D]">7.9 сек.</p>
+                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
+                    </div>
+                    <img class="w-[60px] md:w-auto" src="../assets/-------------- 1.svg" alt="">
+                </div>
+                <div
+                    class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
+                    <div>
+                        <p class="text-[16px] md:text-[24px] text-[#19BC8D]">249 л.с.</p>
+                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
+                    </div>
+                    <img class="w-[60px] md:w-auto" src="../assets/------------------ (1) 1.svg" alt="">
+                </div>
+                <div
+                    class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
+                    <div>
+                        <p class="text-[16px] md:text-[24px] text-[#19BC8D]">9.9 л/100 км</p>
+                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
+                    </div>
+                    <img class="w-[60px] md:w-auto" src="../assets/------- 1.svg" alt="">
+                </div>
+            </div>
+
+
+            <div class="mb-[40px]">
+                <p class="md:text-[48px] text-[16px] line-through">1 959 900 ₽</p>
+                <p class="md:text-[96px] text-[32px] font-medium">960 000 ₽</p>
+            </div>
+
+            <button
+                class="w-full  bg-secondary py-[24px] rounded-[32px] showCreaditpopup text-[16px] md:text-[36px] font-medium text-primary mt-[30px]">Купить
+                в кредит</button>
+        </section>
+
+
+        <section>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
+                <div class="bg-[#1F2023] flex  p-4 justify-between items-end rounded-[32px]">
+                    <div class="flex space-x-4">
+                        <input type="checkbox" class="custom-checkbox">
+                        <div>
+                            <p class="text-[20px] md:text-[26px] font-medium ">Trade-in</p>
+                            <span class="text-[15px] md:text-[20px] text-white leading-tight">Стоимость вашего<br>
+                                авто и
+                                скидка</span>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-[20px] md:text-[32px] font-medium text-[#19BC8D]">80 000 ₽</p>
+                </div>
+                <div class="bg-[#1F2023] flex  p-4 justify-between items-end rounded-[32px]">
+                    <div class="flex space-x-4">
+                        <input type="checkbox" class="custom-checkbox">
+                        <div>
+                            <p class="text-[20px] md:text-[26px] font-medium ">Кредит</p>
+                            <span class="text-[15px] md:text-[20px] text-white leading-tight">Ставка 10% годовых<br>
+                                при взносе от
+                                10%</span>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-[20px] md:text-[32px] font-medium text-[#19BC8D]">70 000 ₽</p>
+                </div>
+                <div class="bg-[#1F2023] flex  p-4 justify-between items-end rounded-[32px]">
+                    <div class="flex space-x-4">
+                        <input type="checkbox" class="custom-checkbox">
+                        <div>
+                            <p class="text-[20px] md:text-[26px] font-medium ">Прямая скидка</p>
+                            <span class="text-[15px] md:text-[20px] text-white leading-tight">Скидка от нашего
+                                <br>автосалона</span>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-[20px] md:text-[32px] font-medium text-[#19BC8D]">50 000 ₽</p>
+                </div>
+
+            </div>
+
+        </section>
+        <section>
+            <div class="container mx-auto px-4 py-8">
+                <div class="flex justify-between mb-[72px] gap-[16px] md:gap-[32px]">
+                    <button id="tab-complectations"
+                        class="bg-[#13141770] w-full text-[#19BC8D] px-[25px] md:px-4 py-[16px] md:py-[18px] text-[12px] md:text-[32px] font-medium rounded-[14px] transition-colors">
+                        Комплектации
+                    </button>
+                    <button id="tab-specs"
+                        class="bg-[#13141770] w-full text-[#19BC8D] px-[25px]  md:px-4 py-[16px] md:py-[18px] text-[12px] md:text-[32px] font-medium rounded-[14px] transition-colors">
+                        Характеристики
+                    </button>
+                </div>
+
+                <div id="content-specs" class="content-section px-4 text-white">
+                    <div class="flex justify-between items-center mb-6 cursor-pointer md:cursor-auto md:block"
+                        data-toggle>
+                        <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D]">2.5 л. 6АКПП (180
+                            л.с.)
+                            FWD
+                        </h2>
+                        <div class="flex items-center md:hidden"> <!-- Стрелка только на мобильных -->
+                            <svg class="w-6 h-6 md:w-8 md:h-8 text-[#19BC8D] transition-transform duration-300"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                data-arrow>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="specs-content md:block">
+                        <div class="mb-10">
+                            <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Двигатель</h2>
+                            <div class="space-y-4">
+                                <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Объем двигателя,
+                                        л</p>
+                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2.5
+                                    </p>
+                                    <p
+                                        class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right hidden md:block">
+                                        2.0</p>
+                                </div>
+                                <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Рабочий объем,
+                                        см³</p>
+                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2497
+                                    </p>
+                                    <p
+                                        class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right hidden md:block">
+                                        1999</p>
+                                </div>
+                                <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип привода</p>
+                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">
+                                        Передний</p>
+                                    <p
+                                        class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right hidden md:block">
+                                        Передний</p>
+                                </div>
+                                <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Мощность, л.с.
+                                    </p>
+                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">180
+                                    </p>
+                                    <p
+                                        class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right hidden md:block">
+                                        150</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-10">
+                            <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Кузов</h2>
+                            <div class="space-y-4">
+                                <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Длина, мм</p>
+                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1860
+                                    </p>
+                                    <p
+                                        class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right hidden md:block">
+                                        1860</p>
+                                </div>
+                                <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Ширина, мм</p>
+                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1465
+                                    </p>
+                                    <p
+                                        class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right hidden md:block">
+                                        1465</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Эксплуатационные
+                                показатели</h2>
+                            <div class="space-y-4">
+                                <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива в
+                                        городе, л/100 км</p>
+                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">11.4
+                                    </p>
+                                    <p
+                                        class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right hidden md:block">
+                                        10.8</p>
+                                </div>
+                                <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива за
+                                        городом, л/100 км</p>
+                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">11.4
+                                    </p>
+                                    <p
+                                        class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right hidden md:block">
+                                        10.8</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div id="content-complectations" class="content-section hidden">
+                    <div class=" w-full">
+                        <div class=" mx-auto px-4 py-8 space-y-10">
+
+                            <div>
+                                <h2
+                                    class="text-xl md:text-4xl font-medium mb-6 text-[#19BC8D] text-center md:text-left">
+                                    2.5 л. 6АКПП (180 л.с.) FWD
+                                </h2>
+
+                                <details class="w-full group space-y-6 col-span-5">
+                                    <summary class="list-none">
+                                        <div
+                                            class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 items-center bg-[#13141770] p-4 md:p-[40px] rounded-[32px] cursor-pointer">
+                                            <div class="flex items-center justify-center md:justify-start gap-2">
+                                                <span class="font-semibold text-lg text-white">Active Plus New</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="transition-transform duration-300 group-open:rotate-180">
+                                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                                </svg>
+                                            </div>
+
+                                            <div class="text-right">
+                                                <span
+                                                    class="line-through text-lg text-gray-300 hidden md:block text-center">1
+                                                    489 000 ₽</span>
+                                            </div>
+
+                                            <div class="flex justify-center md:justify-start">
+                                                <span
+                                                    class="text-[#19BC8D] font-medium text-lg flex items-center gap-2">
+                                                    <span class="md:hidden line-through text-gray-400 text-sm">1 489 000
+                                                        ₽</span>
+                                                    от 633 000 ₽
+                                                </span>
+                                            </div>
+
+                                            <div class="text-center md:text-left">
+                                                <span class="text-white text-sm md:text-base showCreaditpopup">В кредит
+                                                    от 7 806 ₽/мес.</span>
+                                            </div>
+
+                                            <div class="flex gap-2 mt-2 md:mt-0 justify-center md:justify-end">
+                                                <button
+                                                    class="flex-1 max-w-[140px] bg-[#19BC8D] text-white py-3 rounded-[28px] showCreaditpopup font-medium text-sm credit-button">
+                                                    В кредит
+                                                </button>
+                                                <button
+                                                    class="flex-1 max-w-[140px] bg-[#25262A] py-3 rounded-[28px] text-[#19BC8D] font-medium text-sm">
+                                                    <a href="./TradeIn.html">Trade-in</a>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </summary>
+
+                                    <!-- Раскрывающийся блок с деталями — теперь тоже в стиле карточки -->
+                                    <div class="bg-[#13141770] rounded-[32px] p-4 md:p-[40px] mt-[-1px]">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 text-sm text-gray-300">
+                                            <div><strong class="text-white">Безопасность:</strong></div>
+                                            <div></div>
+                                            <div>• Подушка безопасности водителя</div>
+                                            <div>• Подушка безопасности пассажира</div>
+                                            <div>• Боковые подушки</div>
+                                            <div>• Система стабилизации (ESP)</div>
+                                            <div>• Антиблокировочная система (ABS)</div>
+                                            <div>• ISOFIX</div>
+
+                                            <div class="mt-4"><strong class="text-white">Комфорт:</strong></div>
+                                            <div></div>
+                                            <div>• Климат-контроль</div>
+                                            <div>• Мультимедиа с экраном</div>
+                                            <div>• Подогрев сидений</div>
+                                            <div>• Электропакет</div>
+
+                                            <div class="mt-4"><strong class="text-white">Экстерьер:</strong></div>
+                                            <div></div>
+                                            <div>• Противотуманные фары</div>
+                                            <div>• Светодиодные фары</div>
+                                            <div>• Рейлинги на крыше</div>
+                                            <div>• Окраска «металлик»</div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
+
+                                <details class="w-full group space-y-6 col-span-5">
+                                    <summary class="list-none">
+                                        <div
+                                            class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 items-center bg-[#13141770] p-4 md:p-[40px] rounded-[32px] cursor-pointer">
+                                            <div class="flex items-center justify-center md:justify-start gap-2">
+                                                <span class="font-semibold text-lg text-white">Active Plus New</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="transition-transform duration-300 group-open:rotate-180">
+                                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                                </svg>
+                                            </div>
+
+                                            <div class="text-right">
+                                                <span
+                                                    class="line-through text-lg text-gray-300 hidden md:block text-center">1
+                                                    489 000 ₽</span>
+                                            </div>
+
+                                            <div class="flex justify-center md:justify-start">
+                                                <span
+                                                    class="text-[#19BC8D] font-medium text-lg flex items-center gap-2">
+                                                    <span class="md:hidden line-through text-gray-400 text-sm">1 489 000
+                                                        ₽</span>
+                                                    от 633 000 ₽
+                                                </span>
+                                            </div>
+
+                                            <div class="text-center md:text-left">
+                                                <span class="text-white text-sm md:text-base showCreaditpopup">В кредит
+                                                    от 7 806 ₽/мес.</span>
+                                            </div>
+
+                                            <div class="flex gap-2 mt-2 md:mt-0 justify-center md:justify-end">
+                                                <button
+                                                    class="flex-1 max-w-[140px] bg-[#19BC8D] text-white py-3 rounded-[28px] showCreaditpopup font-medium text-sm credit-button">
+                                                    В кредит
+                                                </button>
+                                                <button
+                                                    class="flex-1 max-w-[140px] bg-[#25262A] py-3 rounded-[28px] text-[#19BC8D] font-medium text-sm">
+                                                    <a href="./TradeIn.html">Trade-in</a>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </summary>
+
+                                    <!-- Раскрывающийся блок с деталями — теперь тоже в стиле карточки -->
+                                    <div class="bg-[#13141770] rounded-[32px] p-4 md:p-[40px] mt-[-1px]">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 text-sm text-gray-300">
+                                            <div><strong class="text-white">Безопасность:</strong></div>
+                                            <div></div>
+                                            <div>• Подушка безопасности водителя</div>
+                                            <div>• Подушка безопасности пассажира</div>
+                                            <div>• Боковые подушки</div>
+                                            <div>• Система стабилизации (ESP)</div>
+                                            <div>• Антиблокировочная система (ABS)</div>
+                                            <div>• ISOFIX</div>
+
+                                            <div class="mt-4"><strong class="text-white">Комфорт:</strong></div>
+                                            <div></div>
+                                            <div>• Климат-контроль</div>
+                                            <div>• Мультимедиа с экраном</div>
+                                            <div>• Подогрев сидений</div>
+                                            <div>• Электропакет</div>
+
+                                            <div class="mt-4"><strong class="text-white">Экстерьер:</strong></div>
+                                            <div></div>
+                                            <div>• Противотуманные фары</div>
+                                            <div>• Светодиодные фары</div>
+                                            <div>• Рейлинги на крыше</div>
+                                            <div>• Окраска «металлик»</div>
+                                        </div>
+                                    </div>
+                                </details>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="text-[32px] md:text-[64px] font-bold mt-[68px] md:mt-[132px] mb-[68px]">Спецпредложения</h2>
+            <div id="products-block" class="flex flex-row flex-wrap gap-[12px] md:gap-[30px]">
+
+            </div>
+        </section>
+    </main>
+    <footer class="bg-[#2A2B2F] text-white py-12">
+        <div class="container mx-auto px-6">
+            <!-- Основная секция: карта и информация -->
+            <div class="flex flex-col md:flex-row gap-8 mb-10">
+                <!-- Карта -->
+                <div class="w-full md:w-1/3">
+                    <div class="rounded-xl overflow-hidden shadow-lg transform transition hover:shadow-xl">
+                        <iframe
+                            src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa1e5d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9&amp;source=constructor"
+                            width="100%" height="220" frameborder="0" allowfullscreen="true"
+                            aria-label="Карта расположения компании" style="border: none; border-radius: 12px;">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Информация -->
+                <div class="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
+                    <!-- Адрес -->
+                    <div>
+                        <h3 class="text-xl font-normal text-gray-300 mb-2">Адрес</h3>
+                        <p class="text-2xl font-medium leading-tight">
+                            г. Москва,<br>
+                            Кулакова, вл. 24, корп. 3, Москва
+                        </p>
+                    </div>
+
+                    <!-- График работы -->
+                    <div>
+                        <h3 class="text-xl font-normal text-gray-300 mb-2">График работы</h3>
+                        <p class="text-2xl font-medium">
+                            Ежедневно<br>
+                            с 9:00 до 21:00
+                        </p>
+                    </div>
+
+                    <!-- Контакты -->
+                    <div>
+                        <h3 class="text-xl font-normal text-gray-300 mb-2">Контакты</h3>
+                        <a href="tel:+79999999999"
+                            class="text-2xl font-medium hover:text-secondary transition duration-200">
+                            +7 (495) 778-98-50
+                        </a>
+                    </div>
+
+                    <!-- Обратная связь -->
+                    <div class="flex items-end">
+                        <button
+                            class="bg-secondary text-primary px-6 py-3 rounded-full font-medium hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50 transition-all duration-200 shadow-md hover:shadow-lg">
+                            Обратная связь
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Нижний блок: копирайт и реквизиты -->
+            <div class="border-t  pt-6 mt-6 text-xs text-gray-500 space-y-2">
+                <p>&copy; 2025 ООО «Техинком-Авто». Все права защищены.</p>
+                <p>
+                    Юридический адрес: ул. Кулакова, вл. 24, корп. 3, Москва<br>
+                    ОГРН: 1176952010180 | ИНН: 6950207759
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="../script/main.js" type="module"></script>
+
+    <!-- <script src="./showProducts.js"></script>
+    <script src="./tabs.js"></script> -->
+    <script src="../script/burger.js"></script>
+    <script src="../script/ChangeColors.js"></script>
+
+    <script src="../script/showProducts.js"></script>
+    <script src="../script/tabs.js"></script>
+    <script src="../script/showCharaptersDetails.js"></script>
+</body>
+
+</html>

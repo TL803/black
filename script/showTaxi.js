@@ -2,7 +2,7 @@ const body = document.body;
 
 function createTaxi(atPosition) {
   const taxi = document.createElement('img');
-  taxi.src = '../assets/Frame 262.png';
+  taxi.src = '../assets/Group 1.png';
   taxi.className = 'absolute w-full z-[-1] pointer-events-none';
   
   taxi.style.top = `${atPosition}px`;
@@ -41,7 +41,7 @@ window.addEventListener('scroll', () => {
 document.addEventListener('DOMContentLoaded', () => {
   if (document.body.scrollHeight >= FIRST_POSITION) {
     const firstTaxi = document.createElement('img');
-    firstTaxi.src = '../assets/Frame 262.png';
+    firstTaxi.src = '../assets/Group 1.png';
     firstTaxi.className = 'absolute w-full z-[-1] pointer-events-none';
     firstTaxi.style.top = `${FIRST_POSITION}px`;
     firstTaxi.style.left = '0';
