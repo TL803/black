@@ -350,38 +350,6 @@
         </div>
     </footer>
 
-    <!-- Скрипт: показываем контент после заполнения первой формы -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('firstForm');
-            const hiddenSections = document.getElementById('hiddenSections');
-
-            // Скрываем весь последующий контент
-            hiddenSections.classList.add('hidden');
-
-            // Обработка отправки формы
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                const brand = form.querySelector('[name="brand"]').value;
-                const model = form.querySelector('[name="model"]').value;
-                const trim = form.querySelector('[name="trim"]').value;
-
-                if (!brand || !model || !trim) {
-                    alert('Пожалуйста, выберите марку, модель и комплектацию');
-                    return;
-                }
-
-                // Показываем скрытые секции
-                hiddenSections.classList.remove('hidden');
-
-                // Плавная прокрутка к следующему блоку
-                hiddenSections.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
-
-    <!-- Подключение скриптов -->
     <script src="../script/burger.js"></script>
     <script src="../script/showCar.js"></script>
     <script src="../script/doubleSidedRange.js"></script>
