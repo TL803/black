@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,6 +40,7 @@
             width: 1680px !important;
             margin: auto;
         }
+
         .heading-1 {
             font-size: 64px;
             font-weight: 600;
@@ -58,20 +60,21 @@
             background: transparent;
             outline: none;
         }
+
         .thick-blue-slider::-webkit-slider-runnable-track {
             height: 30px;
             border-radius: 15px;
-            background: linear-gradient(
-              to right,
-              #19BC8D var(--progress, 0%),
-              #13141742 var(--progress, 0%)
-            );
+            background: linear-gradient(to right,
+                    #19BC8D var(--progress, 0%),
+                    #13141742 var(--progress, 0%));
         }
+
         .thick-blue-slider::-moz-range-track {
             height: 30px;
             border-radius: 15px;
             background: #13141742;
         }
+
         .thick-blue-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
@@ -84,6 +87,7 @@
             cursor: pointer;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
         }
+
         .thick-blue-slider::-moz-range-thumb {
             width: 45px;
             height: 45px;
@@ -93,8 +97,22 @@
             cursor: pointer;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
         }
+
+        @media (max-width: 1680px) {
+            .thick-blue-slider::-webkit-slider-thumb {
+                width: 25px;
+                height: 25px;
+                margin-top: -5.5px;
+                background: #19BC8D;
+                border: 1px solid #636363;
+                border-radius: 50%;
+                cursor: pointer;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            }
+        }
     </style>
 </head>
+
 <body class="bg-custom text-white font-sans">
     <header class="container relative flex md:justify-between justify-end items-center mt-[60px]">
         <nav class="md:flex hidden space-x-[32px]">
@@ -143,20 +161,16 @@
                                 class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Trade-in</a>
                             <hr class="border-t border-[#19BC8D33] my-2">
                         </li>
-                        <li><a href="./stock.html"
-                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Акции</a>
+                        <li><a href="./stock.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Акции</a>
                             <hr class="border-t border-[#19BC8D33] my-2">
                         </li>
-                        <li><a href="./service.html"
-                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Сервис</a>
+                        <li><a href="./service.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Сервис</a>
                             <hr class="border-t border-[#19BC8D33] my-2">
                         </li>
-                        <li><a href="./Leasing.html"
-                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Лизинг</a>
+                        <li><a href="./Leasing.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Лизинг</a>
                             <hr class="border-t border-[#19BC8D33] my-2">
                         </li>
-                        <li><a href="./ransom.html"
-                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Выкуп</a>
+                        <li><a href="./ransom.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Выкуп</a>
                             <hr class="border-t border-[#19BC8D33] my-2">
                         </li>
                         <li><a href="./taxiСar.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Авто
@@ -203,8 +217,7 @@
                     <option value="lux">Люкс</option>
                     <option value="premium">Премиум</option>
                 </select>
-                <button
-                    class="text-[16px] md:text-[36px] bg-[#19BC8D66] rounded-[32px] py-[12px] md:py-[32px]">
+                <button class="text-[16px] md:text-[36px] bg-[#19BC8D66] rounded-[32px] py-[12px] md:py-[32px]">
                     Применить
                 </button>
             </form>
@@ -270,7 +283,8 @@
                     <div class="mb-[100px]">
                         <div class="flex overflow-x-auto md:overflow-visible pb-2 md:pb-0 gap-[8px] md:gap-[40px] scrollbar-hide"
                             style="scrollbar-width: none; -ms-overflow-style: none;">
-                            <div id="colorContainer" class="flex md:flex-wrap gap-[8px] md:gap-[40px] min-w-max md:min-w-0">
+                            <div id="colorContainer"
+                                class="flex md:flex-wrap gap-[8px] md:gap-[40px] min-w-max md:min-w-0">
                             </div>
                         </div>
                     </div>
@@ -284,10 +298,13 @@
                     action="">
                     <h2 class="text-[18px] md:text-[48px] font-medium"> 2. Условия </h2>
                     <input type="range" class="thick-blue-slider block w-full" id="downPaymentSlider" min="100000"
-                        max="6000000" value="500000" step="100000">    
-                    <div class="flex justify-between items-center text-xs md:text-sm font-medium mt-2 md:mt-4 mb-4 md:mb-6">
-                        <div class="bg-[#131417] text-gray-600 px-4 md:px-8 py-2 md:py-4 w-full text-center rounded-[50px] shadow-sm">
-                            <span class="text-[12px] md:text-[18px]  text-[#19BC8D]" id="downPaymentValue">500 000 ₽</span>
+                        max="6000000" value="500000" step="100000">
+                    <div
+                        class="flex justify-between items-center text-xs md:text-sm font-medium mt-2 md:mt-4 mb-4 md:mb-6">
+                        <div
+                            class="bg-[#131417] text-gray-600 px-4 md:px-8 py-2 md:py-4 w-full text-center rounded-[50px] shadow-sm">
+                            <span class="text-[12px] md:text-[18px]  text-[#19BC8D]" id="downPaymentValue">500 000
+                                ₽</span>
                         </div>
                         <div
                             class="bg-[#131417] text-gray-600 px-4 md:px-8 py-2 md:py-4 rounded-[50px] shadow-sm opacity-0 pointer-events-none">
@@ -297,7 +314,8 @@
                     <input type="range" class="thick-blue-slider block w-full" id="termSlider" min="1" max="7" value="6"
                         step="1">
                     <div class="flex justify-between items-center text-sm font-medium mt-4">
-                        <div class="bg-[#131417] text-[#19BC8D] w-full text-center px-4 md:px-8 py-2 md:py-4 rounded-[50px] shadow-sm">
+                        <div
+                            class="bg-[#131417] text-[#19BC8D] w-full text-center px-4 md:px-8 py-2 md:py-4 rounded-[50px] shadow-sm">
                             <span class="text-[14px]" id="termValue">6 лет</span>
                         </div>
                         <div
@@ -320,7 +338,8 @@
                     <input class="custom-select" placeholder="Ваш номер телефона" type="text">
                     <div class="flex gap-[12px] md:gap-[44px]">
                         <input type="checkbox" class="custom-checkbox">
-                        <label class="text-[10px] w-[280px] md:text-[16px] md:w-auto" for="">Я соглашаюсь с условиями и даю
+                        <label class="text-[10px] w-[280px] md:text-[16px] md:w-auto" for="">Я соглашаюсь с условиями и
+                            даю
                             свое согласие на обработкуи использование моих
                             персональных данных, и разрешаю сделать запрос<br class="hidden md:flex">
                             в бюро кредитных историй</label>
@@ -396,4 +415,5 @@
     <script src="../script/selectedOption.js"></script>
     <script src="../script/showDetails.js"></script>
 </body>
+
 </html>
