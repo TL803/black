@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <!-- 1. Подключаем шрифт Commissioner из Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
-
     <!-- 2. Загружаем Tailwind CSS через CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
     <!-- 3. Настраиваем Tailwind -->
     <script>
         tailwind.config = {
@@ -38,27 +34,67 @@
             }
         };
     </script>
-
     <style>
         .container {
             width: 1680px !important;
             margin: auto;
         }
-
         .heading-1 {
             font-size: 64px;
             font-weight: 600;
             line-height: 68px;
         }
     </style>
-
-
     <link rel="stylesheet" href="../styles/style.css">
     <!-- Подключаем стили и скрипт NoUiSlider через CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+    <style>
+        .thick-blue-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 30px;
+            background: transparent;
+            outline: none;
+        }
+        .thick-blue-slider::-webkit-slider-runnable-track {
+            height: 30px;
+            border-radius: 15px;
+            background: linear-gradient(
+              to right,
+              #19BC8D var(--progress, 0%),
+              #13141742 var(--progress, 0%)
+            );
+        }
+        .thick-blue-slider::-moz-range-track {
+            height: 30px;
+            border-radius: 15px;
+            background: #13141742;
+        }
+        .thick-blue-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 45px;
+            height: 45px;
+            margin-top: -7.5px;
+            background: #19BC8D;
+            border: 1px solid #636363;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+        .thick-blue-slider::-moz-range-thumb {
+            width: 45px;
+            height: 45px;
+            background: #19BC8D;
+            border: 1px solid #636363;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
-
 <body class="bg-custom text-white font-sans">
     <header class="container relative flex md:justify-between justify-end items-center mt-[60px]">
         <nav class="md:flex hidden space-x-[32px]">
@@ -75,7 +111,6 @@
             <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
             <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
         </nav>
-
         <div class="flex gap-[68px] md:flex hidden items-center">
             <div>
                 <p class="text-white">+7 (999) 999-99-99</p>
@@ -85,72 +120,68 @@
                 Обратная связь
             </button>
         </div>
-
         <div class="burger md:hidden flex items-center">
             <img src="../assets/Бургер меню (2).svg" alt="Бургер меню" id="burgerMenu" class="cursor-pointer w-6 h-6">
         </div>
-
-            <div id="mobileMenu"
-                class="fixed top-0 right-0 w-[60%] h-full bg-[#131417] z-50 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
-                <div class="flex flex-col h-full p-6 text-white">
-                    <div class="flex justify-between items-center mb-6">
-                        <button id="closeMenu"
-                            class="text-white text-2xl w-8 h-8 flex items-center justify-center">&times;</button>
-                    </div>
-
-                    <nav class="flex-1 overflow-y-auto py-2">
-                        <ul class="space-y-4">
-                            <li><a href="./" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Главная</a>
-                                <hr class="border-t border-[#19BC8D33] my-2">
-                            </li>
-                            <li><a href="./carloan.html"
-                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Автокредит</a>
-                                <hr class="border-t border-[#19BC8D33] my-2">
-                            </li>
-                            <li><a href="./TradeIn.html"
-                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Trade-in</a>
-                                <hr class="border-t border-[#19BC8D33] my-2">
-                            </li>
-                            <li><a href="./stock.html"
-                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Акции</a>
-                                <hr class="border-t border-[#19BC8D33] my-2">
-                            </li>
-                            <li><a href="./service.html"
-                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Сервис</a>
-                                <hr class="border-t border-[#19BC8D33] my-2">
-                            </li>
-                            <li><a href="./Leasing.html"
-                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Лизинг</a>
-                                <hr class="border-t border-[#19BC8D33] my-2">
-                            </li>
-                            <li><a href="./ransom.html"
-                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Выкуп</a>
-                                <hr class="border-t border-[#19BC8D33] my-2">
-                            </li>
-                            <li><a href="./taxiСar.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Авто
-                                    под такси</a>
-                                <hr class="border-t border-[#19BC8D33] my-2">
-                            </li>
-                            <li><a href="./Contacts.html"
-                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Контакты</a></li>
-                        </ul>
-                    </nav>
-
-                    <div class="pt-6 border-t border-gray-700 text-sm text-gray-300 mt-4">
-                        <p class="text-[18px] font-bold text-white">+7 (999) 999-99-99</p>
-                        <p>ул. Юбилейная д.8 кв 6</p>
-                    </div>
+        <div id="mobileMenu"
+            class="fixed top-0 right-0 w-[60%] h-full bg-[#131417] z-50 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex flex-col h-full p-6 text-white">
+                <div class="flex justify-between items-center mb-6">
+                    <button id="closeMenu"
+                        class="text-white text-2xl w-8 h-8 flex items-center justify-center">&times;</button>
+                </div>
+                <nav class="flex-1 overflow-y-auto py-2">
+                    <ul class="space-y-4">
+                        <li><a href="./" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Главная</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./carloan.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Автокредит</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./TradeIn.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Trade-in</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./stock.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Акции</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./service.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Сервис</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./Leasing.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Лизинг</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./ransom.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Выкуп</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./taxiСar.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Авто
+                                под такси</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./Contacts.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="pt-6 border-t border-gray-700 text-sm text-gray-300 mt-4">
+                    <p class="text-[18px] font-bold text-white">+7 (999) 999-99-99</p>
+                    <p>ул. Юбилейная д.8 кв 6</p>
                 </div>
             </div>
-
+        </div>
         <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
     </header>
 
     <main class="container flex flex-col mb-[172px]">
         <h1 class="text-[36px] md:text-[96px] mt-[24px]  md:mt-[80px]">Лизинг </h1>
 
-        <section class="mt-[60px]">
-            <form
+        <!-- Первая форма выбора автомобиля -->
+        <section id="form1">
+            <form id="firstForm"
                 class="md:p-[40px] bg-[#25262A] md:px-[92px] md:py-[100px] rounded-[24px] bg-[#1314171F] md:bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px] mb-[60px]"
                 action="">
                 <h2 class="text-[20px] md:text-[24px] md:text-[48px] font-medium">1. Выберите автомобиль</h2>
@@ -159,159 +190,149 @@
                     <option value="bmw">BMW</option>
                     <option value="audi">Audi</option>
                     <option value="mercedes">Mercedes-Benz</option>
-                </select> <select class="custom-select brand" name="brand">
-                    <option value="" disabled selected>Модель</option>
-                    <option value="bmw">BMW</option>
-                    <option value="audi">Audi</option>
-                    <option value="mercedes">Mercedes-Benz</option>
-                </select> <select class="custom-select brand" name="brand">
-                    <option value="" disabled selected>Комплектация</option>
-                    <option value="bmw">BMW</option>
-                    <option value="audi">Audi</option>
-                    <option value="mercedes">Mercedes-Benz</option>
                 </select>
-
+                <select class="custom-select brand" name="model">
+                    <option value="" disabled selected>Модель</option>
+                    <option value="x5">X5</option>
+                    <option value="a4">A4</option>
+                    <option value="e-class">E-Class</option>
+                </select>
+                <select class="custom-select brand" name="trim">
+                    <option value="" disabled selected>Комплектация</option>
+                    <option value="base">Базовая</option>
+                    <option value="lux">Люкс</option>
+                    <option value="premium">Премиум</option>
+                </select>
                 <button
-                    class="text-[16px] md:text-[36px] bg-[#19BC8D66] rounded-[32px] py-[12px] md:py-[32px]">Применить</button>
-            </form>
-        </section>
-
-
-        <section>
-            <div>
-                <h1 class="text-[36px] md:text-[96px] mb-[20px] md:mt-[80px]">Kaiyi X3 Pro</h1>
-                <p
-                    class="inline-block text-[12px] md:text-[20px] px-[10px] md:px-[55px] py-[4px] md:py-[16px] rounded-[32px] border border-[#19BC8D] bg-[#225045] mb-[60px]">
-                    Внедорожник
-                </p>
-            </div>
-            <div class="flex gap-[72px] mb-[80px]">
-
-                <div id='carImage'
-                    class="md:w-[1251px] md:h-[812px] w-full h-[228px] rounded-[24px] bg-[#131417] bg-cover bg-center"
-                    style="background-image: url('../assets/car_white.png');">
-                </div>
-                <div class=" flex-col gap-[58px] md:flex hidden">
-                    <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
-                    <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
-                    <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
-                </div>
-            </div>
-
-            <div class="flex flex-wrap gap-[40px] mb-[80px]">
-                <div
-                    class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
-                    <div>
-                        <p class="text-[16px] md:text-[24px] text-[#19BC8D]">210 км/ч</p>
-                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
-                    </div>
-                    <img class="w-[60px] md:w-auto" src="../assets/--------- (1) 1.svg" alt="">
-                </div>
-                <div
-                    class="w-full md:w-max  inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
-                    <div>
-                        <p class="text-[16px] md:text-[24px] text-[#19BC8D]">7.9 сек.</p>
-                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
-                    </div>
-                    <img class="w-[60px] md:w-auto" src="../assets/-------------- 1.svg" alt="">
-                </div>
-                <div
-                    class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
-                    <div>
-                        <p class="text-[16px] md:text-[24px] text-[#19BC8D]">249 л.с.</p>
-                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
-                    </div>
-                    <img class="w-[60px] md:w-auto" src="../assets/------------------ (1) 1.svg" alt="">
-                </div>
-                <div
-                    class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
-                    <div>
-                        <p class="text-[16px] md:text-[24px] text-[#19BC8D]">9.9 л/100 км</p>
-                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
-                    </div>
-                    <img class="w-[60px] md:w-auto" src="../assets/------- 1.svg" alt="">
-                </div>
-            </div>
-
-            <div class="mb-[100px]">
-                <p class="text-[20px] md:text-[32px] mb-[32px]">Цвет</p>
-                <div class="mb-[100px]">
-                    <div class="flex overflow-x-auto md:overflow-visible pb-2 md:pb-0 gap-[8px] md:gap-[40px] scrollbar-hide"
-                        style="scrollbar-width: none; -ms-overflow-style: none;">
-                        <div id="colorContainer" class="flex md:flex-wrap gap-[8px] md:gap-[40px] min-w-max md:min-w-0">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-[40px]">
-                <p class="md:text-[48px] text-[16px] line-through">1 959 900 ₽</p>
-                <p class="md:text-[96px] text-[32px] font-medium">960 000 ₽</p>
-            </div>
-
-            <form
-                class="p-4 md:p-[20px] md:px-[92px] md:py-[100px] rounded-[24px] md:bg-[#1314171F] flex flex-col gap-8 md:gap-[60px] mb-[120px]"
-                action="">
-
-                <h2 class="text-[18px] md:text-[48px] font-medium"> 2. Условия </h2>
-
-            <input type="range" class="thick-blue-slider block w-full" id="downPaymentSlider" min="100000"
-                    max="6000000" value="500000" step="100000">    
-
-                <div class="flex justify-between items-center text-xs md:text-sm font-medium mt-2 md:mt-4 mb-4 md:mb-6">
-                    <div class="bg-[#131417] text-gray-600 px-4 md:px-8 py-2 md:py-4 w-full text-center rounded-[50px] shadow-sm">
-                        <span class="text-[12px] md:text-[18px]  text-[#19BC8D]" id="downPaymentValue">500 000 ₽</span>
-                    </div>
-                    <div
-                        class="bg-[#131417] text-gray-600 px-4 md:px-8 py-2 md:py-4 rounded-[50px] shadow-sm opacity-0 pointer-events-none">
-                        <span></span>
-                    </div>
-                </div>
-
-
-
-                <input type="range" class="thick-blue-slider block w-full" id="termSlider" min="1" max="7" value="6"
-                    step="1">
-
-                <div class="flex justify-between items-center text-sm font-medium mt-4">
-                    <div class="bg-[#131417] text-[#19BC8D] w-full text-center px-4 md:px-8 py-2 md:py-4 rounded-[50px] shadow-sm">
-                        <span class="text-[14px]" id="termValue">6 лет</span>
-                    </div>
-                    <div
-                        class="bg-[#131417] text-[#19BC8D] px-4 md:px-8 py-2 md:py-4 rounded-[50px] shadow-sm opacity-0 pointer-events-none">
-                        <span></span>
-                    </div>
-                </div>
-
-
-                <button type="button"
-                    class="text-[16px] md:text-[36px] bg-[#19BC8D66] rounded-[32px] py-4 md:py-[32px]">
+                    class="text-[16px] md:text-[36px] bg-[#19BC8D66] rounded-[32px] py-[12px] md:py-[32px]">
                     Применить
                 </button>
             </form>
-
-
         </section>
-        <section>
-            <form
-                class=" md:px-[92px] md:py-[100px] rounded-[24px] md:bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px] "
-                action="">
-                <h2 class="text-[20px] md:text-[48px] font-medium"> 3. Введите ваши данные</h2>
-                <input class="custom-select" placeholder="ФИО" type="text">
-                <input class="custom-select" placeholder="Ваш номер телефона" type="text">
-                <div class="flex gap-[12px] md:gap-[44px]">
-                    <input type="checkbox" class="custom-checkbox">
-                    <label class="text-[10px] w-[280px] md:text-[16px] md:w-auto" for="">Я соглашаюсь с условиями и даю
-                        свое согласие на обработкуи использование моих
-                        персональных данных, и разрешаю сделать запрос<br class="hidden md:flex">
-                        в бюро кредитных историй</label>
+
+        <!-- Все остальные секции — будут скрыты до отправки первой формы -->
+        <div id="hiddenSections" class="hidden">
+            <section>
+                <div>
+                    <h1 class="text-[36px] md:text-[96px] mb-[20px] md:mt-[80px]">Kaiyi X3 Pro</h1>
+                    <p
+                        class="inline-block text-[12px] md:text-[20px] px-[10px] md:px-[55px] py-[4px] md:py-[16px] rounded-[32px] border border-[#19BC8D] bg-[#225045] mb-[60px]">
+                        Внедорожник
+                    </p>
                 </div>
-                <button
-                    class="w-full bg-secondary py-[24px] rounded-[32px] text-[16px] md:text-[36px] font-medium text-primary mt-[30px]">Отправить
-                    заявку</button>
-            </form>
-        </section>
+                <div class="flex gap-[72px] mb-[80px]">
+                    <div id='carImage'
+                        class="md:w-[1251px] md:h-[812px] w-full h-[228px] rounded-[24px] bg-[#131417] bg-cover bg-center"
+                        style="background-image: url('../assets/car_white.png');">
+                    </div>
+                    <div class="flex-col gap-[58px] md:flex hidden">
+                        <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
+                        <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
+                        <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-[40px] mb-[80px]">
+                    <div
+                        class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
+                        <div>
+                            <p class="text-[16px] md:text-[24px] text-[#19BC8D]">210 км/ч</p>
+                            <p class="text-[16px] md:text-[20px]">Cкорость</p>
+                        </div>
+                        <img class="w-[60px] md:w-auto" src="../assets/--------- (1) 1.svg" alt="">
+                    </div>
+                    <div
+                        class="w-full md:w-max  inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
+                        <div>
+                            <p class="text-[16px] md:text-[24px] text-[#19BC8D]">7.9 сек.</p>
+                            <p class="text-[16px] md:text-[20px]">Cкорость</p>
+                        </div>
+                        <img class="w-[60px] md:w-auto" src="../assets/-------------- 1.svg" alt="">
+                    </div>
+                    <div
+                        class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
+                        <div>
+                            <p class="text-[16px] md:text-[24px] text-[#19BC8D]">249 л.с.</p>
+                            <p class="text-[16px] md:text-[20px]">Cкорость</p>
+                        </div>
+                        <img class="w-[60px] md:w-auto" src="../assets/------------------ (1) 1.svg" alt="">
+                    </div>
+                    <div
+                        class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
+                        <div>
+                            <p class="text-[16px] md:text-[24px] text-[#19BC8D]">9.9 л/100 км</p>
+                            <p class="text-[16px] md:text-[20px]">Cкорость</p>
+                        </div>
+                        <img class="w-[60px] md:w-auto" src="../assets/------- 1.svg" alt="">
+                    </div>
+                </div>
+                <div class="mb-[100px]">
+                    <p class="text-[20px] md:text-[32px] mb-[32px]">Цвет</p>
+                    <div class="mb-[100px]">
+                        <div class="flex overflow-x-auto md:overflow-visible pb-2 md:pb-0 gap-[8px] md:gap-[40px] scrollbar-hide"
+                            style="scrollbar-width: none; -ms-overflow-style: none;">
+                            <div id="colorContainer" class="flex md:flex-wrap gap-[8px] md:gap-[40px] min-w-max md:min-w-0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-[40px]">
+                    <p class="md:text-[48px] text-[16px] line-through">1 959 900 ₽</p>
+                    <p class="md:text-[96px] text-[32px] font-medium">960 000 ₽</p>
+                </div>
+                <form
+                    class="p-4 md:p-[20px] md:px-[92px] md:py-[100px] rounded-[24px] md:bg-[#1314171F] flex flex-col gap-8 md:gap-[60px] mb-[120px]"
+                    action="">
+                    <h2 class="text-[18px] md:text-[48px] font-medium"> 2. Условия </h2>
+                    <input type="range" class="thick-blue-slider block w-full" id="downPaymentSlider" min="100000"
+                        max="6000000" value="500000" step="100000">    
+                    <div class="flex justify-between items-center text-xs md:text-sm font-medium mt-2 md:mt-4 mb-4 md:mb-6">
+                        <div class="bg-[#131417] text-gray-600 px-4 md:px-8 py-2 md:py-4 w-full text-center rounded-[50px] shadow-sm">
+                            <span class="text-[12px] md:text-[18px]  text-[#19BC8D]" id="downPaymentValue">500 000 ₽</span>
+                        </div>
+                        <div
+                            class="bg-[#131417] text-gray-600 px-4 md:px-8 py-2 md:py-4 rounded-[50px] shadow-sm opacity-0 pointer-events-none">
+                            <span></span>
+                        </div>
+                    </div>
+                    <input type="range" class="thick-blue-slider block w-full" id="termSlider" min="1" max="7" value="6"
+                        step="1">
+                    <div class="flex justify-between items-center text-sm font-medium mt-4">
+                        <div class="bg-[#131417] text-[#19BC8D] w-full text-center px-4 md:px-8 py-2 md:py-4 rounded-[50px] shadow-sm">
+                            <span class="text-[14px]" id="termValue">6 лет</span>
+                        </div>
+                        <div
+                            class="bg-[#131417] text-[#19BC8D] px-4 md:px-8 py-2 md:py-4 rounded-[50px] shadow-sm opacity-0 pointer-events-none">
+                            <span></span>
+                        </div>
+                    </div>
+                    <button type="button"
+                        class="text-[16px] md:text-[36px] bg-[#19BC8D66] rounded-[32px] py-4 md:py-[32px]">
+                        Применить
+                    </button>
+                </form>
+            </section>
+            <section>
+                <form
+                    class=" md:px-[92px] md:py-[100px] rounded-[24px] md:bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px] "
+                    action="">
+                    <h2 class="text-[20px] md:text-[48px] font-medium"> 3. Введите ваши данные</h2>
+                    <input class="custom-select" placeholder="ФИО" type="text">
+                    <input class="custom-select" placeholder="Ваш номер телефона" type="text">
+                    <div class="flex gap-[12px] md:gap-[44px]">
+                        <input type="checkbox" class="custom-checkbox">
+                        <label class="text-[10px] w-[280px] md:text-[16px] md:w-auto" for="">Я соглашаюсь с условиями и даю
+                            свое согласие на обработкуи использование моих
+                            персональных данных, и разрешаю сделать запрос<br class="hidden md:flex">
+                            в бюро кредитных историй</label>
+                    </div>
+                    <button
+                        class="w-full bg-secondary py-[24px] rounded-[32px] text-[16px] md:text-[36px] font-medium text-primary mt-[30px]">Отправить
+                        заявку</button>
+                </form>
+            </section>
+        </div>
     </main>
+
     <footer class="bg-[#2A2B2F] text-white py-12">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row gap-8 mb-10">
@@ -324,7 +345,6 @@
                         </iframe>
                     </div>
                 </div>
-
                 <div class="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
                     <div>
                         <h3 class="text-xl font-normal text-gray-300 mb-2">Адрес</h3>
@@ -333,7 +353,6 @@
                             Кулакова, вл. 24, корп. 3, Москва
                         </p>
                     </div>
-
                     <div>
                         <h3 class="text-xl font-normal text-gray-300 mb-2">График работы</h3>
                         <p class="text-2xl font-medium">
@@ -341,7 +360,6 @@
                             с 9:00 до 21:00
                         </p>
                     </div>
-
                     <div>
                         <h3 class="text-xl font-normal text-gray-300 mb-2">Контакты</h3>
                         <a href="tel:+79999999999"
@@ -349,7 +367,6 @@
                             +7 (495) 778-98-50
                         </a>
                     </div>
-
                     <div class="flex items-end">
                         <button
                             class="bg-secondary showModalBox text-primary px-6 py-3 rounded-full font-medium hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50 transition-all duration-200 shadow-md hover:shadow-lg">
@@ -358,7 +375,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="border-t  pt-6 mt-6 text-xs text-gray-500 space-y-2">
                 <p>&copy; 2025 ООО «Техинком-Авто». Все права защищены.</p>
                 <p>
@@ -369,65 +385,44 @@
         </div>
     </footer>
 
+    <!-- Скрипт: показываем контент после заполнения первой формы -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('firstForm');
+            const hiddenSections = document.getElementById('hiddenSections');
 
+            // Скрываем все последующие секции
+            hiddenSections.classList.add('hidden');
+
+            // Обработка отправки формы
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const brand = form.querySelector('[name="brand"]').value;
+                const model = form.querySelector('[name="model"]').value;
+                const trim = form.querySelector('[name="trim"]').value;
+
+                if (!brand || !model || !trim) {
+                    alert('Пожалуйста, заполните все поля');
+                    return;
+                }
+
+                // Показываем скрытые секции
+                hiddenSections.classList.remove('hidden');
+
+                // Плавная прокрутка к следующему блоку
+                hiddenSections.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    <!-- Подключение скриптов -->
     <script src="../script/burger.js"></script>
     <script type="module" src="../script/main.js"></script>
     <script type="module" src="../script/LeasingSliders.js"></script>
     <script src="../script/showCar.js"></script>
-
     <script src="../script/ChangeColors.js"></script>
     <script src="../script/selectedOption.js"></script>
     <script src="../script/showDetails.js"></script>
-
-<style>
-  .thick-blue-slider {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 30px;
-    background: transparent;
-    outline: none;
-  }
-
-  .thick-blue-slider::-webkit-slider-runnable-track {
-    height: 30px;
-    border-radius: 15px;
-    background: linear-gradient(
-      to right,
-      #19BC8D var(--progress, 0%),
-      #13141742 var(--progress, 0%)
-    );
-  }
-
-  .thick-blue-slider::-moz-range-track {
-    height: 30px;
-    border-radius: 15px;
-    background: #13141742;
-  }
-
-  .thick-blue-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 45px;
-    height: 45px;
-    margin-top: -7.5px;
-    background: #19BC8D;
-    border: 1px solid #636363;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  }
-
-  .thick-blue-slider::-moz-range-thumb {
-    width: 45px;
-    height: 45px;
-    background: #19BC8D;
-    border: 1px solid #636363;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  }
-</style>
 </body>
-
 </html>
