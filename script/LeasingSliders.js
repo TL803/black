@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (termSlider && termValue) {
+    termSlider.min = 1;
+    termSlider.max = 8;
+
     termSlider.addEventListener('input', function () {
       const term = parseInt(this.value);
       termValue.textContent = `${term} ${getYearWord(term)}`;

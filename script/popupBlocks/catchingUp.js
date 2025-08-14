@@ -99,7 +99,7 @@ const initGlobalModal = () => {
     consentCheckbox.innerHTML = `
         <span class="inline-block relative mt-1">
             <input 
-                type="checkbox" 
+                type="checkbox" checked
                 class="custom-checkbox w-5 h-5 sm:w-6 sm:h-6 accent-[#19BC8D] rounded" 
                 required
             >

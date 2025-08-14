@@ -225,7 +225,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
                 <div class="bg-[#1F2023] flex  p-4 justify-between items-end rounded-[32px]">
                     <div class="flex space-x-4">
-                        <input type="checkbox" class="custom-checkbox">
+                        <input type="checkbox" checked class="custom-checkbox">
                         <div>
                             <p class="text-[20px] md:text-[26px] font-medium ">Trade-in</p>
                             <span class="text-[15px] md:text-[20px] text-white leading-tight">Стоимость вашего<br>
@@ -237,7 +237,7 @@
                 </div>
                 <div class="bg-[#1F2023] flex  p-4 justify-between items-end rounded-[32px]">
                     <div class="flex space-x-4">
-                        <input type="checkbox" class="custom-checkbox">
+                        <input type="checkbox" checked class="custom-checkbox">
                         <div>
                             <p class="text-[20px] md:text-[26px] font-medium ">Кредит</p>
                             <span class="text-[15px] md:text-[20px] text-white leading-tight">Ставка 10% годовых<br>
@@ -249,7 +249,7 @@
                 </div>
                 <div class="bg-[#1F2023] flex  p-4 justify-between items-end rounded-[32px]">
                     <div class="flex space-x-4">
-                        <input type="checkbox" class="custom-checkbox">
+                        <input type="checkbox" checked class="custom-checkbox">
                         <div>
                             <p class="text-[20px] md:text-[26px] font-medium ">Прямая скидка</p>
                             <span class="text-[15px] md:text-[20px] text-white leading-tight">Скидка от нашего
@@ -401,7 +401,7 @@
                                         <div
                                             class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 items-center bg-[#13141770] p-4 md:p-[40px] rounded-[32px] cursor-pointer">
                                             <div class="flex items-center justify-center md:justify-start gap-2">
-                                                <span class="font-semibold text-lg text-white">Active Plus New</span>
+                                                <span class="font-semibold text-xl text-white">Active Plus New</span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -412,13 +412,13 @@
 
                                             <div class="text-right">
                                                 <span
-                                                    class="line-through text-lg text-gray-300 hidden md:block text-center">1
+                                                    class="line-through text-xl text-gray-300 hidden md:block text-center">1
                                                     489 000 ₽</span>
                                             </div>
 
                                             <div class="flex justify-center md:justify-start">
                                                 <span
-                                                    class="text-[#19BC8D] font-medium text-lg flex items-center gap-2">
+                                                    class="text-[#19BC8D] font-medium text-xl flex items-center gap-2">
                                                     <span class="md:hidden line-through text-gray-400 text-sm">1 489 000
                                                         ₽</span>
                                                     от 633 000 ₽
@@ -426,7 +426,7 @@
                                             </div>
 
                                             <div class="text-center md:text-left">
-                                                <span class="text-white text-sm md:text-base showCreaditpopup">В кредит
+                                                <span class="text-white text-xl md:text-base showCreaditpopup">В кредит
                                                     от 7 806 ₽/мес.</span>
                                             </div>
 
@@ -560,62 +560,67 @@
             </div>
         </section>
     </main>
-    <footer class="bg-[#2A2B2F] text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row gap-8 mb-10">
-                <div class="w-full md:w-1/3">
-                    <div class="rounded-xl overflow-hidden shadow-lg transform transition hover:shadow-xl">
-                        <iframe
-                            src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa1e5d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9d8f9&amp;source=constructor"
-                            width="100%" height="220" frameborder="0" allowfullscreen="true"
-                            aria-label="Карта расположения компании" style="border: none; border-radius: 12px;">
-                        </iframe>
-                    </div>
-                </div>
-
-                <div class="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
-                    <div>
-                        <h3 class="text-xl font-normal text-gray-300 mb-2">Адрес</h3>
-                        <p class="text-2xl font-medium leading-tight">
-                            г. Москва,<br>
-                            Кулакова, вл. 24, корп. 3, Москва
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-xl font-normal text-gray-300 mb-2">График работы</h3>
-                        <p class="text-2xl font-medium">
-                            Ежедневно<br>
-                            с 9:00 до 21:00
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-xl font-normal text-gray-300 mb-2">Контакты</h3>
-                        <a href="tel:+79999999999"
-                            class="text-2xl font-medium hover:text-secondary transition duration-200">
-                            +7 (495) 778-98-50
-                        </a>
-                    </div>
-
-                    <div class="flex items-end">
-                        <button
-                            class="bg-secondary showModalBox text-primary px-6 py-3 rounded-full font-medium hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50 transition-all duration-200 shadow-md hover:shadow-lg">
-                            Обратная связь
-                        </button>
-                    </div>
+<footer class="bg-[#2A2B2F] text-white py-8 md:py-12">
+    <div class="container mx-auto px-4 sm:px-6">
+        <div class="flex flex-col lg:flex-row gap-6 md:gap-8 mb-8 md:mb-10">
+            <!-- Карта -->
+            <div class="w-full lg:w-1/3">
+                <div class="rounded-xl overflow-hidden shadow-lg transform transition hover:shadow-xl">
+                    <iframe
+                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A3a1f6d8e7e3f3b8e5e8e3b8e5e8e3b8e5e8e3b8e5e8e3b8e5e8e3b8e5e8e3b8d&mode=search&text=ул.%20Кулакова,%20вл.%2024,%20корп.%203&ll=37.4035%2C55.8256&z=17"
+                        class="w-full h-[250px] sm:h-[300px] md:min-h-[320px] border border-gray-300 rounded-[14px] " 
+                        frameborder="0" 
+                        title="Яндекс.Карта"
+                        loading="lazy">
+                    </iframe>
                 </div>
             </div>
-
-            <div class="border-t  pt-6 mt-6 text-xs text-gray-500 space-y-2">
-                <p>&copy; 2025 ООО «Техинком-Авто». Все права защищены.</p>
-                <p>
-                    Юридический адрес: ул. Кулакова, вл. 24, корп. 3, Москва<br>
-                    ОГРН: 1176952010180 | ИНН: 6950207759
-                </p>
+            
+            <!-- Информация -->
+            <div class="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-4 md:gap-y-6">
+                <div>
+                    <h3 class="text-base md:text-xl font-normal text-gray-300 mb-1 md:mb-2">Адрес</h3>
+                    <p class="text-lg md:text-2xl font-medium leading-tight">
+                        г. Москва,<br>
+                        Кулакова, вл. 24, корп. 3
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-base md:text-xl font-normal text-gray-300 mb-1 md:mb-2">График работы</h3>
+                    <p class="text-lg md:text-2xl font-medium leading-tight">
+                        Ежедневно<br>
+                        с 9:00 до 21:00
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-base md:text-xl font-normal text-gray-300 mb-1 md:mb-2">Контакты</h3>
+                    <a href="tel:+79999999999"
+                        class="text-lg md:text-2xl font-medium hover:text-secondary transition duration-200 block">
+                        +7 (495) 778-98-50
+                    </a>
+                </div>
+                
+                <div class="flex items-end">
+                    <button
+                        class="bg-secondary showModalBox text-primary px-4 py-2 md:px-6 md:py-3 rounded-full font-medium hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50 transition-all duration-200 shadow-md hover:shadow-lg w-full sm:w-auto text-base md:text-lg">
+                        Обратная связь
+                    </button>
+                </div>
             </div>
         </div>
-    </footer>
+        
+        <!-- Нижняя часть -->
+        <div class="border-t border-gray-700 pt-4 md:pt-6 mt-4 md:mt-6 text-xs text-gray-500 space-y-1 md:space-y-2">
+            <p>&copy; 2025 ООО «Техинком-Авто». Все права защищены.</p>
+            <p class="text-xs">
+                Юридический адрес: ул. Кулакова, вл. 24, корп. 3, Москва<br>
+                ОГРН: 1176952010180 | ИНН: 6950207759
+            </p>
+        </div>
+    </div>
+</footer>
     <script src="../script/main.js" type="module"></script>
 
     <script src="../script/burger.js"></script>

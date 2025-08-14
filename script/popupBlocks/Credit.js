@@ -47,10 +47,10 @@ const initGlobalModal = () => {
     consentCheckbox.className = 'flex items-center space-x-[44px]';
     consentCheckbox.innerHTML = `
         <span class="inline-block relative">
-            <input type="checkbox" class="custom-checkbox" required>
+            <input type="checkbox" checked class="custom-checkbox" required>
         </span>
         <span class="text-[11px] md:text-[20px]">
-            Я соглашаюсь с условиями и даю свое согласие на обработку моих персональных данных, и разрешаю сделать запрос в бюро кредитных историй
+            я согласен с политикой обработки персональных данных
         </span>
     `;
 

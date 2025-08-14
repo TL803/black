@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const sliderElement = document.getElementById('price-slider');
     if (sliderElement) {
         noUiSlider.create(sliderElement, {
-            start: [500000, 2500000],
+            start: [100000, 2500000],
             connect: true,
             step: 100000, // <-- Шаг 100 000
             range: {
-                min: 500000,
+                min: 100000,
                 max: 2500000
             },
             format: {
