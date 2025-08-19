@@ -44,7 +44,7 @@ const initGlobalModal = () => {
             <input type="checkbox" checked class="custom-checkbox" required>
         </span>
         <span class="text-[11px] md:text-[20px]">
-            я согласен с политикой обработки персональных данных
+            я согласен с <a href="./Privacy-policy.html" class="text-[#19BC8D] underline">политикой обработки персональных данных</a>
         </span>
     `;
 

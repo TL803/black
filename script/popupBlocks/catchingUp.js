@@ -104,9 +104,8 @@ const initGlobalModal = () => {
                 required
             >
         </span>
-        <span class="text-[11px] sm:text-[13px] md:text-[16px] lg:text-[20px] text-gray-200 leading-tight break-words">
-            Я соглашаюсь с условиями и даю своё согласие на обработку моих персональных данных, 
-            и разрешаю сделать запрос в бюро кредитных историй
+      <span class="text-[11px] md:text-[20px]">
+            я согласен с <a href="./Privacy-policy.html" class="text-[#19BC8D] underline">политикой обработки персональных данных</a>
         </span>
     `;
 

@@ -1,8 +1,6 @@
-// Получаем элементы
 const colorsContainer = document.getElementById('colorContainer');
 const carImage = document.getElementById('carImage');
 
-// Цвета, которые будут отображаться
 const differentColors = [
     { color: "#FFFFFF", name: "Белый" },
     { color: "#161313", name: "Чёрный" },

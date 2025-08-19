@@ -15,7 +15,7 @@
             <div class="flex gap-[68px] md:flex hidden items-center">
                 <div>
                     <p class="text-white">+7 (999) 999-99-99</p>
-                    <p class="text-white">ул. Юбилейная д.8 кв 6</p>
+                    <p class="text-white">г. Москва, ул. Кулакова, вл. 24к3</p>
                 </div>
                 <button class="bg-secondary font-medium text-primary px-[23px] py-[16px] rounded-full">
                     Обратная связь
