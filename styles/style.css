@@ -47,7 +47,8 @@
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-top: 8px solid #B8B8B8; /* Цвет стрелки */
+    border-top: 8px solid #B8B8B8;
+    /* Цвет стрелки */
 }
 
 .custom-select.has-value {
@@ -126,6 +127,7 @@
 
 
 @media (max-width: 1680px) {
+
     /* Контейнер */
     .container {
         width: 354px !important;
@@ -248,7 +250,7 @@
         height: 14px;
     }
 
-    .slider__self .noUi-handle.right-handle{
+    .slider__self .noUi-handle.right-handle {
         top: 25px !important;
     }
 }
@@ -320,7 +322,8 @@
 .custom-thumb {
     position: absolute;
     top: 50%;
-    left: 10%; /* Примерное положение — управляется JS */
+    left: 10%;
+    /* Примерное положение — управляется JS */
     width: 1.5rem;
     height: 1.5rem;
     background-color: #3b82f6;
@@ -387,19 +390,26 @@
     cursor: pointer;
     height: 30px;
     border-radius: 15px;
-   border: none;
+    border: none;
     border: 0;
     outline: none;
     outline-offset: 0;
     box-shadow: none;
-    appearance: none;          /* Убирает системные стили (особенно важно для input, button, select) */
-    -webkit-appearance: none;  /* Для старых версий Safari */
-    -moz-appearance: none;     /* Для Firefox */
-    background: transparent;   /* Если нужно, чтобы фон не создавал визуальной рамки */
-    padding: 0;                /* Опционально: убрать внутренние отступы, если мешают */
-    margin: 0;                 /* Опционально */
-    font: inherit;             /* Чтобы стили шрифта не влияли на размеры */
-    line-height: normal;      
+    appearance: none;
+    /* Убирает системные стили (особенно важно для input, button, select) */
+    -webkit-appearance: none;
+    /* Для старых версий Safari */
+    -moz-appearance: none;
+    /* Для Firefox */
+    background: transparent;
+    /* Если нужно, чтобы фон не создавал визуальной рамки */
+    padding: 0;
+    /* Опционально: убрать внутренние отступы, если мешают */
+    margin: 0;
+    /* Опционально */
+    font: inherit;
+    /* Чтобы стили шрифта не влияли на размеры */
+    line-height: normal;
     background-color: #13141742;
     margin-top: 30px;
 }
@@ -430,39 +440,71 @@
 @media (max-width: 1680px) {
 
     #price-slider {
-    height: 15px;
-}
+        height: 15px;
+    }
+
     #price-slider .noUi-handle {
-    cursor: pointer;
-    height: 30px;
-    width: 30px;
-    top: -8px;
-    right: -9px;
-    border: 1px solid #636363;
-    border-radius: 50%;
-    box-shadow: none;
-    background-color: #19BC8D;
-    outline: none;
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        top: -8px;
+        right: -9px;
+        border: 1px solid #636363;
+        border-radius: 50%;
+        box-shadow: none;
+        background-color: #19BC8D;
+        outline: none;
+    }
+
+
+    .thick-blue-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 30px;
+        height: 30px;
+        margin-top: -8px;
+        background: #19BC8D;
+        border: 1px solid #636363;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .thick-blue-slider::-webkit-slider-runnable-track {
+        height: 15px !important;
+        background: linear-gradient(to right, #19BC8D 0%, #19BC8D var(--fill-percent, 50%), #13141742 var(--fill-percent, 50%), #13141742 100%);
+        border-radius: 15px;
+    }
 }
 
 
-.thick-blue-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 30px;
-    height: 30px;
-    margin-top: -8px;
-    background: #19BC8D;
-    border: 1px solid #636363;
-    border-radius: 50%;
-    cursor: pointer;
+
+
+
+
+#specs-scroll-container {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
-.thick-blue-slider::-webkit-slider-runnable-track {
-    height: 15px !important;
-    background: linear-gradient(to right, #19BC8D 0%, #19BC8D var(--fill-percent, 50%), #13141742 var(--fill-percent, 50%), #13141742 100%);
-    border-radius: 15px;
-}
+#specs-scroll-container::-webkit-scrollbar {
+    display: none;
 }
 
+#specs-scroll-container .flex-shrink-0 {
+    scroll-snap-align: start;
+}
 
+details>summary {
+    list-style: none;
+}
 
+details>summary::-webkit-details-marker {
+    display: none;
+}
+
+.select-none,
+.select-none * {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
