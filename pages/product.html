@@ -74,7 +74,7 @@
 
         <div class="flex gap-[68px] md:flex hidden items-center">
             <div>
-                <p class="text-white">+7 (999) 999-99-99</p>
+                <a href="tel:+74951168260" class="text-white ">+7 (495) 116-82-60</a>
                 <p class="text-white">г. Москва, ул. Кулакова, вл. 24к3</p>
             </div>
             <button
@@ -130,7 +130,7 @@
                 </nav>
 
                 <div class="pt-6 border-t border-gray-700 text-sm text-gray-300 mt-4">
-                    <p class="text-[18px] font-bold text-white">+7 (999) 999-99-99</p>
+                    <a href="tel:+74951168260" class="text-[18px] font-bold text-white">+7 (495) 116-82-60</a>
                     <p>г. Москва, ул. Кулакова, вл. 24к3</p>
                 </div>
             </div>
@@ -170,7 +170,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="flex flex-wrap gap-[40px] mb-[80px]">
                 <div
                     class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
@@ -221,42 +221,50 @@
 
         <section>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
-                <div class="bg-[#1F2023] flex  p-4 justify-between items-end rounded-[32px]">
+                <!-- Trade-in -->
+                <div class="bg-[#1F2023] flex p-4 justify-between items-end rounded-[32px]" data-calc-option="trade-in">
                     <div class="flex space-x-4">
-                        <input type="checkbox" checked class="custom-checkbox">
+                        <input type="checkbox" class="custom-checkbox">
                         <div>
-                            <p class="text-[20px] md:text-[26px] font-medium ">Trade-in</p>
-                            <span class="text-[15px] md:text-[20px] text-white leading-tight">Стоимость вашего<br>
-                                авто и
+                            <p class="text-[20px] md:text-[26px] font-medium">Trade-in</p>
+                            <span class="text-[15px] md:text-[20px] text-white leading-tight">Стоимость вашего<br>авто и
                                 скидка</span>
                         </div>
                     </div>
-                    <p class="mt-2 text-[20px] md:text-[32px] font-medium text-[#19BC8D]">80 000 ₽</p>
-                </div>
-                <div class="bg-[#1F2023] flex  p-4 justify-between items-end rounded-[32px]">
-                    <div class="flex space-x-4">
-                        <input type="checkbox" checked class="custom-checkbox">
-                        <div>
-                            <p class="text-[20px] md:text-[26px] font-medium ">Кредит</p>
-                            <span class="text-[15px] md:text-[20px] text-white leading-tight">Ставка 10% годовых<br>
-                                при взносе от
-                                10%</span>
-                        </div>
-                    </div>
-                    <p class="mt-2 text-[20px] md:text-[32px] font-medium text-[#19BC8D]">70 000 ₽</p>
-                </div>
-                <div class="bg-[#1F2023] flex  p-4 justify-between items-end rounded-[32px]">
-                    <div class="flex space-x-4">
-                        <input type="checkbox" checked class="custom-checkbox">
-                        <div>
-                            <p class="text-[20px] md:text-[26px] font-medium ">Прямая скидка</p>
-                            <span class="text-[15px] md:text-[20px] text-white leading-tight">Скидка от нашего
-                                <br>автосалона</span>
-                        </div>
-                    </div>
-                    <p class="mt-2 text-[20px] md:text-[32px] font-medium text-[#19BC8D]">50 000 ₽</p>
+                    <p class="mt-2 text-[20px] md:text-[32px] font-medium text-[#19BC8D]" data-price>80 000 ₽</p>
                 </div>
 
+                <!-- Кредит -->
+                <div class="bg-[#1F2023] flex p-4 justify-between items-end rounded-[32px]" data-calc-option="credit">
+                    <div class="flex space-x-4">
+                        <input type="checkbox" class="custom-checkbox">
+                        <div>
+                            <p class="text-[20px] md:text-[26px] font-medium">Кредит</p>
+                            <span class="text-[15px] md:text-[20px] text-white leading-tight">Ставка 10% годовых<br>при
+                                взносе от 10%</span>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-[20px] md:text-[32px] font-medium text-[#19BC8D]" data-price>70 000 ₽</p>
+                </div>
+
+                <!-- Прямая скидка -->
+                <div class="bg-[#1F2023] flex p-4 justify-between items-end rounded-[32px]" data-calc-option="discount">
+                    <div class="flex space-x-4">
+                        <input type="checkbox" class="custom-checkbox">
+                        <div>
+                            <p class="text-[20px] md:text-[26px] font-medium">Прямая скидка</p>
+                            <span class="text-[15px] md:text-[20px] text-white leading-tight">Скидка от
+                                нашего<br>автосалона</span>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-[20px] md:text-[32px] font-medium text-[#19BC8D]" data-price>50 000 ₽</p>
+                </div>
+
+                 <div class="flex gap-[24px]">
+                <p class="text-[24px]">
+                Итоговая выгода <p id="total-amount" class="text-[24px] text-[#19BC8D] font-bold">0 ₽</p>
+                </p>
+                </div>
             </div>
 
         </section>
@@ -273,113 +281,279 @@
                     </button>
                 </div>
 
-                <div id="content-specs" class="content-section px-4 text-white">
-                    <div class="flex justify-between items-center mb-6 cursor-pointer md:cursor-auto md:block"
-                        data-toggle>
-                        <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D]">2.5 л. 6АКПП (180
-                            л.с.)
-                            FWD
-                        </h2>
-                        <div class="flex items-center md:hidden">
-                            <svg class="w-6 h-6 md:w-8 md:h-8 text-[#19BC8D] transition-transform duration-300"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                data-arrow>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </div>
-                    </div>
+<div id="content-specs" class="content-section px-4 text-white">
+  <!-- Горизонтальный скролл всех модификаций (заголовок + контент) -->
+  <div class="mods-container flex space-x-6 overflow-x-auto pb-8 scrollbar-thin scrollbar-thumb-[#19BC8D] scrollbar-track-transparent snap-x snap-mandatory" style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
+    
+    <!-- Модификация 1 -->
+    <div class="mod-card flex-shrink-0 w-80 md:w-96 snap-start bg-[#13141770]/[30%] rounded-3xl p-6 flex flex-col" id="mod-1">
+      <!-- Заголовок -->
+      <div class="flex flex-col items-center mb-6">
+        <h2 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] text-center leading-tight">
+          2.5 л. 6АКПП (180 л.с.) FWD
+        </h2>
+      </div>
 
-                    <div class="specs-content md:block">
-                        <div class="mb-10">
-                            <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Двигатель</h2>
-                            <div class="space-y-4">
-                                <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
-                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Объем двигателя,
-                                        л</p>
-                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2.5
-                                    </p>
-                                    <p
-                                        class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right hidden md:block">
-                                        2.0</p>
-                                </div>
-                                <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
-                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Рабочий объем,
-                                        см³</p>
-                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2497
-                                    </p>
-                                    <p
-                                        class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right hidden md:block">
-                                        1999</p>
-                                </div>
-                                <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
-                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип привода</p>
-                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">
-                                        Передний</p>
-                                    <p
-                                        class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right hidden md:block">
-                                        Передний</p>
-                                </div>
-                                <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
-                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Мощность, л.с.
-                                    </p>
-                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">180
-                                    </p>
-                                    <p
-                                        class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right hidden md:block">
-                                        150</p>
-                                </div>
-                            </div>
-                        </div>
+      <!-- Характеристики -->
+      <div class="specs-content space-y-6 flex-grow">
+        <div>
+          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Двигатель</h3>
+          <div class="space-y-3">
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Объем двигателя, л</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">2.5</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Рабочий объем, см³</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">2497</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Тип привода</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">Передний</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Мощность, л.с.</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">180</p>
+            </div>
+          </div>
+        </div>
 
-                        <div class="mb-10">
-                            <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Кузов</h2>
-                            <div class="space-y-4">
-                                <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
-                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Длина, мм</p>
-                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1860
-                                    </p>
-                                    <p
-                                        class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right hidden md:block">
-                                        1860</p>
-                                </div>
-                                <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
-                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Ширина, мм</p>
-                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1465
-                                    </p>
-                                    <p
-                                        class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right hidden md:block">
-                                        1465</p>
-                                </div>
-                            </div>
-                        </div>
+        <div>
+          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Кузов</h3>
+          <div class="space-y-3">
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Длина, мм</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">1860</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Ширина, мм</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">1465</p>
+            </div>
+          </div>
+        </div>
 
-                        <div>
-                            <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Эксплуатационные
-                                показатели</h2>
-                            <div class="space-y-4">
-                                <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
-                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива в
-                                        городе, л/100 км</p>
-                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">11.4
-                                    </p>
-                                    <p
-                                        class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right hidden md:block">
-                                        10.8</p>
-                                </div>
-                                <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
-                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива за
-                                        городом, л/100 км</p>
-                                    <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">11.4
-                                    </p>
-                                    <p
-                                        class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right hidden md:block">
-                                        10.8</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div>
+          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Эксплуатация</h3>
+          <div class="space-y-3">
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Город, л/100 км</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">11.4</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">За городом, л/100 км</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">11.4</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модификация 2 -->
+    <div class="mod-card flex-shrink-0 w-80 md:w-96 snap-start bg-[#13141770]/[30%] rounded-3xl p-6 flex flex-col" id="mod-2">
+      <div class="flex flex-col items-center mb-6">
+        <h2 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] text-center leading-tight">
+          2.0 л. 6АКПП (150 л.с.) FWD
+        </h2>
+      </div>
+      <div class="specs-content space-y-6 flex-grow">
+        <div>
+          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Двигатель</h3>
+          <div class="space-y-3">
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Объем двигателя, л</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">2.0</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Рабочий объем, см³</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">1999</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Тип привода</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">Передний</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Мощность, л.с.</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">150</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Кузов</h3>
+          <div class="space-y-3">
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Длина, мм</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">1860</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Ширина, мм</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">1465</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Эксплуатация</h3>
+          <div class="space-y-3">
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Город, л/100 км</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">10.8</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">За городом, л/100 км</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">7.2</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модификация 3 -->
+    <div class="mod-card flex-shrink-0 w-80 md:w-96 snap-start bg-[#13141770]/[30%] rounded-3xl p-6 flex flex-col" id="mod-3">
+      <div class="flex flex-col items-center mb-6">
+        <h2 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] text-center leading-tight">
+          1.8 л. CVT (140 л.с.) FWD
+        </h2>
+      </div>
+      <div class="specs-content space-y-6 flex-grow">
+        <div>
+          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Двигатель</h3>
+          <div class="space-y-3">
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Объем двигателя, л</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">1.8</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Рабочий объем, см³</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">1798</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Тип привода</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">Передний</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Мощность, л.с.</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">140</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Кузов</h3>
+          <div class="space-y-3">
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Длина, мм</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">1840</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Ширина, мм</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">1450</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Эксплуатация</h3>
+          <div class="space-y-3">
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Город, л/100 км</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">9.6</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">За городом, л/100 км</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">6.8</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модификация 8 (гибрид) -->
+    <div class="mod-card flex-shrink-0 w-80 md:w-96 snap-start bg-[#13141770]/[30%] rounded-3xl p-6 flex flex-col" id="mod-8">
+      <div class="flex flex-col items-center mb-6">
+        <h2 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] text-center leading-tight">
+          2.5 л. Hybrid (210 л.с.) AWD
+        </h2>
+      </div>
+      <div class="specs-content space-y-6 flex-grow">
+        <div>
+          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Двигатель</h3>
+          <div class="space-y-3">
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Объем двигателя, л</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">2.5</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Рабочий объем, см³</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">2497</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Тип привода</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">Полный</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Мощность, л.с.</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">210</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Кузов</h3>
+          <div class="space-y-3">
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Длина, мм</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">1870</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Ширина, мм</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">1470</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Эксплуатация</h3>
+          <div class="space-y-3">
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">Город, л/100 км</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">6.1</p>
+            </div>
+            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
+              <p class="text-[13px] md:text-[16px] font-light">За городом, л/100 км</p>
+              <p class="text-[13px] md:text-[16px] font-light text-right">5.8</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Добавь остальные модификации (4-7) по аналогии -->
+
+  </div>
+</div>
+
+<!-- Стили для скролла (можно вставить в <style> или в CSS файл) -->
+<!-- <style>
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-track-transparent::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thumb-[#19BC8D]::-webkit-scrollbar-thumb {
+    background-color: #19BC8D;
+    border-radius: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .mod-content {
+    display: none;
+  }
+
+  .mod-content.active {
+    display: block;
+  }
+</style> -->
 
 
 
@@ -559,9 +733,9 @@
     </main>
     <footer class="bg-[#2A2B2F] text-white py-8 md:py-12">
         <div class="container mx-auto px-4 sm:px-6">
-            <div class="flex flex-col lg:flex-row gap-6 md:gap-8 mb-8 md:mb-10">
+            <div class="flex flex-col md:flex-row gap-6 md:gap-8 mb-8 md:mb-10">
                 <!-- Карта -->
-                <div class="w-full lg:w-1/3">
+                <div class="w-full md:w-1/3">
                     <div class="rounded-xl overflow-hidden shadow-lg transform transition hover:shadow-xl">
                         <iframe
                             src="https://yandex.ru/map-widget/v1/?um=constructor%3A3a1f6d8e7e3f3b8e5e8e3b8e5e8e3b8e5e8e3b8e5e8e3b8e5e8e3b8e5e8e3b8d&mode=search&text=ул.%20Кулакова,%20вл.%2024,%20корп.%203&ll=37.4035%2C55.8256&z=17"
@@ -572,7 +746,7 @@
                 </div>
 
                 <!-- Информация -->
-                <div class="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-4 md:gap-y-6">
+                <div class="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-4 md:gap-y-6">
                     <div>
                         <h3 class="text-base md:text-xl font-normal text-gray-300 mb-1 md:mb-2">Адрес</h3>
                         <p class="text-lg md:text-2xl font-medium leading-tight">
@@ -585,13 +759,13 @@
                         <h3 class="text-base md:text-xl font-normal text-gray-300 mb-1 md:mb-2">График работы</h3>
                         <p class="text-lg md:text-2xl font-medium leading-tight">
                             Ежедневно<br>
-                            с 9:00 до 21:00
+                            с 9:00 до 20:00
                         </p>
                     </div>
 
                     <div>
                         <h3 class="text-base md:text-xl font-normal text-gray-300 mb-1 md:mb-2">Контакты</h3>
-                        <a href="tel:+79999999999"
+                        <a href="tel:+74951168260"
                             class="text-lg md:text-2xl font-medium hover:text-secondary transition duration-200 block">
                             +7 (495) 778-98-50
                         </a>
@@ -632,6 +806,12 @@
     <script src="../src/modules/display/ShowChaptersDetails.js"></script>
     <script src="../src/utils/ChangeColors.js"></script>
     <script src="../src/modules/navigation/Tabs.js"></script>
+
+    <script src="../src/modules/calculate/offers.js"></script>
+
+        <script src="../src/modules/popupBlocks/CatchingUp.js"></script>
+    <script src="../src/modules/popupBlocks/Credit.js"></script>
+    <script src="../src/modules/popupBlocks/Feedback.js"></script>
 </body>
 
 </html>

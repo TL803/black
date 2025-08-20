@@ -1,6 +1,6 @@
 const showModalBoxes = document.getElementsByClassName('showModalBox');
 
-const initGlobalModal = () => {
+const showGlobalContactModal = () => {
     if (document.querySelector('.global-modal-back')) return;
 
     const body = document.body;
@@ -61,7 +61,7 @@ const initGlobalModal = () => {
     const closeModalButton = document.createElement('button');
     closeModalButton.className = 'absolute top-6 right-8 md:top-10 md:right-14 hover:opacity-80 transition-opacity';
     closeModalButton.innerHTML = `
-        <img src="../assets/Frame 156.svg" alt="Закрыть модальное окно" class="w-[16px] md:w-[32px] w-[16px] md:h-[32px]">
+        <img src="../assets/Frame 156.svg" alt="Закрыть модальное окно" class="w-[16px] md:w-[32px] h-[16px] md:h-[32px]">
     `;
     closeModalButton.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -81,7 +81,7 @@ const initGlobalModal = () => {
         modalHeader.innerHTML = `
             <div class="flex flex-col items-center gap-4 md:gap-6">
                 <div class="w-[60px] h-[60px] md:w-[120px] md:h-[120px] rounded-full bg-green-500 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[30px] h-[30px] md:h-[60px] md:w-[60px] text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[30px] h-[30px] md:w-[60px] md:h-[60px] text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
                     </svg>
                 </div>
@@ -89,7 +89,11 @@ const initGlobalModal = () => {
                 <p class="text-[16px] md:text-[28px] text-gray-300 text-center">Мы перезвоним в ближайшее время!</p>
             </div>
         `;
-        modal.appendChild(closeAfterSubmit);
+
+        setTimeout(() => {
+            modalBack.remove();
+            modal.remove();
+        }, 3000);
     });
 
     body.appendChild(modalBack);
@@ -100,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     Array.from(showModalBoxes).forEach(box => {
         box.addEventListener('click', (e) => {
             e.preventDefault();
-            initGlobalModal();
+            showGlobalContactModal(); 
         });
     });
 });

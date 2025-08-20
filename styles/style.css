@@ -128,7 +128,7 @@
 @media (max-width: 1680px) {
     /* Контейнер */
     .container {
-        width: 100%;
+        width: 354px !important;
         max-width: 360px;
         margin: auto;
         padding: 0 16px;

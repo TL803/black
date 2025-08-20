@@ -56,7 +56,7 @@
         </nav>
         <div class="flex gap-[68px] md:flex hidden items-center">
             <div>
-                <p class="text-white">+7 (999) 999-99-99</p>
+                <a href="tel:+74951168260" class="text-white ">+7 (495) 116-82-60</a>
                 <p class="text-white">г. Москва, ул. Кулакова, вл. 24к3</p>
             </div>
             <button class="bg-secondary showModalBox font-medium text-primary px-[23px] py-[16px] rounded-full">
@@ -107,7 +107,7 @@
                     </ul>
                 </nav>
                 <div class="pt-6 border-t border-gray-700 text-sm text-gray-300 mt-4">
-                    <p class="text-[18px] font-bold text-white">+7 (999) 999-99-99</p>
+                    <a href="tel:+74951168260" class="text-[18px] font-bold text-white">+7 (495) 116-82-60</a>
                     <p>г. Москва, ул. Кулакова, вл. 24к3</p>
                 </div>
             </div>
@@ -149,25 +149,28 @@
             <form id="firstForm"
                 class="md:px-[92px] md:py-[100px] rounded-[24px] md:bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]"
                 action="#">
-                <h2 class="text-[20px] md:text-[24px] md:text-[48px] font-medium">1. Выберите автомобиль</h2>
-                <select class="custom-select" name="brand">
-                    <option value="" disabled selected>Марка автомобиля</option>
-                    <option value="bmw">BMW</option>
-                    <option value="audi">Audi</option>
-                    <option value="mercedes">Mercedes-Benz</option>
-                </select>
-                <select class="custom-select" name="model">
-                    <option value="" disabled selected>Модель</option>
-                    <option value="x5">X5</option>
-                    <option value="a4">A4</option>
-                    <option value="e-class">E-Class</option>
-                </select>
-                <select class="custom-select" name="trim">
-                    <option value="" disabled selected>Комплектация</option>
-                    <option value="base">Базовая</option>
-                    <option value="lux">Люкс</option>
-                    <option value="premium">Премиум</option>
-                </select>
+<h2 class="text-[20px] md:text-[24px] md:text-[48px] font-medium">1. Выберите автомобиль</h2>
+
+<select class="custom-select" name="brand" data-step="1">
+    <option value="" disabled selected>Марка автомобиля</option>
+    <option value="bmw">BMW</option>
+    <option value="audi">Audi</option>
+    <option value="mercedes">Mercedes-Benz</option>
+</select>
+
+<select class="custom-select" name="model" data-step="2">
+    <option value="" disabled selected>Модель</option>
+    <option value="x5">X5</option>
+    <option value="q7">Q7</option>
+    <option value="gle">GLE</option>
+</select>
+
+<select class="custom-select" name="trim" data-step="3">
+    <option value="" disabled selected>Комплектация</option>
+    <option value="base">Базовая</option>
+    <option value="mid">Средняя</option>
+    <option value="premium">Премиум</option>
+</select>
                 <button class="text-[16px] md:text-[36px] bg-[#19BC8D66] rounded-[32px] py-[12px] md:py-[32px]"
                     type="submit">
                     Применить
@@ -289,9 +292,9 @@
 
     <footer class="bg-[#2A2B2F] text-white py-8 md:py-12">
         <div class="container mx-auto px-4 sm:px-6">
-            <div class="flex flex-col lg:flex-row gap-6 md:gap-8 mb-8 md:mb-10">
+            <div class="flex flex-col md:flex-row gap-6 md:gap-8 mb-8 md:mb-10">
                 <!-- Карта -->
-                <div class="w-full lg:w-1/3">
+                <div class="w-full md:w-1/3">
                     <div class="rounded-xl overflow-hidden shadow-lg transform transition hover:shadow-xl">
                         <iframe
                             src="https://yandex.ru/map-widget/v1/?um=constructor%3A3a1f6d8e7e3f3b8e5e8e3b8e5e8e3b8e5e8e3b8e5e8e3b8e5e8e3b8e5e8e3b8d&mode=search&text=ул.%20Кулакова,%20вл.%2024,%20корп.%203&ll=37.4035%2C55.8256&z=17"
@@ -302,7 +305,7 @@
                 </div>
 
                 <!-- Информация -->
-                <div class="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-4 md:gap-y-6">
+                <div class="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-4 md:gap-y-6">
                     <div>
                         <h3 class="text-base md:text-xl font-normal text-gray-300 mb-1 md:mb-2">Адрес</h3>
                         <p class="text-lg md:text-2xl font-medium leading-tight">
@@ -315,13 +318,13 @@
                         <h3 class="text-base md:text-xl font-normal text-gray-300 mb-1 md:mb-2">График работы</h3>
                         <p class="text-lg md:text-2xl font-medium leading-tight">
                             Ежедневно<br>
-                            с 9:00 до 21:00
+                            с 9:00 до 20:00
                         </p>
                     </div>
 
                     <div>
                         <h3 class="text-base md:text-xl font-normal text-gray-300 mb-1 md:mb-2">Контакты</h3>
-                        <a href="tel:+79999999999"
+                        <a href="tel:+74951168260"
                             class="text-lg md:text-2xl font-medium hover:text-secondary transition duration-200 block">
                             +7 (495) 778-98-50
                         </a>
@@ -356,7 +359,12 @@
     <script src="../src/utils/ChangeColors.js"></script>
     <script src="../src/modules/display/ShowCar.js"></script>
 
+    <script src="../src/modules/forms/carSelectionLogic.js"></script>
+    <script src="../src/modules/forms/renderCarCard.js"></script>
 
+    <script src="../src/modules/popupBlocks/CatchingUp.js"></script>
+    <script src="../src/modules/popupBlocks/Credit.js"></script>
+    <script src="../src/modules/popupBlocks/Feedback.js"></script>
 </body>
 
 </html>
