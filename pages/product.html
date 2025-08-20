@@ -281,279 +281,984 @@
                     </button>
                 </div>
 
-<div id="content-specs" class="content-section px-4 text-white">
-  <!-- Горизонтальный скролл всех модификаций (заголовок + контент) -->
-  <div class="mods-container flex space-x-6 overflow-x-auto pb-8 scrollbar-thin scrollbar-thumb-[#19BC8D] scrollbar-track-transparent snap-x snap-mandatory" style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
-    
-    <!-- Модификация 1 -->
-    <div class="mod-card flex-shrink-0 w-80 md:w-96 snap-start bg-[#13141770]/[30%] rounded-3xl p-6 flex flex-col" id="mod-1">
-      <!-- Заголовок -->
-      <div class="flex flex-col items-center mb-6">
-        <h2 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] text-center leading-tight">
-          2.5 л. 6АКПП (180 л.с.) FWD
-        </h2>
-      </div>
 
-      <!-- Характеристики -->
-      <div class="specs-content space-y-6 flex-grow">
-        <div>
-          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Двигатель</h3>
-          <div class="space-y-3">
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Объем двигателя, л</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">2.5</p>
+    <style>
+        /* Стили для скроллбара */
+        .scrollbar-thin::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .scrollbar-track-transparent::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        /* Анимация переключения контента */
+        .mod-content {
+            transition: opacity 0.3s ease;
+        }
+        
+        /* Активная модификация */
+        .mod-active {
+            position: relative;
+        }
+        .mod-active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #19BC8D;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 min-h-screen flex items-center justify-center p-4">
+    <div id="content-specs" class="content-section px-4 text-white w-full max-w-6xl">
+        <!-- Заголовок с горизонтальным скроллом -->
+        <div class="mods-header flex space-x-4 overflow-x-auto pb-4 mb-6 scrollbar-thin scrollbar-thumb-[#19BC8D] scrollbar-track-transparent">
+            <!-- Модификация 1 -->
+            <div class="flex-shrink-0 w-64 md:w-80">
+                <div class="flex flex-col justify-between items-center cursor-pointer mod-active" data-target="mod-1">
+                    <h2 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] text-center leading-tight">
+                        2.5 л. 6АКПП (180 л.с.) FWD
+                    </h2>
+                    <div class="flex items-center md:hidden mt-2">
+                        <svg class="w-6 h-6 text-[#19BC8D] transition-transform duration-300" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" data-arrow>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                </div>
             </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Рабочий объем, см³</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">2497</p>
+
+            <!-- Модификация 2 -->
+            <div class="flex-shrink-0 w-64 md:w-80">
+                <div class="flex flex-col justify-between items-center cursor-pointer" data-target="mod-2">
+                    <h2 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] text-center leading-tight">
+                        2.0 л. 6АКПП (150 л.с.) FWD
+                    </h2>
+                </div>
             </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Тип привода</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">Передний</p>
+
+            <!-- Модификация 3 -->
+            <div class="flex-shrink-0 w-64 md:w-80">
+                <div class="flex flex-col justify-between items-center cursor-pointer" data-target="mod-3">
+                    <h2 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] text-center leading-tight">
+                        1.8 л. CVT (140 л.с.) FWD
+                    </h2>
+                </div>
             </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Мощность, л.с.</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">180</p>
+
+            <!-- Модификация 4 -->
+            <div class="flex-shrink-0 w-64 md:w-80">
+                <div class="flex flex-col justify-between items-center cursor-pointer" data-target="mod-4">
+                    <h2 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] text-center leading-tight">
+                        2.5 л. 6АКПП (180 л.с.) AWD
+                    </h2>
+                </div>
             </div>
-          </div>
+
+            <!-- Модификация 5 -->
+            <div class="flex-shrink-0 w-64 md:w-80">
+                <div class="flex flex-col justify-between items-center cursor-pointer" data-target="mod-5">
+                    <h2 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] text-center leading-tight">
+                        3.5 л. 8АКПП (270 л.с.) AWD
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Модификация 6 -->
+            <div class="flex-shrink-0 w-64 md:w-80">
+                <div class="flex flex-col justify-between items-center cursor-pointer" data-target="mod-6">
+                    <h2 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] text-center leading-tight">
+                        2.0 л. 7DCT (200 л.с.) FWD
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Модификация 7 -->
+            <div class="flex-shrink-0 w-64 md:w-80">
+                <div class="flex flex-col justify-between items-center cursor-pointer" data-target="mod-7">
+                    <h2 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] text-center leading-tight">
+                        1.5 л. 5МКПП (120 л.с.) FWD
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Модификация 8 -->
+            <div class="flex-shrink-0 w-64 md:w-80">
+                <div class="flex flex-col justify-between items-center cursor-pointer" data-target="mod-8">
+                    <h2 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] text-center leading-tight">
+                        2.5 л. Hybrid (210 л.с.) AWD
+                    </h2>
+                </div>
+            </div>
         </div>
 
-        <div>
-          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Кузов</h3>
-          <div class="space-y-3">
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Длина, мм</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">1860</p>
-            </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Ширина, мм</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">1465</p>
-            </div>
-          </div>
-        </div>
+        <!-- Контент характеристик (все модификации) -->
+        <div class="specs-container space-y-8">
+            <!-- Модификация 1: 2.5 л. 6АКПП (180 л.с.) FWD -->
+            <div class="specs-content mod-content" id="mod-1">
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Двигатель</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Объем двигателя, л</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2.5</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Рабочий объем, см³</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2497</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип привода</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Передний</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Мощность, л.с.</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">180</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Крутящий момент, Нм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">232</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип топлива</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Бензин</p>
+                        </div>
+                    </div>
+                </div>
 
-        <div>
-          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Эксплуатация</h3>
-          <div class="space-y-3">
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Город, л/100 км</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">11.4</p>
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Кузов</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Длина, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">4680</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Ширина, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1860</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Высота, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1465</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колесная база, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2820</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колея передняя, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1605</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колея задняя, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1615</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Трансмиссия</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип КПП</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">6-ст. АКПП</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Передаточное число главной пары</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">3.85</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Эксплуатационные показатели</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Макс. скорость, км/ч</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">195</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Разгон 0-100 км/ч, сек</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">9.8</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива в городе, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">11.4</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива за городом, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">7.8</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Средний расход топлива, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">9.1</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">За городом, л/100 км</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">11.4</p>
+
+            <!-- Модификация 2: 2.0 л. 6АКПП (150 л.с.) FWD -->
+            <div class="specs-content mod-content hidden" id="mod-2">
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Двигатель</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Объем двигателя, л</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2.0</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Рабочий объем, см³</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1999</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип привода</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Передний</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Мощность, л.с.</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">150</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Крутящий момент, Нм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">192</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип топлива</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Бензин</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Кузов</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Длина, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">4680</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Ширина, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1860</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Высота, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1465</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колесная база, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2820</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колея передняя, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1605</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колея задняя, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1615</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Трансмиссия</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип КПП</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">6-ст. АКПП</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Передаточное число главной пары</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">3.73</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Эксплуатационные показатели</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Макс. скорость, км/ч</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">185</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Разгон 0-100 км/ч, сек</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">10.8</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива в городе, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">10.8</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива за городом, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">7.2</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Средний расход топлива, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">8.5</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <!-- Модификация 3: 1.8 л. CVT (140 л.с.) FWD -->
+            <div class="specs-content mod-content hidden" id="mod-3">
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Двигатель</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Объем двигателя, л</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1.8</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Рабочий объем, см³</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1798</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип привода</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Передний</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Мощность, л.с.</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">140</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Крутящий момент, Нм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">175</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип топлива</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Бензин</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Кузов</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Длина, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">4670</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Ширина, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1840</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Высота, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1450</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колесная база, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2810</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колея передняя, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1595</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колея задняя, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1605</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Трансмиссия</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип КПП</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Бесступенчатая CVT</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Передаточное число главной пары</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">5.20</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Эксплуатационные показатели</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Макс. скорость, км/ч</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">180</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Разгон 0-100 км/ч, сек</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">11.2</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива в городе, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">9.6</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива за городом, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">6.8</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Средний расход топлива, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">7.8</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модификация 4: 2.5 л. 6АКПП (180 л.с.) AWD -->
+            <div class="specs-content mod-content hidden" id="mod-4">
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Двигатель</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Объем двигателя, л</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2.5</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Рабочий объем, см³</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2497</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип привода</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Полный (AWD)</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Мощность, л.с.</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">180</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Крутящий момент, Нм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">232</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип топлива</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Бензин</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Кузов</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Длина, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">4680</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Ширина, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1860</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Высота, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1470</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колесная база, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2820</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колея передняя, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1605</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колея задняя, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1615</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Трансмиссия</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип КПП</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">6-ст. АКПП</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Передаточное число главной пары</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">3.85</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Система полного привода</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Подключаемый</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Эксплуатационные показатели</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Макс. скорость, км/ч</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">192</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Разгон 0-100 км/ч, сек</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">10.2</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива в городе, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">12.1</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива за городом, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">8.3</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Средний расход топлива, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">9.8</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модификация 5: 3.5 л. 8АКПП (270 л.с.) AWD -->
+            <div class="specs-content mod-content hidden" id="mod-5">
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Двигатель</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Объем двигателя, л</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">3.5</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Рабочий объем, см³</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">3498</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип привода</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Полный (AWD)</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Мощность, л.с.</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">270</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Крутящий момент, Нм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">335</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип топлива</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Бензин</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Кузов</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Длина, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">4720</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Ширина, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1870</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Высота, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1475</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колесная база, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2840</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колея передняя, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1610</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колея задняя, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1620</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Трансмиссия</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип КПП</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">8-ст. АКПП</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Передаточное число главной пары</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">3.42</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Система полного привода</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Постоянный полный</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Эксплуатационные показатели</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Макс. скорость, км/ч</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">220</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Разгон 0-100 км/ч, сек</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">7.5</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива в городе, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">14.2</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива за городом, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">9.3</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Средний расход топлива, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">11.2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модификация 6: 2.0 л. 7DCT (200 л.с.) FWD -->
+            <div class="specs-content mod-content hidden" id="mod-6">
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Двигатель</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Объем двигателя, л</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2.0</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Рабочий объем, см³</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1998</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип привода</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Передний</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Мощность, л.с.</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">200</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Крутящий момент, Нм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">280</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип топлива</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Бензин</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Кузов</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Длина, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">4690</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Ширина, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1865</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Высота, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1460</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колесная база, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2825</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колея передняя, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1608</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колея задняя, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1618</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Трансмиссия</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип КПП</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">7-ст. DCT</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Передаточное число главной пары</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">4.12</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Эксплуатационные показатели</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Макс. скорость, км/ч</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">210</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Разгон 0-100 км/ч, сек</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">8.2</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива в городе, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">11.2</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива за городом, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">7.5</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Средний расход топлива, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">8.9</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модификация 7: 1.5 л. 5МКПП (120 л.с.) FWD -->
+            <div class="specs-content mod-content hidden" id="mod-7">
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Двигатель</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Объем двигателя, л</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1.5</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Рабочий объем, см³</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1498</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип привода</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Передний</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Мощность, л.с.</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">120</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Крутящий момент, Нм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">145</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип топлива</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Бензин</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Кузов</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Длина, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">4650</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Ширина, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1850</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Высота, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1445</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колесная база, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2800</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колея передняя, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1590</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колея задняя, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1600</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Трансмиссия</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип КПП</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">5-ст. МКПП</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Передаточное число главной пары</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">4.31</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Эксплуатационные показатели</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Макс. скорость, км/ч</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">175</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Разгон 0-100 км/ч, сек</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">12.5</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива в городе, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">9.2</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива за городом, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">6.3</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Средний расход топлива, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">7.4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модификация 8: 2.5 л. Hybrid (210 л.с.) AWD -->
+            <div class="specs-content mod-content hidden" id="mod-8">
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Двигатель</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Объем двигателя, л</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2.5</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Рабочий объем, см³</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2497</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип привода</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Полный (AWD)</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Мощность, л.с.</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">210</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Крутящий момент, Нм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">220</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип топлива</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Гибрид</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Мощность электродвигателя, л.с.</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">88</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Кузов</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Длина, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">4695</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Ширина, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1870</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Высота, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1470</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колесная база, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2830</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колея передняя, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1610</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Колея задняя, мм</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">1620</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Трансмиссия</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Тип КПП</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">e-CVT</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Передаточное число главной пары</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">3.92</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Система полного привода</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">Электронный AWD</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-[15px] md:text-[36px] font-medium text-[#19BC8D] mb-6">Эксплуатационные показатели</h2>
+                    <div class="space-y-4">
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Макс. скорость, км/ч</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">180</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Разгон 0-100 км/ч, сек</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">8.9</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива в городе, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">6.1</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Расход топлива за городом, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">5.8</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Средний расход топлива, л/100 км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">5.9</p>
+                        </div>
+                        <div class="bg-[#13141770]/[44%] rounded-[24px] p-4 flex items-center justify-between">
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%]">Запас хода на электротяге, км</p>
+                            <p class="text-[15px] md:text-[32px] font-light w-full md:w-[50%] text-right">2.5</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
-    <!-- Модификация 2 -->
-    <div class="mod-card flex-shrink-0 w-80 md:w-96 snap-start bg-[#13141770]/[30%] rounded-3xl p-6 flex flex-col" id="mod-2">
-      <div class="flex flex-col items-center mb-6">
-        <h2 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] text-center leading-tight">
-          2.0 л. 6АКПП (150 л.с.) FWD
-        </h2>
-      </div>
-      <div class="specs-content space-y-6 flex-grow">
-        <div>
-          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Двигатель</h3>
-          <div class="space-y-3">
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Объем двигателя, л</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">2.0</p>
-            </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Рабочий объем, см³</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">1999</p>
-            </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Тип привода</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">Передний</p>
-            </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Мощность, л.с.</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">150</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Кузов</h3>
-          <div class="space-y-3">
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Длина, мм</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">1860</p>
-            </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Ширина, мм</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">1465</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Эксплуатация</h3>
-          <div class="space-y-3">
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Город, л/100 км</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">10.8</p>
-            </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">За городом, л/100 км</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">7.2</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Получаем все элементы для переключения
+            const modToggles = document.querySelectorAll('[data-target]');
+            
+            // Функция для переключения модификаций
+            function switchModification(targetId) {
+                // Скрываем все блоки с характеристиками
+                document.querySelectorAll('.mod-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Показываем выбранный блок
+                document.getElementById(targetId).classList.remove('hidden');
+                
+                // Убираем активный класс у всех заголовков
+                modToggles.forEach(toggle => {
+                    toggle.classList.remove('mod-active');
+                });
+                
+                // Добавляем активный класс к выбранному заголовку
+                document.querySelector(`[data-target="${targetId}"]`).classList.add('mod-active');
+            }
+            
+            // Добавляем обработчики событий для каждого заголовка
+            modToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    switchModification(targetId);
+                });
+            });
+            
+            // Инициализируем первую модификацию как активную
+            switchModification('mod-1');
+        });
+    </script>
 
-    <!-- Модификация 3 -->
-    <div class="mod-card flex-shrink-0 w-80 md:w-96 snap-start bg-[#13141770]/[30%] rounded-3xl p-6 flex flex-col" id="mod-3">
-      <div class="flex flex-col items-center mb-6">
-        <h2 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] text-center leading-tight">
-          1.8 л. CVT (140 л.с.) FWD
-        </h2>
-      </div>
-      <div class="specs-content space-y-6 flex-grow">
-        <div>
-          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Двигатель</h3>
-          <div class="space-y-3">
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Объем двигателя, л</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">1.8</p>
-            </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Рабочий объем, см³</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">1798</p>
-            </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Тип привода</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">Передний</p>
-            </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Мощность, л.с.</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">140</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Кузов</h3>
-          <div class="space-y-3">
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Длина, мм</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">1840</p>
-            </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Ширина, мм</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">1450</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Эксплуатация</h3>
-          <div class="space-y-3">
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Город, л/100 км</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">9.6</p>
-            </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">За городом, л/100 км</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">6.8</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Модификация 8 (гибрид) -->
-    <div class="mod-card flex-shrink-0 w-80 md:w-96 snap-start bg-[#13141770]/[30%] rounded-3xl p-6 flex flex-col" id="mod-8">
-      <div class="flex flex-col items-center mb-6">
-        <h2 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] text-center leading-tight">
-          2.5 л. Hybrid (210 л.с.) AWD
-        </h2>
-      </div>
-      <div class="specs-content space-y-6 flex-grow">
-        <div>
-          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Двигатель</h3>
-          <div class="space-y-3">
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Объем двигателя, л</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">2.5</p>
-            </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Рабочий объем, см³</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">2497</p>
-            </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Тип привода</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">Полный</p>
-            </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Мощность, л.с.</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">210</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Кузов</h3>
-          <div class="space-y-3">
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Длина, мм</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">1870</p>
-            </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Ширина, мм</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">1470</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-[15px] md:text-[18px] font-medium text-[#19BC8D] mb-4">Эксплуатация</h3>
-          <div class="space-y-3">
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">Город, л/100 км</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">6.1</p>
-            </div>
-            <div class="bg-[#13141770]/[44%] rounded-[20px] p-3 flex items-center justify-between">
-              <p class="text-[13px] md:text-[16px] font-light">За городом, л/100 км</p>
-              <p class="text-[13px] md:text-[16px] font-light text-right">5.8</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Добавь остальные модификации (4-7) по аналогии -->
-
-  </div>
-</div>
-
-<!-- Стили для скролла (можно вставить в <style> или в CSS файл) -->
-<!-- <style>
-  .scrollbar-thin {
-    scrollbar-width: thin;
-  }
-
-  .scrollbar-track-transparent::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .scrollbar-thumb-[#19BC8D]::-webkit-scrollbar-thumb {
-    background-color: #19BC8D;
-    border-radius: 8px;
-  }
-
-  .scrollbar-thin::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .mod-content {
-    display: none;
-  }
-
-  .mod-content.active {
-    display: block;
-  }
-</style> -->
 
 
 
