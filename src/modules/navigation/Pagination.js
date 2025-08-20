@@ -9,7 +9,7 @@ const marksArray = [
 ];
 
 function isMobile() {
-  return window.innerWidth < 1600;
+  return window.innerWidth < 1680;
 }
 
 let currentPage = 0;
@@ -79,13 +79,16 @@ marks.addEventListener('click', function (e) {
   const clickedCard = e.target.closest('.toggle-elem-click');
   if (!clickedCard) return;
 
+  const mark = clickedCard.dataset.mark;
+
+  // Опционально: визуальное выделение (если остаётся на той же странице)
   document.querySelectorAll('.toggle-elem-click').forEach(card => {
     card.style.backgroundColor = 'rgba(0, 0, 0, 0.44)';
-    card.classList.remove('text-white');
-    card.classList.add('text-white');
   });
-
   clickedCard.style.backgroundColor = '#225045';
+
+  // Перенаправление на SelectedCar.html с передачей марки в параметре
+  window.location.href = `SelectedCar.html?mark=${encodeURIComponent(mark)}`;
 });
 
 prevBtn.addEventListener('click', () => {

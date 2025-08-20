@@ -35,5 +35,5 @@ tabComplectationsBtn?.addEventListener("click", () => showTab("complectations"))
 
 // Открыть первую вкладку по умолчанию
 if (contentSpecs) {
-    showTab("specs");
+    showTab("complectations");
 }

@@ -1,9 +1,12 @@
 class ModalManager {
-    static MODAL_INTERVAL = 150_000; 
+    static MODAL_INTERVAL = 150_000; // 2.5 минуты
     static autoModalInterval = null;
     static isOpen = false;
 
-    static createModal() {
+    // Дефолтный тип для автозапуска
+    static DEFAULT_TYPE = 'Credit';
+
+    static createModal(type = 'Credit') {
         const backdrop = document.createElement('div');
         backdrop.className = 'global-modal-back bg-[#00000066] w-full h-screen fixed inset-0 z-40';
 
@@ -24,7 +27,7 @@ class ModalManager {
             box-border
         `;
 
-        const header = this.createModalHeader();
+        const header = this.createModalHeader(type);
         const form = this.createModalForm();
         const closeButton = this.createCloseButton();
 
@@ -37,9 +40,18 @@ class ModalManager {
         return { backdrop, modal };
     }
 
-    static createModalHeader() {
+    static createModalHeader(type) {
         const header = document.createElement('div');
         header.className = 'text-center text-white px-4 break-words';
+
+        // Формируем заголовок в зависимости от типа
+        let offerText = '';
+        if (type === 'Trade-in') {
+            offerText = 'по программе Trade-in';
+        } else {
+            offerText = 'в кредит';
+        }
+
         header.innerHTML = `
             <p class="text-[14px] sm:text-[28px] md:text-[40px] lg:text-[48px] font-regular md:font-medium leading-tight mb-2 sm:mb-4">
                 Настало время для вашей мечты — новый авто по особой цене!
@@ -53,7 +65,7 @@ class ModalManager {
                 class="w-full max-w-[280px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] mx-auto mb-4 sm:mb-8 h-auto"
             >
             <h2 class="text-[16px] sm:text-[36px] md:text-[56px] lg:text-[64px] font-medium md:font-bold leading-tight">
-                Специальное предложение на Hyundai Sonata
+                Специальное предложение на Hyundai Sonata ${offerText}
             </h2>
         `;
         return header;
@@ -167,7 +179,7 @@ class ModalManager {
             backdrop.remove();
             modal.remove();
         }
-        this.isOpen = false; 
+        this.isOpen = false;
     }
 
     static restartAutoModal() {
@@ -185,29 +197,41 @@ class ModalManager {
         this.autoModalInterval = setInterval(() => {
             console.log('Интервал сработал!');
             if (!this.isOpen) {
-                this.showModal();
+                this.showModal(this.DEFAULT_TYPE); // всегда дефолтный тип при автозапуске
             } else {
                 console.log('Модалка уже открыта — пропускаем');
             }
         }, this.MODAL_INTERVAL);
     }
 
-    static showModal() {
+    static showModal(type = this.DEFAULT_TYPE) {
         if (this.isOpen) return;
         this.isOpen = true;
-        console.log('Показываем модалку...');
-        const { backdrop, modal } = this.createModal();
+        console.log('Показываем модалку с типом:', type);
+        const { backdrop, modal } = this.createModal(type);
         document.body.appendChild(backdrop);
         document.body.appendChild(modal);
         this.initModal(backdrop, modal);
     }
 
-
     static init() {
+        // Запускаем автозапуск
         this.startAutoModal();
+
+        // Настраиваем все элементы с data-toggle-timer-container
+        const buttons = document.querySelectorAll('[data-toggle-timer-container]');
+        buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const type = button.getAttribute('data-toggle-timer-container');
+                const validType = type === 'Trade-in' ? 'Trade-in' : 'Credit'; // валидация
+                this.showModal(validType);
+            });
+        });
     }
 }
 
+// Инициализация после загрузки DOM
 document.addEventListener('DOMContentLoaded', () => {
     ModalManager.init();
 });

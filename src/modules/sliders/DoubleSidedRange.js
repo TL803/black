@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
             step: 100000, // <-- Шаг 100 000
             range: {
                 min: 100000,
-                max: 2500000
+                max: 5000000
             },
             format: {
                 to: function (value) {

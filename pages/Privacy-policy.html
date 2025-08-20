@@ -45,37 +45,88 @@
 
 <body class="bg-custom text-white font-sans">
     <section
-        class="h-[935px] relative bg-cover bg-top bg-no-repeat flex flex-col justify-between rounded-bl-[98px] rounded-br-[98px]"
+        class="h-[300px] md:h-[935px] relative bg-cover bg-top bg-no-repeat flex flex-col justify-between rounded-bl-[20px] rounded-br-[20px] md:rounded-bl-[98px] md:rounded-br-[98px]"
         style="background-image: url('../assets/Rectangle 28 (1).png');">
-        <header class="container relative flex justify-between items-center mt-[60px]">
-            <nav class="flex space-x-[32px]">
-                <a href="./" class="py-4 px-4 rounded-full text-tertiary">
-                    <span class="font-medium">Главная</span>
-                </a>
-                <a href="./carloan.html" class="py-4 px-4 rounded-full text-tertiary"><span>Автокредит</span></a>
-                <a href="./TradeIn.html" class="py-4 px-4 rounded-full text-tertiary"><span>Trade-in</span></a>
-                <a href="./stock.html" class="py-4 px-4 rounded-full text-tertiary"><span>Акции</span></a>
-                <a href="./service.html" class="py-4 px-4 rounded-full text-tertiary"><span>Сервис</span></a>
-                <a href="./Leasing.html" class="py-4 px-4 rounded-full text-tertiary"><span>Лизинг</span></a>
-                <a href="./ransom.html" class="py-4 px-4 rounded-full text-tertiary"><span>Выкуп</span></a>
-                <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
-                <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
-            </nav>
-            <div class="flex gap-[68px] items-center">
-                <div>
-                    <a href="tel:+74951168260" class="text-white ">+7 (495) 116-82-60</a>
-                    <p class="text-white">г. Москва, ул. Кулакова, вл. 24к3</p>
-                </div>
-                <button class="bg-secondary font-medium text-primary px-[23px] py-[16px] rounded-full">
-                    Обратная связь
-                </button>
+    <header class="container relative flex md:justify-between justify-end items-center mt-[60px]">
+        <nav class="md:flex hidden space-x-[32px]">
+            <a href="./" class="py-4 px-4 rounded-full text-tertiary">
+                <span class="font-medium">Главная</span>
+            </a>
+            <a href="./carloan.html"
+                class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary"><span>Автокредит</span></a>
+            <a href="./TradeIn.html" class="py-4 px-4 rounded-full text-tertiary"><span>Trade-in</span></a>
+            <a href="./stock.html" class="py-4 px-4 rounded-full text-tertiary"><span>Акции</span></a>
+            <a href="./service.html" class="py-4 px-4 rounded-full text-tertiary"><span>Сервис</span></a>
+            <a href="./Leasing.html" class="py-4 px-4 rounded-full text-tertiary"><span>Лизинг</span></a>
+            <a href="./ransom.html" class="py-4 px-4 rounded-full text-tertiary"><span>Выкуп</span></a>
+            <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
+            <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
+        </nav>
+        <div class="flex gap-[68px] md:flex hidden items-center">
+            <div>
+                <a href="tel:+74951168260" class="text-white ">+7 (495) 116-82-60</a>
+                <p class="text-white">г. Москва, ул. Кулакова, вл. 24к3</p>
             </div>
-        </header>
+            <button class="bg-secondary showModalBox font-medium text-primary px-[23px] py-[16px] rounded-full">
+                Обратная связь
+            </button>
+        </div>
+        <div class="burger md:hidden flex items-center">
+            <img src="../assets/Бургер меню (2).svg" alt="Бургер меню" id="burgerMenu" class="cursor-pointer w-6 h-6">
+        </div>
+        <div id="mobileMenu"
+            class="fixed top-0 right-0 w-[60%] h-full bg-[#131417] z-50 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex flex-col h-full p-6 text-white">
+                <div class="flex justify-between items-center mb-6">
+                    <button id="closeMenu"
+                        class="text-white text-2xl w-8 h-8 flex items-center justify-center">&times;</button>
+                </div>
+                <nav class="flex-1 overflow-y-auto py-2">
+                    <ul class="space-y-4">
+                        <li><a href="./" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Главная</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./carloan.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Автокредит</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./TradeIn.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Trade-in</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./stock.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Акции</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./service.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Сервис</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./Leasing.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Лизинг</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./ransom.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Выкуп</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./taxiСar.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Авто
+                                под такси</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./Contacts.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="pt-6 border-t border-gray-700 text-sm text-gray-300 mt-4">
+                    <a href="tel:+74951168260" class="text-[18px] font-bold text-white">+7 (495) 116-82-60</a>
+                    <p>г. Москва, ул. Кулакова, вл. 24к3</p>
+                </div>
+            </div>
+        </div>
+        <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
+    </header>
     </section>
     <main class="container">
         <section>
-            <h1 class="text-[90px] font-medium mb-[20px] mt-[80px]">Политика конфиденциальности</h1>
-            <p class="text-[40px] font-regular">Веб-сайт n-autocenter.ru (далее – мы) заботится о сохранении конфиденциальности Вашей информации. В
+            <h1 class="text-[20px] md:text-[90px] font-medium mb-[20px] mt-[80px]">Политика конфиденциальности</h1>
+            <p class="text-[14px] md:text-[40px] font-regular">Веб-сайт n-autocenter.ru (далее – мы) заботится о сохранении конфиденциальности Вашей информации. В
                 настоящем документе описываются принятые n-autocenter.ru правила использования персональных данных,
                 которые вы сообщаете нам в онлайне или в офлайне — по обычной почте, в конкурсных материалах, по
                 телефону, в ходе опросов, используя возможности сайта и т.п. Внимательно прочтите весь документ.
@@ -92,8 +143,8 @@
                 по которой она была собрана.
                 Используемые в настоящей Политике конфиденциальности термины «мы»
                 и «нас» относятся к n-autocenter.ru.</p>
-            <h1 class="text-[64px] font-medium mb-[20px] mt-[80px]">Обработка персональных данных</h1>
-            <p class="text-[40px] font-regular">Веб-сайт n-autocenter.ru (далее – мы) заботится о сохранении конфиденциальности Вашей информации. В
+            <h1 class="text-[20px] md:text-[90px] font-medium mb-[20px] mt-[80px]">Обработка персональных данных</h1>
+            <p class="text-[14px] md:text-[40px] font-regular">Веб-сайт n-autocenter.ru (далее – мы) заботится о сохранении конфиденциальности Вашей информации. В
                 настоящем документе описываются принятые n-autocenter.ru правила использования персональных данных,
                 которые вы сообщаете нам в онлайне или в офлайне — по обычной почте, в конкурсных материалах, по
                 телефону, в ходе опросов, используя возможности сайта и т.п. Внимательно прочтите весь документ.
@@ -110,8 +161,8 @@
                 по которой она была собрана.
                 Используемые в настоящей Политике конфиденциальности термины «мы»
                 и «нас» относятся к n-autocenter.ru.</p>
-            <h1 class="text-[64px] font-medium mb-[20px] mt-[80px]">Право выбора</h1>
-            <p class="text-[40px] font-regular">Веб-сайт n-autocenter.ru (далее – мы) заботится о сохранении конфиденциальности Вашей информации. В
+            <h1 class="text-[20px] md:text-[90px] font-medium mb-[20px] mt-[80px]">Право выбора</h1>
+            <p class="text-[14px] md:text-[40px] font-regular">Веб-сайт n-autocenter.ru (далее – мы) заботится о сохранении конфиденциальности Вашей информации. В
                 настоящем документе описываются принятые n-autocenter.ru правила использования персональных данных,
                 которые вы сообщаете нам в онлайне или в офлайне — по обычной почте, в конкурсных материалах, по
                 телефону, в ходе опросов, используя возможности сайта и т.п. Внимательно прочтите весь документ.
@@ -130,6 +181,11 @@
                 и «нас» относятся к n-autocenter.ru.</p>
         </section>
     </main>
+
+
+    <script src="../src/modules/popupBlocks/CatchingUp.js"></script>
+    <script src="../src/modules/navigation/Burger.js"></script>
+
 </body>
 
 </html>
