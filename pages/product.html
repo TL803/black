@@ -39,6 +39,13 @@
         };
     </script>
 
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
     <style>
         .container {
             width: 1680px !important;
@@ -184,7 +191,7 @@
                     class="w-full md:w-max  inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
                     <div>
                         <p class="text-[16px] md:text-[24px] text-[#19BC8D]">7.9 сек.</p>
-                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
+                        <p class="text-[16px] md:text-[20px]">Разгон</p>
                     </div>
                     <img class="w-[60px] md:w-auto" src="../assets/-------------- 1.svg" alt="">
                 </div>
@@ -192,7 +199,7 @@
                     class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
                     <div>
                         <p class="text-[16px] md:text-[24px] text-[#19BC8D]">249 л.с.</p>
-                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
+                        <p class="text-[16px] md:text-[20px]">Мощность</p>
                     </div>
                     <img class="w-[60px] md:w-auto" src="../assets/------------------ (1) 1.svg" alt="">
                 </div>
@@ -200,7 +207,7 @@
                     class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
                     <div>
                         <p class="text-[16px] md:text-[24px] text-[#19BC8D]">9.9 л/100 км</p>
-                        <p class="text-[16px] md:text-[20px]">Cкорость</p>
+                        <p class="text-[16px] md:text-[20px]">Расход</p>
                     </div>
                     <img class="w-[60px] md:w-auto" src="../assets/------- 1.svg" alt="">
                 </div>
@@ -271,9 +278,9 @@
         </section>
 
 
-        
+
         <section>
-            <div class="container mx-auto px-4 py-8">
+            <div class="container w-full mx-auto px-[0] md:px-4 md:py-8 ">
                 <div class="flex justify-between mb-[72px] gap-[16px] md:gap-[32px]">
                     <button id="tab-complectations"
                         class="bg-[#13141770] w-full text-[#19BC8D] px-[25px] md:px-4 py-[16px] md:py-[18px] text-[12px] md:text-[32px] font-medium rounded-[14px] transition-colors">
@@ -307,7 +314,7 @@
                         </button>
 
                         <!-- Свайп-контейнер -->
-                        <div id="specs-scroll-container" class="flex space-x-6 pb-8 select-none"
+                        <div id="specs-scroll-container" class="flex space-x-6 pb-8  select-none"
                             style="overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
 
                             <!-- Модификация 1 -->
@@ -396,7 +403,7 @@
 
                             <!-- Модификация 2 -->
                             <div
-                                class="flex-shrink-0 w-[380px] snap-start bg-[#13141770]/[40%] rounded-3xl p-6 flex flex-col">
+                                class="flex-shrink-0 w-[380px]  snap-start bg-[#13141770]/[40%] rounded-3xl p-6 flex flex-col">
                                 <div class="flex flex-col items-center mb-6">
                                     <h3 class="text-lg font-semibold text-[#19BC8D] text-center leading-tight">
                                         2.0 л. 6АКПП (150 л.с.) FWD
@@ -1111,47 +1118,9 @@
                     </div>
                 </div>
 
-
-                <!-- === CSS === -->
-
-
-                <!-- === JS: свайп и навигация === -->
-
-
-                <!-- Стили для скролла (можно вставить в <style> или в CSS файл) -->
-                <!-- <style>
-  .scrollbar-thin {
-    scrollbar-width: thin;
-  }
-
-  .scrollbar-track-transparent::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .scrollbar-thumb-[#19BC8D]::-webkit-scrollbar-thumb {
-    background-color: #19BC8D;
-    border-radius: 8px;
-  }
-
-  .scrollbar-thin::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .mod-content {
-    display: none;
-  }
-
-  .mod-content.active {
-    display: block;
-  }
-</style> -->
-
-
-
-
-                <div id="content-complectations" class="content-section hidden">
+                <div id="content-complectations" class="content-section  hidden">
                     <div class=" w-full">
-                        <div class=" mx-auto px-4 py-8 space-y-10">
+                        <div class=" mx-auto md:px-4 py-8 space-y-10">
 
                             <div>
                                 <h2
@@ -1199,9 +1168,9 @@
                                                     class="flex-1 max-w-[140px] bg-[#19BC8D] text-white py-3 rounded-[28px] showCreaditpopup font-medium text-sm credit-button">
                                                     В кредит
                                                 </button>
-                                                <button data-toggle-timer-container="Trade-in" 
+                                                <button data-toggle-timer-container="Trade-in"
                                                     class="flex-1 max-w-[140px] bg-[#25262A] py-3 rounded-[28px] text-[#19BC8D] font-medium text-sm">
-                                                    <a >Trade-in</a>
+                                                    <a>Trade-in</a>
                                                 </button>
                                                 <button
                                                     class="w-[50px] h-[50px] bg-[#25262A] rounded-full flex items-center justify-center"><img
@@ -1245,8 +1214,9 @@
                                 <summary class="list-none">
                                     <div
                                         class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 items-center bg-[#13141770] p-4 md:p-[40px] rounded-[32px] cursor-pointer">
-                                        <div class="flex items-center justify-center md:justify-start gap-2">
-                                            <span class="font-semibold text-lg text-white">Active Plus New</span>
+                                        <div class="flex items-center justify-center md:justify-start gap-4">
+                                            <input type="checkbox" class="custom-checkbox">
+                                            <span class="font-semibold text-xl text-white">Premium</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
@@ -1257,12 +1227,12 @@
 
                                         <div class="text-right">
                                             <span
-                                                class="line-through text-lg text-gray-300 hidden md:block text-center">1
+                                                class="line-through text-xl text-gray-300 hidden md:block text-center">1
                                                 489 000 ₽</span>
                                         </div>
 
                                         <div class="flex justify-center md:justify-start">
-                                            <span class="text-[#19BC8D] font-medium text-lg flex items-center gap-2">
+                                            <span class="text-[#19BC8D] font-medium text-xl flex items-center gap-2">
                                                 <span class="md:hidden line-through text-gray-400 text-sm">1 489 000
                                                     ₽</span>
                                                 от 633 000 ₽
@@ -1270,7 +1240,7 @@
                                         </div>
 
                                         <div class="text-center md:text-left">
-                                            <span class="text-white text-sm md:text-base showCreaditpopup">В кредит
+                                            <span class="text-white text-xl md:text-base showCreaditpopup">В кредит
                                                 от 7 806 ₽/мес.</span>
                                         </div>
 
@@ -1281,9 +1251,13 @@
                                             </button>
                                             <button data-toggle-timer-container="Trade-in"
                                                 class="flex-1 max-w-[140px] bg-[#25262A] py-3 rounded-[28px] text-[#19BC8D] font-medium text-sm">
-                                                <a >Trade-in</a>
+                                                <a>Trade-in</a>
                                             </button>
+                                            <button
+                                                class="w-[50px] h-[50px] bg-[#25262A] rounded-full flex items-center justify-center"><img
+                                                    class="w-[30px] h-[30px]" src="../assets/print.svg" alt=""></button>
                                         </div>
+
                                     </div>
                                 </summary>
 
@@ -1317,10 +1291,11 @@
 
                         </div>
                     </div>
-                    <button
-                        class="w-full md:w-[545px] h-[50px] md:h-[84px] rounded-[12px] bg-[#19BC8D] text-[#25262A] text-[18px] md:text-[24px] font-medium">Сравнить
-                        комплектации</button>
-
+                    <a href="./Comparison.html">
+                        <button
+                            class="w-full md:w-[545px] h-[50px] md:h-[84px] rounded-[12px] bg-[#19BC8D] text-[#25262A] text-[18px] md:text-[24px] font-medium">Сравнить
+                            комплектации</button>
+                    </a>
                 </div>
             </div>
         </section>
@@ -1341,7 +1316,8 @@
 
                         <iframe
                             src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae548079d84e22e0ce482be3969ed695a5165564027de6591218c0ab98beaaf00&amp;source=constructor"
-                             frameborder="0" class="w-full h-[250px] sm:h-[300px] md:min-h-[320px] border border-gray-300 rounded-[14px]"></iframe>
+                            frameborder="0"
+                            class="w-full h-[250px] sm:h-[300px] md:min-h-[320px] border border-gray-300 rounded-[14px]"></iframe>
                     </div>
                 </div>
 
@@ -1399,7 +1375,51 @@
     <script src="../script/showProducts.js"></script>
     <script src="../script/tabs.js"></script>
     <script src="../script/showCharaptersDetails.js"></script> -->
+<div id="print-template" class="hidden">
+  <div style="font-family: Arial, sans-serif; padding: 30px; background: white; color: black; width: 210mm; height: 297mm;">
+    <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+      <div>
+        <h1 style="color: #19BC8D; font-size: 24px;">Автоцентр</h1>
+        <p>+7 (495) 116-82-60</p>
+        <p>г. Москва, ул. Кулакова, вл. 24к3</p>
+      </div>
+      <div>
+        <img src="../assets/logo.png" alt="Логотип" style="height: 50px;">
+      </div>
+    </div>
 
+    <hr style="border: 1px solid #19BC8D; margin: 20px 0;">
+
+    <h2 id="pdf-car-name" style="font-size: 28px; color: #25262A;">Kaiyi X3 Pro</h2>
+    <p id="pdf-car-type" style="color: #19BC8D; font-weight: bold;">Внедорожник</p>
+
+    <div style="margin: 30px 0;">
+      <img id="pdf-car-image" src="" alt="Фото авто" style="width: 100%; max-height: 400px; object-fit: contain;">
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div>
+        <p><strong>Мощность:</strong> <span id="pdf-power">249 л.с.</span></p>
+        <p><strong>Разгон:</strong> <span id="pdf-accel">7.9 сек.</span></p>
+      </div>
+      <div>
+        <p><strong>Скорость:</strong> <span id="pdf-speed">210 км/ч</span></p>
+        <p><strong>Расход:</strong> <span id="pdf-fuel">9.9 л/100 км</span></p>
+      </div>
+    </div>
+
+    <div style="margin: 30px 0; font-size: 24px; font-weight: bold; color: #19BC8D;">
+      Цена: <span id="pdf-price">960 000 ₽</span>
+    </div>
+
+    <div style="position: absolute; bottom: 30px; width: calc(100% - 60px);">
+      <p style="color: #888; font-size: 12px;">
+        Предложение действует до конца месяца. Не является публичной офертой.
+      </p>
+      <p style="margin-top: 10px;">С уважением, Руководитель отдела продаж</p>
+    </div>
+  </div>
+</div>
 
     <script src="../src/modules/navigation/Burger.js"></script>
     <script src="../src/modules/display/ShowAllCars.js"></script>
@@ -1413,6 +1433,8 @@
     <script src="../src/modules/popupBlocks/Credit.js"></script>
     <script src="../src/modules/popupBlocks/Feedback.js"></script>
     <script src="../src/modules/sliders/CharaptersSlider.js"></script>
+
+    <script src="../src/utils/makePdf.js"></script>
 </body>
 
 </html>

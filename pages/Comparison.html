@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сравнение комплектаций — Техинком-Авто</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Commissioner', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#25262A',
+                        secondary: '#19BC8D',
+                        secondaryLight: '#19BC8D66',
+                        gray: '#4B4B4B',
+                        dark: '#13141770',
+                        white: '#ffffff',
+                        card: '#1E1F23',
+                        border: '#333333'
+                    },
+                    backgroundColor: {
+                        'custom': '#25262A',
+                        'card': '#1E1F23',
+                        'category-bg': '#2A2B2F',
+                    },
+                    screens: {
+                        md: '1680px'
+                    },
+                }
+            }
+        };
+    </script>
+
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body class="bg-custom text-white font-sans min-h-screen">
+
+    <!-- Header -->
+    <header class="container relative flex md:justify-between justify-end items-center mt-[60px]">
+        <nav class="md:flex hidden space-x-[32px]">
+            <a href="./" class="py-4 px-4 rounded-full text-tertiary">
+                <span class="font-medium">Главная</span>
+            </a>
+            <a href="./carloan.html" class="py-4 px-4 rounded-full text-tertiary"><span>Автокредит</span></a>
+            <a href="./TradeIn.html" class="py-4 px-4 rounded-full text-tertiary"><span>Trade-in</span></a>
+            <a href="./stock.html" class="py-4 px-4 rounded-full text-tertiary"><span>Акции</span></a>
+            <a href="./service.html" class="py-4 px-4 rounded-full text-tertiary"><span>Сервис</span></a>
+            <a href="./Leasing.html"
+                class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary"><span>Лизинг</span></a>
+            <a href="./ransom.html" class="py-4 px-4 rounded-full text-tertiary"><span>Выкуп</span></a>
+            <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
+            <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
+        </nav>
+        <div class="flex gap-[68px] md:flex hidden items-center">
+            <div>
+                <a href="tel:+74951168260" class="text-white ">+7 (495) 116-82-60</a>
+                <p class="text-white">г. Москва, ул. Кулакова, вл. 24к3</p>
+            </div>
+            <button class="bg-secondary showModalBox font-medium text-primary px-[23px] py-[16px] rounded-full">
+                Обратная связь
+            </button>
+        </div>
+        <div class="burger md:hidden flex items-center">
+            <img src="../assets/Бургер меню (2).svg" alt="Бургер меню" id="burgerMenu" class="cursor-pointer w-6 h-6">
+        </div>
+        <div id="mobileMenu"
+            class="fixed top-0 right-0 w-[60%] h-full bg-[#131417] z-50 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex flex-col h-full p-6 text-white">
+                <div class="flex justify-between items-center mb-6">
+                    <button id="closeMenu"
+                        class="text-white text-2xl w-8 h-8 flex items-center justify-center">&times;</button>
+                </div>
+                <nav class="flex-1 overflow-y-auto py-2">
+                    <ul class="space-y-4">
+                        <li><a href="./" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Главная</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./carloan.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Автокредит</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./TradeIn.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Trade-in</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./stock.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Акции</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./service.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Сервис</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./Leasing.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Лизинг</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./ransom.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Выкуп</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./taxiСar.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Авто
+                                под такси</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./Contacts.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="pt-6 border-t border-gray-700 text-sm text-gray-300 mt-4">
+                    <a href="tel:+74951168260" class="text-[18px] font-bold text-white">+7 (495) 116-82-60</a>
+                    <p>г. Москва, ул. Кулакова, вл. 24к3</p>
+                </div>
+            </div>
+        </div>
+        <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
+    </header>
+
+    <!-- Main Content -->
+<main class="container mx-auto px-4 py-12">
+    <a href="./product.html">
+        <button
+            class="bg-secondary text-primary px-6 py-2.5 mb-8 rounded-full font-medium text-base md:text-lg hover:bg-opacity-90 transition shadow-md">
+            Вернуться назад
+        </button>
+    </a>
+
+    <h1 class="text-4xl md:text-5xl font-bold mb-12">Сравнение комплектаций</h1>
+
+    <!-- Comparison Table -->
+    <div class="overflow-x-auto bg-card rounded-xl shadow-lg border border-border">
+        <table class="min-w-full divide-y divide-gray/20">
+            <thead>
+                <tr class="border-b border-gray/30">
+                    <th class="px-4 py-4 text-left text-lg md:text-2xl font-semibold text-white uppercase tracking-wider">
+                        Опции
+                    </th>
+                    <th class="px-4 py-4 text-center text-lg md:text-2xl font-semibold text-white">
+                        ELITE
+                    </th>
+                    <th class="px-4 py-4 text-center text-lg md:text-2xl font-semibold text-white">
+                        PREMIUM
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray/10">
+                <!-- Category: Безопасность -->
+                <tr>
+                    <td colspan="3"
+                        class="px-4 py-3 text-lg md:text-xl font-bold text-secondary bg-category-bg border-b border-gray/30 uppercase tracking-wide">
+                        Безопасность
+                    </td>
+                </tr>
+
+                <!-- Safety Rows -->
+                <tr class="hover:bg-gray-900/20 transition duration-150">
+                    <td class="px-4 py-3 text-base md:text-lg text-white leading-normal md:leading-relaxed">
+                        Электромеханический стояночный тормоз (EPB) и функция удержания автомобиля на месте Autohold
+                    </td>
+                    <td class="px-4 py-3 text-center text-secondary text-xl md:text-2xl font-bold">+</td>
+                    <td class="px-4 py-3 text-center text-secondary text-xl md:text-2xl font-bold">+</td>
+                </tr>
+                <tr class="hover:bg-gray-900/20 transition duration-150">
+                    <td class="px-4 py-3 text-base md:text-lg text-white leading-normal md:leading-relaxed">
+                        Разъем USB для видеорегистратора
+                    </td>
+                    <td class="px-4 py-3 text-center text-secondary text-xl md:text-2xl font-bold">+</td>
+                    <td class="px-4 py-3 text-center text-secondary text-xl md:text-2xl font-bold">+</td>
+                </tr>
+                <!-- Другие строки — аналогично -->
+                <tr class="hover:bg-gray-900/20 transition duration-150">
+                    <td class="px-4 py-3 text-base md:text-lg text-white leading-normal md:leading-relaxed">
+                        Подогрев руля
+                    </td>
+                    <td class="px-4 py-3 text-center"></td>
+                    <td class="px-4 py-3 text-center text-secondary text-xl md:text-2xl font-bold">+</td>
+                </tr>
+
+                <!-- Category: Комфорт -->
+                <tr>
+                    <td colspan="3"
+                        class="px-4 py-3 text-lg md:text-xl font-bold text-secondary bg-category-bg border-b border-gray/30 uppercase tracking-wide">
+                        Комфорт
+                    </td>
+                </tr>
+
+                <tr class="hover:bg-gray-900/20 transition duration-150">
+                    <td class="px-4 py-3 text-base md:text-lg text-white leading-normal md:leading-relaxed">
+                        Панорамная крыша
+                    </td>
+                    <td class="px-4 py-3 text-center"></td>
+                    <td class="px-4 py-3 text-center text-secondary text-xl md:text-2xl font-bold">+</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+        <a href="./product.html">
+        <button
+            class="bg-secondary text-primary px-6 py-2.5 mb-8 rounded-full mt-[50px] font-medium text-base md:text-lg hover:bg-opacity-90 transition shadow-md">
+            Вернуться назад
+        </button>
+    </a>
+</main>
+
+    <footer class="bg-[#2A2B2F] text-white py-8 md:py-12 mt-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row gap-6 md:gap-8 mb-8 md:mb-10">
+                <div class="w-full md:w-1/3">
+                    <div class="rounded-xl overflow-hidden shadow-lg">
+                        <iframe
+                            src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae548079d84e22e0ce482be3969ed695a5165564027de6591218c0ab98beaaf00&amp;source=constructor"
+                            frameborder="0"
+                            class="w-full h-[250px] sm:h-[300px] md:min-h-[320px] border border-gray-600 rounded-[14px]"></iframe>
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-4 md:gap-y-6">
+                    <div>
+                        <h3 class="text-base md:text-xl font-normal text-gray-300 mb-1 md:mb-2">Адрес</h3>
+                        <p class="text-lg md:text-2xl font-medium leading-tight">
+                            г. Москва,<br>
+                            Кулакова, вл. 24, корп. 3
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-base md:text-xl font-normal text-gray-300 mb-1 md:mb-2">График работы</h3>
+                        <p class="text-lg md:text-2xl font-medium leading-tight">
+                            Ежедневно<br>
+                            с 9:00 до 21:00
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-base md:text-xl font-normal text-gray-300 mb-1 md:mb-2">Контакты</h3>
+                        <a href="tel:+74951168260"
+                            class="text-lg md:text-2xl font-medium hover:text-secondary transition duration-200 block">
+                            +7 (495) 778-98-50
+                        </a>
+                    </div>
+                    <div class="flex items-end">
+                        <button
+                            class="bg-secondary text-primary px-4 py-2 md:px-6 md:py-3 rounded-full font-medium hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50 transition-all duration-200 shadow-md hover:shadow-lg w-full sm:w-auto text-base md:text-lg">
+                            Обратная связь
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-700 pt-4 md:pt-6 mt-4 md:mt-6 text-xs text-gray-500 space-y-1 md:space-y-2">
+                <p>&copy; 2025 ООО «Техинком-Авто». Все права защищены.</p>
+                <p class="text-xs">
+                    Юридический адрес: ул. Кулакова, вл. 24, корп. 3, Москва<br>
+                    ОГРН: 1176952010180 | ИНН: 6950207759
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../src/modules/popupBlocks/CatchingUp.js"></script>
+    <script src="../src/modules/navigation/Burger.js"></script>
+
+</body>
+
+</html>
