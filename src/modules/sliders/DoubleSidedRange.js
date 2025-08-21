@@ -1,44 +1,41 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const sliderElement = document.getElementById('price-slider');
-    if (sliderElement) {
-        noUiSlider.create(sliderElement, {
-            start: [100000, 2500000],
-            connect: true,
-            step: 100000, // <-- Шаг 100 000
-            range: {
-                min: 100000,
-                max: 5000000
-            },
-            format: {
-                to: function (value) {
-                    return Math.round(value);
-                },
-                from: function (value) {
-                    return Number(value);
-                }
-            }
-        });
+    const slider = document.getElementById('downPaymentSlider');
+    const valueDisplay = document.getElementById('downPaymentValue');
+    const percentDisplay = document.getElementById('downPaymentPercent');
 
-        const minPriceValue = document.getElementById('minPriceValue');
-        const maxPriceValue = document.getElementById('maxPriceValue');
-
-        sliderElement.noUiSlider.on('update', function (values, handle) {
-            const value = Math.round(values[handle]);
-            const formattedValue = value.toLocaleString('ru-RU') + ' ₽';
-            if (handle === 0) {
-                minPriceValue.textContent = `От ${formattedValue}`;
-            } else {
-                maxPriceValue.textContent = `До ${formattedValue}`;
-            }
-        });
-
-        const hiddenMinInput = document.querySelector('input[name="price_from"]');
-        const hiddenMaxInput = document.querySelector('input[name="price_to"]');
-
-        sliderElement.noUiSlider.on('change', function (values, handle) {
-            const value = Math.round(values[handle]);
-            if (handle === 0 && hiddenMinInput) hiddenMinInput.value = value;
-            if (handle === 1 && hiddenMaxInput) hiddenMaxInput.value = value;
-        });
+    if (!slider || !valueDisplay || !percentDisplay) {
+        console.error('Missing required elements for down payment slider');
+        return;
     }
+
+    const min = 100000;
+    const max = 5000000;
+    const step = 100000;
+
+    slider.min = min;
+    slider.max = max;
+    slider.step = step;
+
+    function formatNumber(num) {
+        return num.toLocaleString('ru-RU');
+    }
+
+    function updateValues() {
+        const value = parseInt(slider.value);
+        const percent = Math.round((value / max) * 100);
+
+        // Обновляем отображение
+        valueDisplay.textContent = `${formatNumber(value)} ₽`;
+        percentDisplay.textContent = `(${percent}%)`;
+
+        // Обновляем заливку
+        const fillPercent = ((value - min) / (max - min)) * 100;
+        slider.style.setProperty('--fill-percent', `${fillPercent}%`);
+    }
+
+    // Обработчик движения
+    slider.addEventListener('input', updateValues);
+
+    // Инициализация
+    updateValues();
 });
