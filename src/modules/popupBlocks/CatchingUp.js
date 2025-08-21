@@ -197,7 +197,7 @@ class ModalManager {
         this.autoModalInterval = setInterval(() => {
             console.log('Интервал сработал!');
             if (!this.isOpen) {
-                this.showModal(this.DEFAULT_TYPE); // всегда дефолтный тип при автозапуске
+                this.showModal(this.DEFAULT_TYPE);
             } else {
                 console.log('Модалка уже открыта — пропускаем');
             }

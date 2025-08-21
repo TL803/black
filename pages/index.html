@@ -48,28 +48,59 @@
 </head>
 
 <body class="bg-custom text-white font-sans">
+    <style>
+        /* Разрешаем клики по кнопкам */
+        #banner-slider {
+            pointer-events: none;
+        }
 
+        .slide,
+        .slide * {
+            pointer-events: auto;
+        }
+
+        #banner-slider button,
+        #banner-slider a {
+            pointer-events: auto !important;
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
+        }
+
+        header,
+        .burger img {
+            pointer-events: auto;
+        }
+
+        /* Опционально: визуал */
+        button:hover {
+            transform: translateY(-1px);
+        }
+    </style>
+    <!-- Обёртка для header и слайдера -->
     <section
-        class="md:h-[935px] h-[447px] relative bg-cover bg-top bg-no-repeat flex flex-col justify-between rounded-bl-[32px] rounded-br-[32px] md:rounded-bl-[98px] md:rounded-br-[98px]"
-        style="background-image: url('../assets/Главная.png');">
-        <header class="container relative flex md:justify-between justify-end items-center mt-[60px]">
+        class="relative h-[447px] md:h-[935px] overflow-hidden rounded-bl-[32px] rounded-br-[32px] md:rounded-bl-[98px] md:rounded-br-[98px]">
+
+        <!-- Header -->
+        <header
+            class="container absolute top-0 left-0 right-0 z-20 flex md:justify-between justify-end items-center mt-[60px] pointer-events-auto">
             <nav class="md:flex hidden space-x-[32px]">
                 <a href="./" class="bg-secondary/50 py-4 px-4 rounded-[20px] border border-secondary">
                     <span class="font-medium">Главная</span>
                 </a>
-                <a href="./carloan.html" class="py-4 px-4 rounded-full text-tertiary"><span>Автокредит</span></a>
-                <a href="./TradeIn.html" class="py-4 px-4 rounded-full text-tertiary"><span>Trade-in</span></a>
-                <a href="./stock.html" class="py-4 px-4 rounded-full text-tertiary"><span>Акции</span></a>
-                <a href="./service.html" class="py-4 px-4 rounded-full text-tertiary"><span>Сервис</span></a>
-                <a href="./Leasing.html" class="py-4 px-4 rounded-full text-tertiary"><span>Лизинг</span></a>
-                <a href="./ransom.html" class="py-4 px-4 rounded-full text-tertiary"><span>Выкуп</span></a>
-                <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary"><span>Авто под такси</span></a>
-                <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary"><span>Контакты</span></a>
+                <a href="./carloan.html" class="py-4 px-4 rounded-full text-tertiary">Автокредит</a>
+                <a href="./TradeIn.html" class="py-4 px-4 rounded-full text-tertiary">Trade-in</a>
+                <a href="./stock.html" class="py-4 px-4 rounded-full text-tertiary">Акции</a>
+                <a href="./service.html" class="py-4 px-4 rounded-full text-tertiary">Сервис</a>
+                <a href="./Leasing.html" class="py-4 px-4 rounded-full text-tertiary">Лизинг</a>
+                <a href="./ransom.html" class="py-4 px-4 rounded-full text-tertiary">Выкуп</a>
+                <a href="./taxiСar.html" class="py-4 px-4 rounded-full text-tertiary">Авто под такси</a>
+                <a href="./Contacts.html" class="py-4 px-4 rounded-full text-tertiary">Контакты</a>
             </nav>
 
             <div class="flex gap-[68px] md:flex hidden items-center">
                 <div>
-                    <a href="tel:+74951168260" class="text-white ">+7 (495) 116-82-60</a>
+                    <a href="tel:+74951168260" class="text-white">+7 (495) 116-82-60</a>
                     <p class="text-white">г. Москва, ул. Кулакова, вл. 24к3</p>
                 </div>
                 <button class="bg-secondary showModalBox font-medium text-primary px-[23px] py-[16px] rounded-full">
@@ -77,77 +108,185 @@
                 </button>
             </div>
 
-            <div class="burger md:hidden flex items-center">
-                <img src="../assets/Бургер меню (2).svg" alt="Бургер меню" id="burgerMenu"
-                    class="cursor-pointer w-6 h-6">
+            <div class="burger md:hidden flex items-center z-30">
+                <img src="../assets/Бургер меню (2).svg" alt="Меню" id="burgerMenu"
+                    class="cursor-pointer w-6 h-6 hover:opacity-80">
             </div>
+        </header>
 
-            <div id="mobileMenu"
-                class="fixed top-0 right-0 w-[60%] h-full bg-[#131417] z-50 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
-                <div class="flex flex-col h-full p-6 text-white">
-                    <div class="flex justify-between items-center mb-6">
-                        <button id="closeMenu"
-                            class="text-white text-2xl w-8 h-8 flex items-center justify-center">&times;</button>
-                    </div>
-
-                    <nav class="flex-1 overflow-y-auto py-2">
-                        <ul class="space-y-4">
-                            <li><a href="./" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Главная</a>
-                                <hr class="border-t border-[#19BC8D33] my-2">
-                            </li>
-                            <li><a href="./carloan.html"
-                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Автокредит</a>
-                                <hr class="border-t border-[#19BC8D33] my-2">
-                            </li>
-                            <li><a href="./TradeIn.html"
-                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Trade-in</a>
-                                <hr class="border-t border-[#19BC8D33] my-2">
-                            </li>
-                            <li><a href="./stock.html"
-                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Акции</a>
-                                <hr class="border-t border-[#19BC8D33] my-2">
-                            </li>
-                            <li><a href="./service.html"
-                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Сервис</a>
-                                <hr class="border-t border-[#19BC8D33] my-2">
-                            </li>
-                            <li><a href="./Leasing.html"
-                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Лизинг</a>
-                                <hr class="border-t border-[#19BC8D33] my-2">
-                            </li>
-                            <li><a href="./ransom.html"
-                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Выкуп</a>
-                                <hr class="border-t border-[#19BC8D33] my-2">
-                            </li>
-                            <li><a href="./taxiСar.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Авто
-                                    под такси</a>
-                                <hr class="border-t border-[#19BC8D33] my-2">
-                            </li>
-                            <li><a href="./Contacts.html"
-                                    class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Контакты</a></li>
-                        </ul>
-                    </nav>
-
-                    <div class="pt-6 border-t border-gray-700 text-sm text-gray-300 mt-4">
-                        <a href="tel:+74951168260" class="text-[18px] font-bold text-white">+7 (495) 116-82-60</a>
-                        <p>г. Москва, ул. Кулакова, вл. 24к3</p>
+        <!-- Слайдер -->
+        <div id="banner-slider" class="flex h-full transition-transform duration-500 ease-in-out">
+            <!-- Слайд 1 -->
+            <div class="slide flex-shrink-0 w-full h-full relative bg-cover bg-top"
+                style="background-image: url('../assets/banners/Главная.png');">
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="container h-full flex flex-col justify-end text-white">
+                    <div class="mb-[43px] md:mb-[154px]">
+                        <h2 class="text-[20px] md:text-[64px] font-bold md:font-semibold text-white mb-[29px] md:mb-16">
+                            У вас 95% вероятность получить<br> одобрение по кредиту!
+                        </h2>
+                        <button
+                            class="bg-secondary showCreaditpopup text-primary text-[16px] md:text-[36px] font-medium py-[12px] md:py-[32px] md:px-[64px] w-full md:w-max rounded-[32px] hover:bg-opacity-90 transition pointer-events-auto z-10 relative">
+                            Купить машину в кредит
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
-        </header>
+            <!-- Слайд 2 -->
+            <div class="slide flex-shrink-0 w-full h-full relative bg-cover bg-top"
+                style="background-image: url('../assets/banners/Rectangle 28 (2).png');">
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="container h-full flex flex-col justify-end text-white">
+                    <div class="mb-[43px] md:mb-[154px]">
+                        <h2 class="text-[20px] md:text-[64px] font-bold md:font-semibold text-white mb-[29px] md:mb-16">
+                            Получите подарок при покупке <br>автомобиля в кредит!
+                        </h2>
+                        <button data-toggle-timer-container="Credit"
+                            class="bg-secondary text-primary text-[16px] md:text-[36px] font-medium py-[12px] md:py-[32px] md:px-[64px] w-full md:w-max rounded-[32px] hover:bg-opacity-90 transition pointer-events-auto z-10 relative">
+                            Купить машину в кредит
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-        <section class="container flex flex-col items-start justify-end h-full md:mb-[154px] mb-[43px]">
-            <h2 class="md:text-[64px] md:font-semibold font-bold text-[20px] font text-white md:mb-16 mb-[29px]">У вас
-                95% вероятность получить<br> одобрение по кредиту!</h2>
-            <button
-                class="bg-secondary showCreaditpopup text-primary md:text-[36px] text-[16px] font-medium md:px-[64px] md:py-[32px] py-[12px] w-full md:w-max rounded-[32px] hover:bg-opacity-90 transition">
-                Купить машину в кредит
-            </button>
-        </section>
+            <!-- Слайд 3 -->
+            <div class="slide flex-shrink-0 w-full h-full relative bg-cover bg-top"
+                style="background-image: url('../assets/banners/Rectangle 28 (3).png');">
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="container h-full flex flex-col justify-end text-white">
+                    <div class="mb-[43px] md:mb-[154px]">
+                        <h2 class="text-[20px] md:text-[64px] font-bold md:font-semibold text-white mb-[29px] md:mb-16">
+                            Выгоднее уже не будет!<br>Приобрети авто до роста цен и процентов по кредиту.
+                        </h2>
+                        <button data-toggle-timer-container="Credit"
+                            class="bg-secondary text-primary text-[16px] md:text-[36px] font-medium py-[12px] md:py-[32px] md:px-[64px] w-full md:w-max rounded-[32px] hover:bg-opacity-90 transition pointer-events-auto z-10 relative">
+                            Купить машину в кредит
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 4 -->
+            <div class="slide flex-shrink-0 w-full h-full relative bg-cover bg-top"
+                style="background-image: url('../assets/banners/Rectangle 28 (4).png');">
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="container h-full flex flex-col justify-end text-white">
+                    <div class="mb-[43px] md:mb-[154px]">
+                        <h2 class="text-[20px] md:text-[64px] font-bold md:font-semibold text-white mb-[29px] md:mb-16">
+                            «Независимость» — ваш проверенный помощник<br> в выборе идеального автомобиля.
+                        </h2>
+                        <button
+                            class="bg-secondary showCreaditpopup text-primary text-[16px] md:text-[36px] font-medium py-[12px] md:py-[32px] md:px-[64px] w-full md:w-max rounded-[32px] hover:bg-opacity-90 transition pointer-events-auto z-10 relative">
+                            Купить машину в кредит
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 5 -->
+            <div class="slide flex-shrink-0 w-full h-full relative bg-cover bg-top"
+                style="background-image: url('../assets/banners/Rectangle 28 (5).png');">
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="container h-full flex flex-col justify-end text-white">
+                    <div class="mb-[43px] md:mb-[154px]">
+                        <h2
+                            class="text-[20px] md:text-[64px] font-bold md:font-semibold text-[#19BC8D] mb-[29px] md:mb-[200px]">
+                            Trade-in<br>
+                            <span class="text-white md:text-[32px] font-medium">Выгода 200 тысяч <br>
+                                Поменяйте свой подержанный автомобиль на новый!</span>
+                        </h2>
+                        <a href="./TradeIn.html">
+                            <button
+                                class="bg-secondary text-primary text-[16px] md:text-[36px] font-medium py-[12px] md:py-[32px] md:px-[64px] w-full md:w-max rounded-[32px] hover:bg-opacity-90 transition pointer-events-auto z-10 relative">
+                                Купить машину в Trade-in
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 6 -->
+            <div class="slide flex-shrink-0 w-full h-full relative bg-[#19BC8D]">
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="container h-full flex flex-col justify-end text-white">
+                    <div class="mb-[43px] md:mb-[54px] flex flex-col md:flex-row md:items-end gap-6 md:gap-12">
+                        <div class="flex flex-col gap-[20px] md:gap-[80px] max-w-lg">
+                            <h2
+                                class="text-[24px]  md:text-[64px] font-semibold leading-[30px] md:leading-[60px]">
+                                Кешбек за покупку<br>
+                                SOUEAST при оплате картой
+                            </h2>
+                        <a target="_blank" href="https://n-avtosalon.ru/auto/lada/granta/granta_sedan">
+                            <button
+                                class="bg-[#25262A] text-[#19B588] text-[16px] md:text-[36px] font-medium py-[12px] px-[16px] md:py-[32px] md:px-[64px] w-full md:w-max rounded-[32px] hover:bg-opacity-90 transition pointer-events-auto z-10 relative">
+                                Купить машину в кредит
+                            </button>
+                        </a>
+                        </div>
+                        <div class="hidden md:block">
+                            <img src="../assets/banners/Group 915.png" alt="SOUEAST SUV"
+                                class="w-[300px] md:w-auto h-auto object-contain" />
+                        </div>
+                    </div>
+                    <p class="text-[10px] md:text-[16px] leading-relaxed max-w-4xl mb-[60px]">
+                        Срок проведения акции: с 01 августа 2025 года по 31 октября 2025 года включительно.<br>
+                        Кэшбэк в размере 100 000 рублей начисляется в виде бонусных единиц согласно условиям Программы
+                        лояльности.<br>
+                        Подробности можно узнать по телефону или в автосалоне.
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
+        <div id="mobileMenu"
+            class="fixed top-0 right-0 w-[60%] h-full bg-[#131417] z-50 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex flex-col h-full p-6 text-white">
+                <div class="flex justify-between items-center mb-6">
+                    <button id="closeMenu"
+                        class="text-white text-2xl w-8 h-8 flex items-center justify-center">&times;</button>
+                </div>
 
+                <nav class="flex-1 overflow-y-auto py-2">
+                    <ul class="space-y-4">
+                        <li><a href="./" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Главная</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./carloan.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Автокредит</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./TradeIn.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Trade-in</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./stock.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Акции</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./service.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Сервис</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./Leasing.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Лизинг</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./ransom.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Выкуп</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./taxiСar.html" class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Авто
+                                под такси</a>
+                            <hr class="border-t border-[#19BC8D33] my-2">
+                        </li>
+                        <li><a href="./Contacts.html"
+                                class="block py-2 px-4 hover:bg-secondary/50 rounded-lg">Контакты</a></li>
+                    </ul>
+                </nav>
+
+                <div class="pt-6 border-t border-gray-700 text-sm text-gray-300 mt-4">
+                    <a href="tel:+74951168260" class="text-[18px] font-bold text-white">+7 (495) 116-82-60</a>
+                    <p>г. Москва, ул. Кулакова, вл. 24к3</p>
+                </div>
+            </div>
+        </div>
     <main class="mb-[172px]">
         <section class="container md:mt-[132px] mt-[24px]">
             <div class="flex items-center justify-between gap-[28px]">
@@ -181,7 +320,8 @@
 
                         <iframe
                             src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae548079d84e22e0ce482be3969ed695a5165564027de6591218c0ab98beaaf00&amp;source=constructor"
-                             frameborder="0" class="w-full h-[250px] sm:h-[300px] md:min-h-[320px] border border-gray-300 rounded-[14px]"></iframe>
+                            frameborder="0"
+                            class="w-full h-[250px] sm:h-[300px] md:min-h-[320px] border border-gray-300 rounded-[14px]"></iframe>
                     </div>
                 </div>
 
@@ -240,6 +380,8 @@
     <script src="../src/modules/popupBlocks/Feedback.js"></script>
 
     <script src="../src/modules/PhoneWidgets/Widget.js"></script>
+
+    <script src="../src/modules/sliders/Banners.js"></script>
 </body>
 
 </html>
