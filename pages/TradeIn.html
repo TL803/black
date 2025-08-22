@@ -114,7 +114,7 @@
         </div>
         <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
     </header>
-    <main class="container flex flex-col gap-[132px] mb-[172px]">
+    <main class="container flex flex-col gap-[40px] md:gap-[132px] mb-[60px] md:mb-[172px]">
         <section id="form1">
             <h1 class="text-[24px] md:text-[90px] md:text-[90px] mb-[30px] md:mb-[60px] mt-[80px]">Купить новый
                 автомобиль в Трейд-Ин
@@ -149,28 +149,28 @@
             <form id="firstForm"
                 class="md:px-[92px] md:py-[100px] rounded-[24px] md:bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]"
                 action="#">
-<h2 class="text-[20px] md:text-[24px] md:text-[48px] font-medium">1. Выберите автомобиль</h2>
+                <h2 class="text-[20px] md:text-[24px] md:text-[48px] font-medium">1. Выберите автомобиль</h2>
 
-<select class="custom-select" name="brand" data-step="1">
-    <option value="" disabled selected>Марка автомобиля</option>
-    <option value="bmw">BMW</option>
-    <option value="audi">Audi</option>
-    <option value="mercedes">Mercedes-Benz</option>
-</select>
+                <select class="custom-select" name="brand" data-step="1">
+                    <option value="" disabled selected>Марка автомобиля</option>
+                    <option value="bmw">BMW</option>
+                    <option value="audi">Audi</option>
+                    <option value="mercedes">Mercedes-Benz</option>
+                </select>
 
-<select class="custom-select" name="model" data-step="2">
-    <option value="" disabled selected>Модель</option>
-    <option value="x5">X5</option>
-    <option value="q7">Q7</option>
-    <option value="gle">GLE</option>
-</select>
+                <select class="custom-select" name="model" data-step="2">
+                    <option value="" disabled selected>Модель</option>
+                    <option value="x5">X5</option>
+                    <option value="q7">Q7</option>
+                    <option value="gle">GLE</option>
+                </select>
 
-<select class="custom-select" name="trim" data-step="3">
-    <option value="" disabled selected>Комплектация</option>
-    <option value="base">Базовая</option>
-    <option value="mid">Средняя</option>
-    <option value="premium">Премиум</option>
-</select>
+                <select class="custom-select" name="trim" data-step="3">
+                    <option value="" disabled selected>Комплектация</option>
+                    <option value="base">Базовая</option>
+                    <option value="mid">Средняя</option>
+                    <option value="premium">Премиум</option>
+                </select>
                 <button class="text-[16px] md:text-[36px] bg-[#19BC8D66] rounded-[32px] py-[12px] md:py-[32px]"
                     type="submit">
                     Применить
@@ -199,9 +199,9 @@
                         <div class="w-[354px] h-[232px] rounded-[24px] bg-[#131417]"></div>
                     </div>
                 </div>
-                <div class="mb-[100px]">
+                <div class="mb-[20px] md:mb-[100px]">
                     <p class="text-[20px] md:text-[32px] mb-[32px]">Цвет</p>
-                    <div class="mb-[100px]">
+                    <div class="mb-[50px]">
                         <div class="flex overflow-x-auto md:overflow-visible pb-2 md:pb-0 gap-[8px] md:gap-[40px] scrollbar-hide"
                             style="scrollbar-width: none; -ms-overflow-style: none;">
                             <div id="colorContainer"
@@ -210,7 +210,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-wrap gap-[40px] mb-[80px]">
+                <div class="flex flex-wrap gap-[20px] md:gap-[40px] mb-[80px]">
                     <div
                         class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
                         <div>
@@ -238,7 +238,7 @@
                     <div
                         class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
                         <div>
-                            <p class="text-[16px] md:text-[24px] text-[#19BC8D]">9.9 л/100 км</p>
+                            <p class="text-[14px] md:text-[24px] text-[#19BC8D]">9.9 л/100 км</p>
                             <p class="text-[16px] md:text-[20px]">Расход</p>
                         </div>
                         <img class="w-[60px] md:w-auto" src="../assets/------- 1.svg" alt="">
@@ -251,7 +251,7 @@
                 </div>
             </section>
 
-            <section class="mb-[150px]">
+            <section class="mb-[40px] md:mb-[150px]">
                 <form
                     class="md:px-[92px] md:py-[100px] rounded-[24px] md:bg-[#1314171F] flex flex-col gap-[24px] md:gap-[60px]"
                     action="#">
@@ -295,7 +295,8 @@
 
                         <iframe
                             src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae548079d84e22e0ce482be3969ed695a5165564027de6591218c0ab98beaaf00&amp;source=constructor"
-                             frameborder="0" class="w-full h-[250px] sm:h-[300px] md:min-h-[320px] border border-gray-300 rounded-[14px]"></iframe>
+                            frameborder="0"
+                            class="w-full h-[250px] sm:h-[300px] md:min-h-[320px] border border-gray-300 rounded-[14px]"></iframe>
                     </div>
                 </div>
 

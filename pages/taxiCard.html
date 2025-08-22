@@ -1136,9 +1136,9 @@
 
 
 
-                <div id="content-complectations" class="content-section hidden">
+                <div id="content-complectations" class="content-section  hidden">
                     <div class=" w-full">
-                        <div class=" mx-auto px-4 py-8 space-y-10">
+                        <div class=" mx-auto md:px-4 py-8 space-y-10">
 
                             <div>
                                 <h2
@@ -1186,9 +1186,9 @@
                                                     class="flex-1 max-w-[140px] bg-[#19BC8D] text-white py-3 rounded-[28px] showCreaditpopup font-medium text-sm credit-button">
                                                     В кредит
                                                 </button>
-                                                <button data-toggle-timer-container="Trade-in" 
+                                                <button data-toggle-timer-container="Trade-in"
                                                     class="flex-1 max-w-[140px] bg-[#25262A] py-3 rounded-[28px] text-[#19BC8D] font-medium text-sm">
-                                                    <a >Trade-in</a>
+                                                    <a>Trade-in</a>
                                                 </button>
                                                 <button
                                                     class="w-[50px] h-[50px] bg-[#25262A] rounded-full flex items-center justify-center"><img
@@ -1232,8 +1232,9 @@
                                 <summary class="list-none">
                                     <div
                                         class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 items-center bg-[#13141770] p-4 md:p-[40px] rounded-[32px] cursor-pointer">
-                                        <div class="flex items-center justify-center md:justify-start gap-2">
-                                            <span class="font-semibold text-lg text-white">Active Plus New</span>
+                                        <div class="flex items-center justify-center md:justify-start gap-4">
+                                            <input type="checkbox" class="custom-checkbox">
+                                            <span class="font-semibold text-xl text-white">Premium</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
@@ -1244,12 +1245,12 @@
 
                                         <div class="text-right">
                                             <span
-                                                class="line-through text-lg text-gray-300 hidden md:block text-center">1
+                                                class="line-through text-xl text-gray-300 hidden md:block text-center">1
                                                 489 000 ₽</span>
                                         </div>
 
                                         <div class="flex justify-center md:justify-start">
-                                            <span class="text-[#19BC8D] font-medium text-lg flex items-center gap-2">
+                                            <span class="text-[#19BC8D] font-medium text-xl flex items-center gap-2">
                                                 <span class="md:hidden line-through text-gray-400 text-sm">1 489 000
                                                     ₽</span>
                                                 от 633 000 ₽
@@ -1257,7 +1258,7 @@
                                         </div>
 
                                         <div class="text-center md:text-left">
-                                            <span class="text-white text-sm md:text-base showCreaditpopup">В кредит
+                                            <span class="text-white text-xl md:text-base showCreaditpopup">В кредит
                                                 от 7 806 ₽/мес.</span>
                                         </div>
 
@@ -1268,9 +1269,13 @@
                                             </button>
                                             <button data-toggle-timer-container="Trade-in"
                                                 class="flex-1 max-w-[140px] bg-[#25262A] py-3 rounded-[28px] text-[#19BC8D] font-medium text-sm">
-                                                <a >Trade-in</a>
+                                                <a>Trade-in</a>
                                             </button>
+                                            <button
+                                                class="w-[50px] h-[50px] bg-[#25262A] rounded-full flex items-center justify-center"><img
+                                                    class="w-[30px] h-[30px]" src="../assets/print.svg" alt=""></button>
                                         </div>
+
                                     </div>
                                 </summary>
 
@@ -1304,10 +1309,11 @@
 
                         </div>
                     </div>
-                    <button
-                        class="w-full md:w-[545px] h-[50px] md:h-[84px] rounded-[12px] bg-[#19BC8D] text-[#25262A] text-[18px] md:text-[24px] font-medium">Сравнить
-                        комплектации</button>
-
+                    <a href="./Comparison.html">
+                        <button
+                            class="w-full md:w-[545px] h-[50px] md:h-[84px] rounded-[12px] bg-[#19BC8D] text-[#25262A] text-[18px] md:text-[24px] font-medium">Сравнить
+                            комплектации</button>
+                    </a>
                 </div>
             </div>
         </section>

@@ -146,16 +146,16 @@
         <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
     </header>
 
-    <main class="container flex flex-col mb-[172px] gap-[80px]">
+    <main class="container flex flex-col mb-[50px] md:mb-[172px] gap-[40px] md:gap-[80px]">
         <section>
             <div>
-                <h1 class="text-[36px] md:text-[96px] mb-[20px] mt-[80px]">Kaiyi X3 Pro</h1>
+                <h1 class="text-[36px] md:text-[96px] mb-[10px] md:mb-[20px] mt-[20px] md:mt-[80px]">Kaiyi X3 Pro</h1>
                 <p
-                    class="inline-block text-[12px] md:text-[20px] px-[10px] md:px-[55px] py-[4px] md:py-[16px] rounded-[32px] border border-[#19BC8D] bg-[#225045] mb-[60px]">
+                    class="inline-block text-[12px] md:text-[20px] px-[10px] md:px-[55px] py-[4px] md:py-[16px] rounded-[32px] border border-[#19BC8D] bg-[#225045] mb-[30px] md:mb-[60px]">
                     Внедорожник
                 </p>
             </div>
-            <div class="flex gap-[72px] mb-[80px]">
+            <div class="flex gap-[72px] mb-[40px] md:mb-[80px]">
                 <div id='carImage'
                     class="md:w-[1251px] md:h-[812px] w-full h-[228px] rounded-[24px] bg-[#131417] bg-cover bg-center"
                     style="background-image: url('../assets/car_white.png');">
@@ -167,7 +167,7 @@
                 </div>
             </div>
 
-            <div class="mb-[100px]">
+            <div class="mb-[-60px] md:mb-[100px]">
                 <p class="text-[20px] md:text-[32px] mb-[32px]">Цвет</p>
                 <div class="mb-[100px]">
                     <div class="flex overflow-x-auto md:overflow-visible pb-2 md:pb-0 gap-[8px] md:gap-[40px] scrollbar-hide"
@@ -178,7 +178,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-wrap gap-[40px] mb-[80px]">
+            <div class="flex flex-wrap gap-[20px] md:gap-[40px] mb-[40px] md:mb-[80px]">
                 <div
                     class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
                     <div>
@@ -206,7 +206,7 @@
                 <div
                     class="w-full md:w-max inline-block py-[12px] md:py-[24px] px-[40px] border border-[#19BC8D] bg-[#13141770] rounded-[24px] justify-between md:rounded-[32px] flex items-center gap-[96px]">
                     <div>
-                        <p class="text-[16px] md:text-[24px] text-[#19BC8D]">9.9 л/100 км</p>
+                        <p class="text-[14px] md:text-[24px] text-[#19BC8D]">9.9 л/100 км</p>
                         <p class="text-[16px] md:text-[20px]">Расход</p>
                     </div>
                     <img class="w-[60px] md:w-auto" src="../assets/------- 1.svg" alt="">
@@ -215,7 +215,7 @@
 
 
 
-            <div class="mb-[40px]">
+            <div class="md:mb-[40px]">
                 <p class="md:text-[48px] text-[16px] line-through">1 959 900 ₽</p>
                 <p class="md:text-[96px] text-[32px] font-medium">960 000 ₽</p>
             </div>
@@ -227,7 +227,7 @@
 
 
         <section>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-[12px] md:gap-[32px]">
                 <!-- Trade-in -->
                 <div class="bg-[#1F2023] flex p-4 justify-between items-end rounded-[32px]" data-calc-option="trade-in">
                     <div class="flex space-x-4">
@@ -281,7 +281,7 @@
 
         <section>
             <div class="container w-full mx-auto px-[0] md:px-4 md:py-8 ">
-                <div class="flex justify-between mb-[72px] gap-[16px] md:gap-[32px]">
+                <div class="flex justify-between mb-[30px] md:mb-[72px] gap-[16px] md:gap-[32px]">
                     <button id="tab-complectations"
                         class="bg-[#13141770] w-full text-[#19BC8D] px-[25px] md:px-4 py-[16px] md:py-[18px] text-[12px] md:text-[32px] font-medium rounded-[14px] transition-colors">
                         Комплектации
@@ -1301,7 +1301,7 @@
         </section>
 
         <section class="container">
-            <h2 class="text-[32px] md:text-[64px] font-bold mt-[68px] md:mt-[132px] mb-[68px]">Спецпредложения</h2>
+            <h2 class="text-[32px] md:text-[64px] font-bold mt-[28px] md:mt-[132px]  mb-[20px] md:mb-[68px]">Спецпредложения</h2>
             <div id="products-block" class="flex flex-row flex-wrap gap-[12px] md:gap-[30px]">
 
             </div>
@@ -1375,51 +1375,53 @@
     <script src="../script/showProducts.js"></script>
     <script src="../script/tabs.js"></script>
     <script src="../script/showCharaptersDetails.js"></script> -->
-<div id="print-template" class="hidden">
-  <div style="font-family: Arial, sans-serif; padding: 30px; background: white; color: black; width: 210mm; height: 297mm;">
-    <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
-      <div>
-        <h1 style="color: #19BC8D; font-size: 24px;">Автоцентр</h1>
-        <p>+7 (495) 116-82-60</p>
-        <p>г. Москва, ул. Кулакова, вл. 24к3</p>
-      </div>
-      <div>
-        <img src="../assets/logo.png" alt="Логотип" style="height: 50px;">
-      </div>
+    <div id="print-template" class="hidden">
+        <div
+            style="font-family: Arial, sans-serif; padding: 30px; background: white; color: black; width: 210mm; height: 297mm;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                <div>
+                    <h1 style="color: #19BC8D; font-size: 24px;">Автоцентр</h1>
+                    <p>+7 (495) 116-82-60</p>
+                    <p>г. Москва, ул. Кулакова, вл. 24к3</p>
+                </div>
+                <div>
+                    <img src="../assets/logo.png" alt="Логотип" style="height: 50px;">
+                </div>
+            </div>
+
+            <hr style="border: 1px solid #19BC8D; margin: 20px 0;">
+
+            <h2 id="pdf-car-name" style="font-size: 28px; color: #25262A;">Kaiyi X3 Pro</h2>
+            <p id="pdf-car-type" style="color: #19BC8D; font-weight: bold;">Внедорожник</p>
+
+            <div style="margin: 30px 0;">
+                <img id="pdf-car-image" src="" alt="Фото авто"
+                    style="width: 100%; max-height: 400px; object-fit: contain;">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <p><strong>Мощность:</strong> <span id="pdf-power">249 л.с.</span></p>
+                    <p><strong>Разгон:</strong> <span id="pdf-accel">7.9 сек.</span></p>
+                </div>
+                <div>
+                    <p><strong>Скорость:</strong> <span id="pdf-speed">210 км/ч</span></p>
+                    <p><strong>Расход:</strong> <span id="pdf-fuel">9.9 л/100 км</span></p>
+                </div>
+            </div>
+
+            <div style="margin: 30px 0; font-size: 24px; font-weight: bold; color: #19BC8D;">
+                Цена: <span id="pdf-price">960 000 ₽</span>
+            </div>
+
+            <div style="position: absolute; bottom: 30px; width: calc(100% - 60px);">
+                <p style="color: #888; font-size: 12px;">
+                    Предложение действует до конца месяца. Не является публичной офертой.
+                </p>
+                <p style="margin-top: 10px;">С уважением, Руководитель отдела продаж</p>
+            </div>
+        </div>
     </div>
-
-    <hr style="border: 1px solid #19BC8D; margin: 20px 0;">
-
-    <h2 id="pdf-car-name" style="font-size: 28px; color: #25262A;">Kaiyi X3 Pro</h2>
-    <p id="pdf-car-type" style="color: #19BC8D; font-weight: bold;">Внедорожник</p>
-
-    <div style="margin: 30px 0;">
-      <img id="pdf-car-image" src="" alt="Фото авто" style="width: 100%; max-height: 400px; object-fit: contain;">
-    </div>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-      <div>
-        <p><strong>Мощность:</strong> <span id="pdf-power">249 л.с.</span></p>
-        <p><strong>Разгон:</strong> <span id="pdf-accel">7.9 сек.</span></p>
-      </div>
-      <div>
-        <p><strong>Скорость:</strong> <span id="pdf-speed">210 км/ч</span></p>
-        <p><strong>Расход:</strong> <span id="pdf-fuel">9.9 л/100 км</span></p>
-      </div>
-    </div>
-
-    <div style="margin: 30px 0; font-size: 24px; font-weight: bold; color: #19BC8D;">
-      Цена: <span id="pdf-price">960 000 ₽</span>
-    </div>
-
-    <div style="position: absolute; bottom: 30px; width: calc(100% - 60px);">
-      <p style="color: #888; font-size: 12px;">
-        Предложение действует до конца месяца. Не является публичной офертой.
-      </p>
-      <p style="margin-top: 10px;">С уважением, Руководитель отдела продаж</p>
-    </div>
-  </div>
-</div>
 
     <script src="../src/modules/navigation/Burger.js"></script>
     <script src="../src/modules/display/ShowAllCars.js"></script>
