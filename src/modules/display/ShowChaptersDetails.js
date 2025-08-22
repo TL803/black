@@ -1,54 +1,74 @@
-  // Элементы
-  const toggleButton = document.querySelector('[data-toggle]');
-  const specsContent = document.querySelector('.specs-content');
-  const arrowIcon = document.querySelector('[data-arrow]');
+function getToggleElements() {
+  return {
+    toggleButton: document.querySelector('[data-toggle]'),
+    specsContent: document.querySelector('.specs-content'),
+    arrowIcon: document.querySelector('[data-arrow]')
+  };
+}
 
-  // Медиа-запрос для десктопа (md: и выше — например, 768px)
-  const desktopMediaQuery = window.matchMedia('(min-width: 768px)');
+function isDesktop() {
+  return window.matchMedia('(min-width: 768px)').matches;
+}
 
-  // Функция: включить/выключить логику в зависимости от экрана
-  function handleResponsiveToggle() {
-    if (desktopMediaQuery.matches) {
-      // Десктоп: всегда показываем, убираем обработчик
-      specsContent.classList.remove('hidden');
-      toggleButton.style.pointerEvents = 'none'; // отключаем клик
-      arrowIcon?.parentElement?.classList.add('hidden'); // прячем стрелку
-    } else {
-      // Мобильная версия
-      arrowIcon?.parentElement?.classList.remove('hidden'); // показываем стрелку
-      toggleButton.style.pointerEvents = 'auto'; // включаем клик
+function showContent() {
+  const { specsContent, arrowIcon } = getToggleElements();
+  specsContent.classList.remove('hidden');
+  arrowIcon.style.transform = 'rotate(180deg)';
+}
 
-      // Устанавливаем начальное состояние (скрыто)
-      if (!toggleButton.hasAttribute('data-initialized')) {
-        specsContent.classList.add('hidden');
-        arrowIcon.style.transform = 'rotate(0deg)';
-        toggleButton.setAttribute('data-initialized', 'true');
-      }
+function hideContent() {
+  const { specsContent, arrowIcon } = getToggleElements();
+  specsContent.classList.add('hidden');
+  arrowIcon.style.transform = 'rotate(0deg)';
+}
 
-      // Удаляем старый обработчик, чтобы не дублировался
-      const newButton = toggleButton.cloneNode(true);
-      toggleButton.replaceWith(newButton);
-      newButton.addEventListener('click', toggleContent);
-    }
+function setDesktopState() {
+  const { specsContent, toggleButton, arrowIcon } = getToggleElements();
+  showContent();
+  toggleButton.style.pointerEvents = 'none';
+  arrowIcon.parentElement.classList.add('hidden');
+}
+
+function setMobileState() {
+  const { toggleButton, arrowIcon } = getToggleElements();
+  arrowIcon.parentElement.classList.remove('hidden');
+  toggleButton.style.pointerEvents = 'auto';
+
+  if (!toggleButton.hasAttribute('data-initialized')) {
+    hideContent();
+    toggleButton.setAttribute('data-initialized', 'true');
   }
 
-  // Функция переключения видимости
-  function toggleContent() {
-    specsContent.classList.toggle('hidden');
-    const isHidden = specsContent.classList.contains('hidden');
-    arrowIcon.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(180deg)';
+  const newButton = toggleButton.cloneNode(true);
+  newButton.addEventListener('click', toggleMobileContent);
+  toggleButton.replaceWith(newButton);
+}
+
+function toggleMobileContent() {
+  const { specsContent, arrowIcon } = getToggleElements();
+  if (specsContent.classList.contains('hidden')) {
+    showContent();
+  } else {
+    hideContent();
   }
+}
 
-  // Инициализация
-  if (toggleButton && specsContent && arrowIcon) {
-    // Добавляем обработчик для мобильных
-    function addMobileListener() {
-      toggleButton.addEventListener('click', toggleContent);
-    }
-
-    // Проверяем при загрузке
-    handleResponsiveToggle();
-
-    // Следим за изменением размера экрана
-    desktopMediaQuery.addEventListener('change', handleResponsiveToggle);
+function updateToggleState() {
+  if (isDesktop()) {
+    setDesktopState();
+  } else {
+    setMobileState();
   }
+}
+
+function initToggle() {
+  const { toggleButton, specsContent, arrowIcon } = getToggleElements();
+  if (!toggleButton || !specsContent || !arrowIcon) return;
+
+  updateToggleState();
+
+  const mediaQuery = window.matchMedia('(min-width: 768px)');
+  mediaQuery.addEventListener('change', updateToggleState);
+}
+
+document.addEventListener('DOMContentLoaded', initToggle);

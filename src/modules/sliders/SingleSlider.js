@@ -1,130 +1,138 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Находим слайдеры и элементы отображения
-    const slider = document.querySelector('.thick-blue-slider'); // первый слайдер (процент)
-    const creditSlider = document.querySelector('.credit-slider'); // второй слайдер (срок кредита)
+function $(selector) {
+  return typeof selector === 'string' ? document.querySelector(selector) : selector;
+}
 
-    // === ВАЖНО: Проверяем, существуют ли элементы ===
-    const percentValue = document.getElementById('percentValue');
-    const amountValue = document.getElementById('amountValue');
-    const loanTermElement = document.getElementById('loanTerm');
-    const monthlyPaymentElement = document.getElementById('monthlyPayment');
+function $id(id) {
+  return document.getElementById(id);
+}
 
-    const propertyPrice = 5_000_000; // Стоимость недвижимости
+function formatNumber(num) {
+  return num.toLocaleString('ru-RU');
+}
 
-    // Форматирование чисел с пробелами (ru-RU)
-    function formatNumber(num) {
-        return num.toLocaleString('ru-RU');
+function getYearText(year) {
+  if (year === 1) return 'год';
+  if (year >= 2 && year <= 4) return 'года';
+  return 'лет';
+}
+
+function createSliderController(slider, config = {}) {
+  const {
+    valueElement,
+    tooltipAttr = 'data-value',
+    formatter,
+    onUpdate = () => {}
+  } = config;
+
+  if (!slider) return null;
+
+  const { min, max, step } = config;
+  slider.min = min ?? slider.min;
+  slider.max = max ?? slider.max;
+  slider.step = step ?? slider.step;
+  if (!slider.value) slider.value = min;
+
+  function updateFillPercent(value) {
+    const percent = ((value - slider.min) / (slider.max - slider.min)) * 100;
+    slider.style.setProperty('--fill-percent', `${percent}%`);
+  }
+
+  function update() {
+    const value = parseFloat(slider.value);
+    updateFillPercent(value);
+
+    if (valueElement) {
+      valueElement.textContent = formatter ? formatter(value) : String(value);
     }
 
-    // Склонение слова "год"
-    function getYearText(year) {
-        if (year === 1) return 'год';
-        if (year >= 2 && year <= 4) return 'года';
-        return 'лет';
+    if (tooltipAttr) {
+      slider.setAttribute(tooltipAttr, slider.value);
     }
 
-    // === Обновление первого слайдера (процент и сумма) ===
-    function updateSlider() {
-        if (!slider) return;
+    onUpdate(value);
+  }
 
-        const value = parseFloat(slider.value);
-        const min = parseFloat(slider.min) || 0;
-        const max = parseFloat(slider.max) || 100;
+  slider.addEventListener('input', update);
+  update();
 
-        // Процент заполнения для стиля
-        const percent = ((value - min) / (max - min)) * 100;
-        slider.style.setProperty('--fill-percent', `${percent}%`);
+  return { update, element: slider };
+}
 
-        // Округлённое значение в процентах
-        const roundedPercent = Math.round(value); // value уже округляется через step
+function initDownPaymentSlider() {
+  const slider = $('.thick-blue-slider');
+  const percentValue = $id('percentValue');
+  const amountValue = $id('amountValue');
 
-        // Обновляем отображение процента, если элемент есть
-        if (percentValue) {
-            percentValue.textContent = `${roundedPercent} Лет`;
-        }
+  const propertyPrice = 5_000_000;
 
-        // Сумма первоначального взноса
-        const amount = propertyPrice * (roundedPercent / 100);
-        if (amountValue) {
-            amountValue.textContent = formatNumber(Math.round(amount));
-        }
-
-        // Tooltip
-        slider.setAttribute('data-value', `${roundedPercent}%`);
+  return createSliderController(slider, {
+    valueElement: percentValue,
+    min: 0,
+    max: 100,
+    step: 10,
+    formatter: (value) => {
+      const percent = Math.round(value);
+      const amount = propertyPrice * (percent / 100);
+      if (amountValue) {
+        amountValue.textContent = formatNumber(Math.round(amount));
+      }
+      return `${percent} Лет`;
+    },
+    onUpdate: (value) => {
+      const percent = Math.round(value);
+      slider.setAttribute('data-value', `${percent}%`);
     }
+  });
+}
 
-    // === Обновление второго слайдера (срок кредита) ===
-    function updateCreditSlider() {
-        if (!creditSlider) return;
+function initCreditTermSlider() {
+  const slider = $('.credit-slider');
+  const loanTermElement = $id('loanTerm');
+  const monthlyPaymentElement = $id('monthlyPayment');
 
-        const years = parseInt(creditSlider.value, 10);
+  const paymentMap = {
+    1: 6_000_000,
+    2: 3_000_000,
+    3: 2_000_000,
+    4: 1_500_000,
+    5: 1_200_000,
+    6: 1_000_000,
+    7: Math.round(6_000_000 / 7)
+  };
 
-        // Жёстко заданные значения ежемесячных платежей (в рублях)
-        const paymentMap = {
-            1: 6000000,
-            2: 3000000,
-            3: 2000000,
-            4: 1500000,
-            5: 1200000,
-            6: 1000000,
-            7: Math.round(6_000_000 / 7) // ≈ 857 143
-        };
-
-        const monthlyPayment = paymentMap[years] || 0;
-
-        // Обновляем отображение срока, если элемент существует
-        if (loanTermElement) {
-            loanTermElement.textContent = `${years} ${getYearText(years)}`;
-        }
-
-        // Обновляем ежемесячный платёж
-        if (monthlyPaymentElement) {
-            monthlyPaymentElement.textContent = formatNumber(monthlyPayment);
-        }
-
-        // Обновляем tooltip
-        creditSlider.setAttribute('data-value', `${years} ${getYearText(years)}`);
+  return createSliderController(slider, {
+    valueElement: loanTermElement,
+    min: 1,
+    max: 7,
+    step: 1,
+    formatter: (years) => {
+      const payment = paymentMap[years] || 0;
+      if (monthlyPaymentElement) {
+        monthlyPaymentElement.textContent = formatNumber(payment);
+      }
+      return `${years} ${getYearText(years)}`;
+    },
+    onUpdate: (years) => {
+      slider.setAttribute('data-value', `${years} ${getYearText(years)}`);
     }
+  });
+}
 
-    // === Инициализация первого слайдера (процент) ===
-    if (!slider) {
-        console.warn("Первый слайдер (.thick-blue-slider) не найден");
-    } else {
-        slider.min = 0;
-        slider.max = 100;
-        slider.step = 10; // Шаг 10%
-        if (!slider.value) slider.value = 0;
+function setupGlobalSliderAPI(controller) {
+  window.setSliderValue = function (value) {
+    const slider = $('.thick-blue-slider');
+    if (!slider || !controller) return;
 
-        // Инициализация tooltip
-        slider.setAttribute('data-value', '0%');
-        slider.addEventListener('input', updateSlider);
-        updateSlider(); // начальное обновление
-    }
+    const step = 10;
+    const roundedValue = Math.round(value / step) * step;
+    slider.value = Math.max(0, Math.min(100, roundedValue));
+    controller.update();
+  };
+}
 
-    // === Инициализация второго слайдера (срок кредита) ===
-    if (!creditSlider) {
-        console.warn("Второй слайдер (.credit-slider) не найден");
-    } else {
-        creditSlider.min = 1;
-        creditSlider.max = 7;
-        creditSlider.step = 1;
-        if (!creditSlider.value) creditSlider.value = 1;
+document.addEventListener('DOMContentLoaded', () => {
+  const downPaymentCtrl = initDownPaymentSlider();
+  const creditTermCtrl = initCreditTermSlider();
 
-        // Устанавливаем начальное значение tooltip
-        const initialYears = parseInt(creditSlider.value, 10);
-        creditSlider.setAttribute('data-value', `${initialYears} ${getYearText(initialYears)}`);
-
-        creditSlider.addEventListener('input', updateCreditSlider);
-        updateCreditSlider(); // начальное обновление
-    }
-
-    // === Функция для программного изменения значения слайдера (опционально) ===
-    window.setSliderValue = function (value) {
-        if (slider) {
-            const step = 10;
-            const roundedValue = Math.round(value / step) * step; // округляем к шагу
-            slider.value = Math.max(0, Math.min(100, roundedValue)); // в пределах 0–100
-            updateSlider();
-        }
-    };
+  setupGlobalAPI(downPaymentCtrl);
 });

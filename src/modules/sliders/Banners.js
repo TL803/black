@@ -1,153 +1,165 @@
-    document.addEventListener('DOMContentLoaded', () => {
-        // --- 1. GET: Получаем элементы ---
-        const slider = document.getElementById('banner-slider');
-        const slides = slider.children;
-        const totalSlides = slides.length;
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('banner-slider');
+    if (!slider || !slider.children.length) {
+        console.warn('Слайдер не найден или пуст');
+        return;
+    }
 
-        // --- 2. STATE: Состояние слайдера ---
-        let currentIndex = 0;
-        let isDragging = false;
-        let startPos = 0;
-        let currentTranslate = 0;
-        let prevTranslate = 0;
+    const slides = slider.children;
+    const totalSlides = slides.length;
 
-        // --- 3. INIT: Инициализация ---
-        function init() {
-            render();
-            addEventListeners();
-            setCursor('grab');
-            console.log(`Слайдер запущен. Слайдов: ${totalSlides}`);
-        }
+    let currentIndex = 0;
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let slideWidth = 0; 
 
-        // --- 4. RENDER: Отрисовка текущего слайда ---
-        function render() {
-            slider.style.transition = 'transform 0.5s ease';
-            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-            currentTranslate = -currentIndex * slider.clientWidth;
-        }
+    function init() {
+        updateSlideWidth();
+        render();
+        addEventListeners();
+        setCursor('grab');
+        console.debug(`Слайдер запущен. Слайдов: ${totalSlides}`);
+    }
 
-        // --- 5. Утилита: Проверка, по кнопке ли кликнули ---
-        function isInteractive(target) {
-            return target.closest('button') || target.closest('a');
-        }
+    function render() {
+        updateSlideWidth();
+        slider.style.transition = 'transform 0.5s ease';
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        currentTranslate = -currentIndex * slideWidth;
+    }
 
-        // --- 6. DRAG: Обработка перетаскивания ---
-        function handleMouseDown(e) {
-            if (isInteractive(e.target)) return;
-            if (e.button !== 0) return;
+    function updateSlideWidth() {
+        slideWidth = slider.clientWidth || window.innerWidth;
+    }
 
-            isDragging = true;
-            startPos = e.pageX;
-            prevTranslate = currentTranslate;
-            setCursor('grabbing');
-            e.preventDefault();
-        }
+    function isInteractive(target) {
+        return target.closest('button, a, input, select, textarea');
+    }
 
-        function handleMouseMove(e) {
-            if (!isDragging) return;
-            const dx = e.pageX - startPos;
-            currentTranslate = prevTranslate + dx;
-            updatePosition();
-        }
+    function handleMouseDown(e) {
+        if (isInteractive(e.target)) return;
+        if (e.button !== 0) return;
 
-        function handleMouseUp() {
-            if (!isDragging) return;
-            isDragging = false;
-            setCursor('grab');
-            finalizeDrag();
-        }
+        isDragging = true;
+        startPos = e.pageX;
+        prevTranslate = currentTranslate;
+        setCursor('grabbing');
+        e.preventDefault();
+    }
 
-        function handleTouchStart(e) {
-            if (isInteractive(e.target)) return;
+    function handleMouseMove(e) {
+        if (!isDragging) return;
+        const dx = e.pageX - startPos;
+        currentTranslate = prevTranslate + dx;
+        updatePosition();
+    }
 
-            isDragging = true;
-            startPos = e.changedTouches[0].pageX;
-            prevTranslate = currentTranslate;
-            e.preventDefault();
-        }
+    function handleMouseUp() {
+        if (!isDragging) return;
+        isDragging = false;
+        setCursor('grab');
+        finalizeDrag();
+    }
 
-        function handleTouchMove(e) {
-            if (!isDragging) return;
-            const dx = e.changedTouches[0].pageX - startPos;
-            currentTranslate = prevTranslate + dx;
-            updatePosition();
-            e.preventDefault();
-        }
+    function handleTouchStart(e) {
+        if (isInteractive(e.target)) return;
 
-        function handleTouchEnd() {
-            if (!isDragging) return;
-            isDragging = false;
-            finalizeDrag();
-        }
+        isDragging = true;
+        startPos = e.changedTouches[0].pageX;
+        prevTranslate = currentTranslate;
+        e.preventDefault();
+    }
 
-        // --- 7. Вспомогательные функции ---
-        function updatePosition() {
-            slider.style.transition = 'none';
-            slider.style.transform = `translateX(${currentTranslate}px)`;
-        }
+    function handleTouchMove(e) {
+        if (!isDragging) return;
+        const dx = e.changedTouches[0].pageX - startPos;
+        currentTranslate = prevTranslate + dx;
+        updatePosition();
+        e.preventDefault(); 
+    }
 
-        function finalizeDrag() {
-            const minThreshold = 50;
-            const movedBy = currentTranslate - prevTranslate;
+    function handleTouchEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        finalizeDrag();
+    }
 
-            if (movedBy < -minThreshold) {
-                goToSlide(currentIndex + 1);
-            } else if (movedBy > minThreshold) {
-                goToSlide(currentIndex - 1);
-            } else {
-                goToSlide(currentIndex);
-            }
-        }
+    function handleTouchCancel() {
+        if (!isDragging) return;
+        isDragging = false;
+        setCursor('grab');
+    }
 
-        function goToSlide(index) {
-            index = (index + totalSlides) % totalSlides;
-            currentIndex = index;
-            render();
-        }
+    function updatePosition() {
+        slider.style.transition = 'none';
+        slider.style.transform = `translateX(${currentTranslate}px)`;
+    }
 
-        function setCursor(type) {
-            slider.style.cursor = type;
-        }
+    function finalizeDrag() {
+        updateSlideWidth();
+        const minThreshold = slideWidth * 0.2; 
+        const movedBy = currentTranslate - prevTranslate;
 
-        // --- 8. Клавиатура ---
-        function handleKeyDown(e) {
-            if (e.key === 'ArrowLeft') goToSlide(currentIndex - 1);
-            if (e.key === 'ArrowRight') goToSlide(currentIndex + 1);
-        }
+        if (Math.abs(movedBy) < 10) return;
 
-        // --- 9. Ресайз ---
-        function handleResize() {
+        if (movedBy < -minThreshold) {
+            goToSlide(currentIndex + 1);
+        } else if (movedBy > minThreshold) {
+            goToSlide(currentIndex - 1);
+        } else {
             goToSlide(currentIndex);
         }
+    }
 
-        // --- 10. Добавление слушателей ---
-        function addEventListeners() {
-            // Мышь
-            slider.addEventListener('mousedown', handleMouseDown);
-            document.addEventListener('mousemove', handleMouseMove);
-            document.addEventListener('mouseup', handleMouseUp);
+    function goToSlide(index) {
+        index = (index + totalSlides) % totalSlides;
+        currentIndex = index;
+        render();
+    }
 
-            // Touch
-            slider.addEventListener('touchstart', handleTouchStart, { passive: false });
-            slider.addEventListener('touchmove', handleTouchMove, { passive: false });
-            slider.addEventListener('touchend', handleTouchEnd);
+    function setCursor(type) {
+        slider.style.cursor = type;
+    }
 
-            // Клавиатура
-            document.addEventListener('keydown', handleKeyDown);
-
-            // Ресайз
-            window.addEventListener('resize', handleResize);
+    function handleKeyDown(e) {
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            goToSlide(currentIndex - 1);
         }
+        if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            goToSlide(currentIndex + 1);
+        }
+    }
 
-        // --- 11. Запуск ---
-        init();
+    function handleResize() {
+        updateSlideWidth();
+        goToSlide(currentIndex);
+    }
 
-        // --- 12. Обработчик для кнопок (пример) ---
-        document.querySelectorAll('.showCreaditpopup').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                console.log('Открываем форму кредита');
-                // showModal('creditForm');
-            });
+    function addEventListeners() {
+        slider.addEventListener('mousedown', handleMouseDown);
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mouseup', handleMouseUp);
+
+        slider.addEventListener('touchstart', handleTouchStart, { passive: false });
+        slider.addEventListener('touchmove', handleTouchMove, { passive: false });
+        slider.addEventListener('touchend', handleTouchEnd);
+        slider.addEventListener('touchcancel', handleTouchCancel);
+
+        document.addEventListener('keydown', handleKeyDown);
+        window.addEventListener('resize', handleResize);
+    }
+
+    init();
+
+    document.querySelectorAll('.showCreaditpopup').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            console.debug('Открываем форму кредита');
+            // showModal('creditForm');
         });
     });
+});

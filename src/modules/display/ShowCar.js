@@ -1,27 +1,77 @@
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('firstForm');
-            const hiddenSections = document.getElementById('hiddenSections');
+function getFormElements() {
+  return {
+    form: document.getElementById('firstForm'),
+    hiddenSections: document.getElementById('hiddenSections')
+  };
+}
 
-            // Скрываем все последующие секции
-            hiddenSections.classList.add('hidden');
+function hideElement(element) {
+  if (element) element.classList.add('hidden');
+}
 
-            // Обработка отправки формы
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
+function showElement(element) {
+  if (element) element.classList.remove('hidden');
+}
 
-                const brand = form.querySelector('[name="brand"]').value;
-                const model = form.querySelector('[name="model"]').value;
-                const trim = form.querySelector('[name="trim"]').value;
+function scrollToElement(element) {
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+}
 
-                if (!brand || !model || !trim) {
-                    alert('Пожалуйста, заполните все поля');
-                    return;
-                }
+function isFormValid(form) {
+  const brand = form.querySelector('[name="brand"]')?.value.trim();
+  const model = form.querySelector('[name="model"]')?.value.trim();
+  const trim = form.querySelector('[name="trim"]')?.value.trim();
 
-                // Показываем скрытые секции
-                hiddenSections.classList.remove('hidden');
+  if (!brand) {
+    showError('Пожалуйста, выберите марку');
+    return false;
+  }
+  if (!model) {
+    showError('Пожалуйста, выберите модель');
+    return false;
+  }
+  if (!trim) {
+    showError('Пожалуйста, выберите комплектацию');
+    return false;
+  }
 
-                // Плавная прокрутка к следующему блоку
-                hiddenSections.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
+  return true;
+}
+
+function showError(message) {
+  alert(message);
+}
+
+function handleFormSubmit(e) {
+  e.preventDefault();
+  const { form, hiddenSections } = getFormElements();
+
+  if (!form || !hiddenSections) {
+    console.warn('Один из необходимых элементов не найден');
+    return;
+  }
+
+  if (isFormValid(form)) {
+    showElement(hiddenSections);
+    scrollToElement(hiddenSections);
+  }
+}
+
+function initFormFlow() {
+  const { form, hiddenSections } = getFormElements();
+
+  if (!form) {
+    console.warn('Форма с id="firstForm" не найдена');
+    return;
+  }
+
+  if (hiddenSections) {
+    hideElement(hiddenSections);
+  }
+
+  form.addEventListener('submit', handleFormSubmit);
+}
+
+document.addEventListener('DOMContentLoaded', initFormFlow);
