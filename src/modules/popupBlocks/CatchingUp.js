@@ -1,9 +1,8 @@
 class ModalManager {
-    static MODAL_INTERVAL = 150_000; // 2.5 минуты
+    static MODAL_INTERVAL = 150_000;
     static autoModalInterval = null;
     static isOpen = false;
 
-    // Дефолтный тип для автозапуска
     static DEFAULT_TYPE = 'Credit';
 
     static createModal(type = 'Credit') {
@@ -13,17 +12,13 @@ class ModalManager {
         const modal = document.createElement('div');
         modal.className = `
             global-modal
-            flex flex-col gap-[20px] sm:gap-[32px] md:gap-[44px] lg:gap-[80px]
-            container w-full
-            px-[16px] sm:px-[24px] md:px-[40px] lg:px-[92px]
-            py-[24px] sm:py-[32px] md:py-[60px] lg:py-[106px]
+            flex flex-col
+            w-[90vw] max-w-[340px] sm:max-w-[400px] md:max-w-[500px]
+            mx-auto p-4 sm:p-6
             bg-gradient-to-r from-[#131417] to-[#005f4f]
-            rounded-[12px] sm:rounded-[16px] md:rounded-[24px] lg:rounded-[52px]
-            shadow-xl
+            rounded-xl shadow-lg
             fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-            z-50 max-w-[95vw] max-w-[600px] md:max-w-[1800px]
-            text-white
-            overflow-y-auto max-h-[95vh]
+            z-50 overflow-hidden text-white
             box-border
         `;
 
@@ -42,30 +37,25 @@ class ModalManager {
 
     static createModalHeader(type) {
         const header = document.createElement('div');
-        header.className = 'text-center text-white px-4 break-words';
+        header.className = 'text-center text-white px-4 py-6 space-y-3 break-words';
 
-        // Формируем заголовок в зависимости от типа
-        let offerText = '';
-        if (type === 'Trade-in') {
-            offerText = 'по программе Trade-in';
-        } else {
-            offerText = 'в кредит';
-        }
+        let offerText = type === 'Trade-in' ? 'по программе Trade-in' : 'в кредит';
+        const isTradeIn = type === 'Trade-in';
 
         header.innerHTML = `
-            <p class="text-[14px] sm:text-[28px] md:text-[40px] lg:text-[48px] font-regular md:font-medium leading-tight mb-2 sm:mb-4">
+            <p class="text-[14px] sm:text-[16px] font-medium leading-tight">
                 Настало время для вашей мечты — новый авто по особой цене!
             </p>
-            <p class="text-[14px] sm:text-[24px] md:text-[36px] lg:text-[40px] font-regular md:font-medium mb-4 sm:mb-6 leading-tight">
+            <p class="text-[12px] sm:text-[14px] font-medium text-gray-300">
                 Акция действует до 3 июля
             </p>
             <img 
                 src="../assets/Frame 193 (1).png" 
                 alt="Три автомобиля" 
-                class="w-full max-w-[280px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] mx-auto mb-4 sm:mb-8 h-auto"
+                class="w-full h-auto max-h-[100px] sm:max-h-[120px] mt-6 mb-4 object-contain"
             >
-            <h2 class="text-[16px] sm:text-[36px] md:text-[56px] lg:text-[64px] font-medium md:font-bold leading-tight">
-                Специальное предложение на Hyundai Sonata ${offerText}
+            <h2 class="text-[16px] sm:text-[18px] font-bold text-white text-center">
+                Специальное предложение на Hyundai Sonata ${isTradeIn ? 'по программе Trade-in' : ''}
             </h2>
         `;
         return header;
@@ -73,38 +63,38 @@ class ModalManager {
 
     static createModalForm() {
         const form = document.createElement('form');
-        form.className = 'flex flex-col gap-[16px] sm:gap-[20px] md:gap-[24px] px-4';
+        form.className = 'flex flex-col gap-4 mt-6';
 
         const inputName = this.createInput('text', 'ФИО', true);
         const inputPhone = this.createInput('tel', 'Ваш номер телефона', true);
 
-        const consent = document.createElement('label');
-        consent.className = 'flex items-start sm:items-center space-x-2 sm:space-x-4 break-words';
-        consent.innerHTML = `
-            <span class="inline-block relative mt-1">
-                <input type="checkbox" checked class="custom-checkbox w-5 h-5 sm:w-6 sm:h-6 accent-[#19BC8D] rounded" required>
-            </span>
-            <span class="text-[11px] md:text-[20px]">
-                я согласен с <a href="./Privacy-policy.html" class="text-[#19BC8D] underline">политикой обработки персональных данных</a>
-            </span>
-        `;
+        const consentContainer = document.createElement('div');
+        consentContainer.className = 'flex items-start gap-2 mt-4 text-[10px] sm:text-[12px] text-gray-300';
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = true;
+        checkbox.required = true;
+        checkbox.className = 'custom-checkbox w-14 h-5 accent-[#19BC8D] rounded cursor-pointer';
+
+        const consentText = document.createElement('span');
+        consentText.textContent = 'Я соглашаюсь с условиями и даю свое согласие на обработку и использование моих персональных данных, и разрешаю сделать запрос в бюро кредитных историй';
+
+        consentContainer.appendChild(checkbox);
+        consentContainer.appendChild(consentText);
 
         const submitBtn = document.createElement('button');
         submitBtn.type = 'submit';
         submitBtn.className = `
-            w-full bg-[#19BC8D] hover:bg-[#17a67c] 
-            py-[14px] sm:py-[20px] md:py-[24px] 
-            rounded-[24px] sm:rounded-[32px]
-            text-[14px] sm:text-[16px] md:text-[20px] lg:text-[36px] 
-            font-medium text-[#131417] 
-            mt-[16px] sm:mt-[30px]
+            w-full bg-[#19BC8D] hover:bg-[#17a67c]
+            py-3 sm:py-4 rounded-full
+            text-[14px] sm:text-[16px] font-medium text-[#131417]
             transition-colors duration-200
-            shadow-md
-            break-words
+            mt-6 shadow-md
         `;
         submitBtn.textContent = 'Отправить заявку на звонок';
 
-        form.append(inputName, inputPhone, consent, submitBtn);
+        form.append(inputName, inputPhone, consentContainer, submitBtn);
         return form;
     }
 
@@ -114,12 +104,11 @@ class ModalManager {
         input.placeholder = placeholder;
         input.required = required;
         input.className = `
-            custom-select border border-gray-500 bg-transparent
-            rounded-lg p-3 sm:p-4
-            text-[14px] sm:text-[16px] md:text-[18px]
-            placeholder-gray-400 text-white
+            custom-input
+            w-full bg-transparent border border-gray-500
+            rounded-full px-4 py-3 text-white placeholder-gray-400
             focus:outline-none focus:ring-2 focus:ring-[#19BC8D]
-            w-full
+            text-[14px] sm:text-[16px]
             box-border
         `;
         return input;
@@ -127,9 +116,12 @@ class ModalManager {
 
     static createCloseButton() {
         const btn = document.createElement('button');
-        btn.className = 'absolute top-3 right-3 sm:top-6 sm:right-6 md:top-10 md:right-14 hover:opacity-80 transition-opacity z-50';
+        btn.className = 'absolute top-4 right-4 w-6 h-6 flex items-center justify-center hover:opacity-80 transition-opacity';
         btn.innerHTML = `
-            <img src="../assets/Frame 156.svg" alt="Закрыть модальное окно" class="w-[14px] h-[14px] sm:w-[20px] sm:h-[20px] md:w-[32px] md:h-[32px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
         `;
         return btn;
     }
@@ -155,14 +147,10 @@ class ModalManager {
 
         const header = modal.querySelector('.text-center');
         header.innerHTML = `
-            <div class="flex flex-col items-center gap-4 sm:gap-6 px-4 break-words">
-                <img src="../assets/Frame 193 (1).png" alt="Три автомобиля" class="w-full max-w-[280px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] mx-auto mb-6 h-auto">
-                <h2 class="text-[24px] sm:text-[32px] md:text-[48px] font-bold text-white text-center leading-tight">
-                    Получили вашу заявку на звонок!
-                </h2>
-                <p class="text-[14px] sm:text-[16px] md:text-[24px] text-gray-300 text-center leading-relaxed break-words">
-                    Мы перезвоним вам в ближайшее время!
-                </p>
+            <div class="flex flex-col items-center gap-4 text-white px-4 py-4">
+                <img src="../assets/Frame 193 (1).png" alt="Три автомобиля" class="w-full max-w-[100px] h-auto mb-4 object-contain">
+                <h2 class="text-[16px] font-bold text-white">Получили вашу заявку!</h2>
+                <p class="text-[12px] text-gray-300">Мы перезвоним вам в ближайшее время.</p>
             </div>
         `;
 
@@ -215,23 +203,20 @@ class ModalManager {
     }
 
     static init() {
-        // Запускаем автозапуск
         this.startAutoModal();
 
-        // Настраиваем все элементы с data-toggle-timer-container
         const buttons = document.querySelectorAll('[data-toggle-timer-container]');
         buttons.forEach(button => {
             button.addEventListener('click', (e) => {
                 e.preventDefault();
                 const type = button.getAttribute('data-toggle-timer-container');
-                const validType = type === 'Trade-in' ? 'Trade-in' : 'Credit'; // валидация
+                const validType = ['Credit', 'Trade-in'].includes(type) ? type : 'Credit';
                 this.showModal(validType);
             });
         });
     }
 }
 
-// Инициализация после загрузки DOM
 document.addEventListener('DOMContentLoaded', () => {
     ModalManager.init();
 });
